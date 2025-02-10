@@ -1,3 +1,9 @@
+{{/* System Range */}}
+
+{{/* Default Static Values */}}
+
+{{ $ragePubKey := "age1t8mdnrcvhvv9zqsnt5wmnglxj3fx62k7kt4m26x2zatnsczt3pgq9h2wmd" }}
+
 {{/* Default Dynamic Values */}}
 
 {{ $shell := "" }}
@@ -6,6 +12,16 @@
 {{- else -}}
   {{- $shell = "zsh" -}}
 {{- end -}}
+
+encryption = "age"
+[age]
+	command = "rage"
+  identity = "~/.config/chezmoi/key.txt"
+  recipient = "{{ "$ragePubKey" }}"
+  
+[data]
+  githubUserName = "lvyuemeng"
+  email = "lv15623448685@gmail.com"
 
 [git]
 autoAdd = true # Add changes to the source state after any change

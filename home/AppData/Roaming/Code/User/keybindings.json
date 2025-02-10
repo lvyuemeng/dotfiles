@@ -267,4 +267,14 @@
         "key": "ctrl+w a",
         "command": "workbench.action.closeEditorsInGroup"
     },
+    {
+        "key": "ctrl+s oem_4",
+        "command": "editor.fold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+s oem_6",
+        "command": "editor.unfold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
 ]

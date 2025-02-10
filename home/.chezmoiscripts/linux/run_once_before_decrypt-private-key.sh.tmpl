@@ -2,7 +2,12 @@
 
 if [ ! -f "${HOME}/.config/chezmoi/key.txt" ]; then
     mkdir -p "${HOME}/.config/chezmoi"
-    chezmoi age decrypt --output "${HOME}/.config/chezmoi/key.txt" --passphrase "{{ .chezmoi.sourceDir }}/key.txt.rage"
+    # ensure rage is installed
+    if ! command -v rage &> /dev/null; then
+        echo "rage is not installed. Please install it and try again."
+        exit 1
+    fi
+    rage -o "${HOME}/.config/chezmoi/key.txt" -p "{{ .chezmoi.sourceDir }}/key.txt.rage"
     chmod 600 "${HOME}/.config/chezmoi/key.txt"
 fi
 EOF

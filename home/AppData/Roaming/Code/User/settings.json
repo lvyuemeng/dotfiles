@@ -148,7 +148,6 @@
         "julia.enableTelemetry"
     ],
     "vscode-neovim.compositeKeys": {
-    
         "jj": {
             "command": "vscode-neovim.escape",
         },
@@ -272,17 +271,23 @@
     "rust-analyzer.inlayHints.rangeExclusiveHints.enable": true,
     "workbench.startupEditor": "none",
     "files.associations": {
-        "*.json.tmpl":"json",
-        "*.toml.tmpl":"toml",
-        "*.ymal.tmpl":"yaml",
-        "*.yml.tmpl":"yml",
-        "*chezmoiignore*":"gitignore",
-        "*chezmoiremove*":"gitignore",
-        "*gitignore*":"gitignore",
-        "*rgignore*":"gitignore",
-        "*.ps1.tmpl":"powershell",
-        "*.sh.tmpl":"shellscript",
-        "*.bat.tmpl":"bat",
-        "*.lua.tmpl":"lua",
-    }
+        "*.json.tmpl": "json",
+        ".*.json.tmpl": "json",
+        "*.toml.tmpl": "toml",
+        ".*.toml.tmpl": "toml",
+        "*.ymal.tmpl": "yaml",
+        ".*.ymal.tmpl": "yaml",
+        "*.yml.tmpl": "yml",
+        ".*.yml.tmpl": "yml",
+        "*chezmoiignore*": "gitignore",
+        "*chezmoiremove*": "gitignore",
+        "*gitignore*": "gitignore",
+        "*rgignore*": "gitignore",
+        "*.ps1.tmpl": "powershell",
+        "*.sh.tmpl": "shellscript",
+        "*.bat.tmpl": "bat",
+        "*.lua.tmpl": "lua",
+    },
+    "terminal.integrated.enablePersistentSessions": false,
+    "editor.experimentalEditContextEnabled": false
 }
