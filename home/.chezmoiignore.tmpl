@@ -1,0 +1,21 @@
+# chezmoi 
+
+{{ if ne .chezmoi.os "linux" }}
+.chezmoiscripts/linux/**/*
+{{ end }}
+{{ if ne .chezmoi.os "windows" }}
+.chezmoiscripts/windows/**/*
+.local/bin/**/*
+{{ end }}
+
+# OS specific
+
+{{ if eq .chezmoi.os "windows" }}
+{{ else }}
+AppData/**/*
+.wslconfig
+{{ end }}
+
+
+
+
