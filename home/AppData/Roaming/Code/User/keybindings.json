@@ -99,6 +99,41 @@
         "command": "workbench.action.terminal.focusTabs",
         "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported || terminalHasBeenCreated && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
     },
+    {
+        "key": "alt+up",
+        "command": "workbench.action.terminal.resizePaneUp",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+down",
+        "command": "workbench.action.terminal.resizePaneDown",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+left",
+        "command": "workbench.action.terminal.resizePaneLeft",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+right",
+        "command": "workbench.action.terminal.resizePaneRight",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+oem_plus",
+        "command": "workbench.action.terminal.fontZoomIn",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+oem_minus",
+        "command": "workbench.action.terminal.fontZoomOut",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+0",
+        "command": "workbench.action.terminal.fontZoomReset",
+        "when": "terminalFocus"
+    },
     // ===== Quick Actions =====
     {
         "key": "ctrl+b",
@@ -107,19 +142,23 @@
     // ===== Resize Actions =====
     {
         "key": "alt+left",
-        "command": "workbench.action.decreaseViewWidth"
+        "command": "workbench.action.decreaseViewWidth",
+        "when": "editorFocus"
     },
     {
         "key": "alt+right",
-        "command": "workbench.action.increaseViewWidth"
+        "command": "workbench.action.increaseViewWidth",
+        "when": "editorFocus"
     },
     {
         "key": "alt+up",
-        "command": "workbench.action.decreaseViewHeight"
+        "command": "workbench.action.decreaseViewHeight",
+        "when": "editorFocus"
     },
     {
         "key": "alt+down",
-        "command": "workbench.action.increaseViewHeight"
+        "command": "workbench.action.increaseViewHeight",
+        "when": "editorFocus"
     },
     // Buffer navigation (VSCode tabs)
     {

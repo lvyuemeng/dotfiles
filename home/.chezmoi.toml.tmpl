@@ -1,3 +1,6 @@
+{{/* Default Dynamic Values */}}
+
+{{ $shell := "" }}
 {{- if eq .chezmoi.os "windows" -}}
   {{- $shell = "pwsh" -}}
 {{- else -}}

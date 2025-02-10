@@ -1,0 +1,31 @@
+# == user ==
+[user]
+	name = {{ .githubUserName }}
+	email = {{ .email }}
+[github]
+	user = {{ .githubUserName }}
+[init]
+	defaultBranch = main
+
+# == Ease ==
+[core]
+	editor = code --wait
+[fetch]
+	prune = true
+[alias]
+	st = "status"
+	br = "branch"
+	ch = "checkout"
+	cm = "commit"
+[color]
+	ui = auto
+
+# == Security ==
+# transfer/receive integrity
+[transfer]
+	fsckObjects = true
+[receive]
+	fsckObjects = true
+# credenence cache
+[credential]
+	helper = cache

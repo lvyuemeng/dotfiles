@@ -271,4 +271,18 @@
     "zig.zls.enabled": "on",
     "rust-analyzer.inlayHints.rangeExclusiveHints.enable": true,
     "workbench.startupEditor": "none",
+    "files.associations": {
+        "*.json.tmpl":"json",
+        "*.toml.tmpl":"toml",
+        "*.ymal.tmpl":"yaml",
+        "*.yml.tmpl":"yml",
+        "*chezmoiignore*":"gitignore",
+        "*chezmoiremove*":"gitignore",
+        "*gitignore*":"gitignore",
+        "*rgignore*":"gitignore",
+        "*.ps1.tmpl":"powershell",
+        "*.sh.tmpl":"shellscript",
+        "*.bat.tmpl":"bat",
+        "*.lua.tmpl":"lua",
+    }
 }
