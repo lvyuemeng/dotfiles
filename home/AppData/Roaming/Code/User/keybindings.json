@@ -1,0 +1,231 @@
+[ // ===== Alt: Window/Split Operations ===== 
+    // Split creation
+    {
+        "key": "alt+\\",
+        "command": "workbench.action.splitEditorRight"
+    },
+    {
+        "key": "alt+-",
+        "command": "workbench.action.splitEditorDown"
+    },
+    // ===== Window/Split Management =====
+    {
+        "key": "alt+h",
+        "command": "workbench.action.navigateLeft",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "alt+l",
+        "command": "workbench.action.navigateRight",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "alt+k",
+        "command": "workbench.action.navigateUp",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "alt+j",
+        "command": "workbench.action.navigateDown",
+        "when": "!terminalFocus"
+    },
+    // ===== Terminal =====
+    {
+        "key": "alt+t", // Toggle existing terminal
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "alt+n", // New terminal
+        "command": "workbench.action.terminal.new",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+\\", // Split terminal right
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+-", // Split terminal down
+        "command": "workbench.action.terminal.splitDown",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+h", // Focus left terminal
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+l", // Focus right terminal
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+k", // Scroll up (in terminal)
+        "command": "workbench.action.terminal.scrollUp",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+j", // Scroll down (in terminal)
+        "command": "workbench.action.terminal.scrollDown",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+q", // Kill current terminal
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+[",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+]",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "workbench.action.terminal.scrollDownPage",
+        "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "workbench.action.terminal.scrollUpPage",
+        "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "ctrl+oem_5",
+        "command": "workbench.action.terminal.focusTabs",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported || terminalHasBeenCreated && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
+    },
+    // ===== Quick Actions =====
+    {
+        "key": "ctrl+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    // ===== Resize Actions =====
+    {
+        "key": "alt+left",
+        "command": "workbench.action.decreaseViewWidth"
+    },
+    {
+        "key": "alt+right",
+        "command": "workbench.action.increaseViewWidth"
+    },
+    {
+        "key": "alt+up",
+        "command": "workbench.action.decreaseViewHeight"
+    },
+    {
+        "key": "alt+down",
+        "command": "workbench.action.increaseViewHeight"
+    },
+    // Buffer navigation (VSCode tabs)
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditor"
+    },
+    // ===== Search Navigation =====
+    {
+        "key": "alt+f",
+        "command": "workbench.action.findInFiles"
+    },
+    {
+        "key": "alt+shift+f",
+        "command": "workbench.action.replaceInFiles"
+    },
+    {
+        "key": "alt+down",
+        "command": "search.action.focusNextSearchResult",
+        "when": "searchViewletVisible"
+    },
+    {
+        "key": "alt+up",
+        "command": "search.action.focusPreviousSearchResult",
+        "when": "searchViewletVisible"
+    },
+    {
+        "key": "alt+enter",
+        "command": "search.action.openResult",
+        "when": "searchViewletVisible"
+    },
+    // ===== Git Operations =====
+    {
+        "key": "alt+g",
+        "command": "workbench.view.scm" // Open Git panel
+    },
+    {
+        "key": "alt+b",
+        "command": "git.checkout" // Switch Git branch
+    },
+    {
+        "key": "alt+shift+b",
+        "command": "workbench.action.quickOpen", // Open Git branches quickly
+        "args": "git branch"
+    },
+    // ==== Section ====
+    {
+        "key": "f1",
+        "command": "workbench.actions.view.problems"
+    },
+    {
+        "key": "f2",
+        "command": "workbench.action.output.toggleOutput"
+    },
+    {
+        "key": "f3",
+        "command": "workbench.debug.action.toggleRepl"
+    },
+    {
+        "key": "f4",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    // ==== File Operation ====
+    {
+        "key": "shift+alt+p",
+        "command": "copyFilePath",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "shift+alt+p",
+        "command": "copyFilePath",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+alt+p",
+        "command": "search.action.copyPath",
+        "when": "fileMatchOrFolderMatchWithResourceFocus"
+    },
+    {
+        "key": "shift+alt+c",
+        "command": "-search.action.copyPath",
+        "when": "fileMatchOrFolderMatchWithResourceFocus"
+    },
+    {
+        "key": "shift+alt+l",
+        "command": "copyRelativeFilePath",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "shift+alt+l",
+        "command": "copyRelativeFilePath",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+w u",
+        "command": "workbench.action.closeUnmodifiedEditors"
+    },
+    {
+        "key": "ctrl+w a",
+        "command": "workbench.action.closeAllEditors"
+    },
+    {
+        "key": "ctrl+w a",
+        "command": "workbench.action.closeEditorsInGroup"
+    },
+]
