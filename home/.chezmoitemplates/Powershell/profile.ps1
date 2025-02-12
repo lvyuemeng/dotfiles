@@ -1,40 +1,39 @@
-function Set-BrootAlias {
-    $script:brootAlias = 'br'
-    Set-Alias -Name $script:brootAlias -Value 'broot' -Scope Script
+function CustomAlias {
+    $script:broot = "br"
+    
+    Set-Alias -Name $script:broot -Value 'broot' -Scope Script
 }
 
-function mine {
-    Set-Location C:\Users\nostalgia\Unified\Mine
-}
-
-function Set-ProjAlias {
-    $script:ProjAlias = 'Proj'
-    Set-Alias -Name $script:ProjAlias -Value 'Project' -Scope Script
-}
-
-function Set-OhMyPosh {
-    oh-my-posh init pwsh --config "https://fastly.jsdelivr.net/gh/Weidows-projects/Programming-Configuration@master/others/pwsh/weidows.omp.json" | Invoke-Expression
-}
-
-function Set-Starship {
-    Invoke-Expression (&starship init powershell)
+function JumpTo {
+    $jump = @{
+        "mine" = "$env:USERPROFILE\Unified\Mine"
+        "proj" = "$env:USERPROFILE\Unified\Mine\Proj"
+    }
+    
+    foreach ($key in $jump.Keys) {
+        New-Item -Path "Function:\$key" -Value {Set-Location $jump[$key]} | Out-Null
+    }
 }
 
 function Evoke {
+    # oh-my-posh
+    # oh-my-posh init pwsh --config "https://fastly.jsdelivr.net/gh/Weidows-projects/Programming-Configuration@master/others/pwsh/weidows.omp.json" | Invoke-Expression
+    # fnm
     fnm env --use-on-cd | Out-String | Invoke-Expression
+    # vfox
     Invoke-Expression "$(vfox activate pwsh)"
+    # starship
+    Invoke-Expression (&starship init powershell)
 }
 
 function Initialize-Environment {
-    [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+    # [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
-    Set-ProjAlias
-    Set-BrootAlias
-    Set-Starship
-    # Set-OhMyPosh
+    CustomAlias
+    JumpTo
     Evoke
 
-    $env:STARSHIP_CONFIG = "~\.config\starship.toml"
+    $env:STARSHIP_CONFIG = "$USERPROFILE\.config\starship\starship.toml"
     $env:EDITOR = "code.cmd"
     $env:SHELL = "pwsh"
 }
