@@ -31,7 +31,7 @@ function Initialize-Env {
     # starship
     Invoke-Expression (&starship init powershell)
 
-    $ENV:STARSHIP_CONFIG = "~\.config\starship\starship.toml"
+    $ENV:STARSHIP_CONFIG = "$HOME\.config\starship\starship.toml"
     $ENV:EDITOR = "code.cmd"
     $ENV:SHELL = "pwsh"
 }
