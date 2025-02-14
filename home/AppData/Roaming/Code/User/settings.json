@@ -1,259 +1,14 @@
 {
-    //experimental setting
-    "terminal.integrated.stickyScroll.enabled": true,
-    "editor.wordWrap": "on",
-    "editor.lineHeight": 1.5,
-    "window.dialogStyle": "custom",
-    "editor.autoClosingBrackets": "beforeWhitespace",
-    "editor.suggest.snippetsPreventQuickSuggestions": true,
-    "editor.acceptSuggestionOnEnter": "smart",
-    "editor.suggestSelection": "recentlyUsedByPrefix",
-    "editor.guides.bracketPairs": true,
-    "editor.bracketPairColorization.enabled": true,
-    "editor.mouseWheelZoom": true,
-    "editor.smoothScrolling": true,
-    "editor.cursorBlinking": "smooth",
-    "editor.cursorSmoothCaretAnimation": "explicit",
-    "workbench.list.smoothScrolling": true,
-    "editor.formatOnPaste": true,
-    "editor.formatOnType": true,
-    "terminal.explorerKind": "both",
-    "terminal.sourceControlRepositoriesKind": "both",
-    "emmet.triggerExpansionOnTab": true,
-    "terminal.integrated.fontFamily": "FiraCode Nerd Font,MesloLGM Nerd Font",
-    "editor.fontFamily": "Consolas, monospace, FiraCode Nerd Font, MesloLGM Nerd Font",
-    "editor.codeLensFontFamily": "MesLoLGS NF",
-    "editor.experimentalInlineEdit.fontFamily": "MesloLGM Nerd Font",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 500,
-    "explorer.confirmDelete": false,
-    "json.maxItemsComputed": 8000,
-    "tailwindCSS.experimental.classRegex": [
-        "class: \"(.*)\""
-    ],
-    "tailwindCSS.includeLanguages": {
-        "rust": "html"
-    },
-    "vim.visualModeKeyBindings": [
-        {
-            "before": [
-                "i",
-                "i",
-            ],
-            "after": [
-                "<ESC>"
-            ],
-        },
-        {
-            "before": [
-                "j",
-                "j",
-            ],
-            "after": [
-                "<ESC>",
-            ]
-        }
-    ],
-    "editor.lineNumbers": "relative",
+    // VscodeVim setting(Deprecated)
+    /*
     "vim.useSystemClipboard": true,
     "vim.leader": "<space>",
     "vim.sneak": true,
     "vim.surround": true,
     "vim.easymotion": true,
     "vim.enableNeovim": true,
-    "rust-analyzer.inlayHints.discriminantHints.enable": "fieldless",
-    "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "with_block",
-    "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
-    "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
-    "files.watcherExclude": {
-        "**/.bloop": true,
-        "**/.metals": true,
-        "**/.ammonite": true
-    },
-    "metals.javaVersion": "21",
-    "metals.inlayHints.hintsInPatternMatch.enable": true,
-    "metals.inlayHints.implicitArguments.enable": true,
-    "metals.inlayHints.inferredTypes.enable": true,
-    "metals.inlayHints.typeParameters.enable": true,
-    "terminal.integrated.commandsToSkipShell": [
-        "language-julia.interrupt"
-    ],
-    "julia.symbolCacheDownload": true,
-    "julia.enableTelemetry": true,
-    "C_Cpp.intelliSenseEngine": "disabled",
-    "clangd.path": "c:\\Users\\nostalgia\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\18.1.3\\clangd_18.1.3\\bin\\clangd.exe",
-    "editor.insertSpaces": false,
-    "C_Cpp.default.cppStandard": "c++23",
-    "redhat.telemetry.enabled": true,
-    "git.terminalAuthentication": false,
-    "rescript.settings.incrementalTypechecking.acrossFiles": true,
-    "rescript.settings.incrementalTypechecking.debugLogging": true,
-    "rescript.settings.incrementalTypechecking.enabled": true,
-    "rescript.settings.inlayHints.enable": true,
-    "rescript.settings.codeLens": true,
-    "git.autofetch": true,
-    "rust-analyzer.debug.openDebugPane": true,
-    "flix.explain.enabled": true,
-    "raku.trace.server": "verbose",
-    "metals.serverVersion": "1.4.2+62-8377cbec-SNAPSHOT",
-    "workbench.colorTheme": "Material Theme Darker High Contrast",
-    "security.workspace.trust.untrustedFiles": "open",
-    "rust-analyzer.procMacro.ignored": {
-        "leptos_macro": [
-            // optional:
-            // "component",
-            "server"
-        ],
-    },
-    "julia.focusPlotNavigator": true,
-    "clangd.checkUpdates": true,
-    "clangd.arguments": [
-        "--background-index",
-        "--completion-style=detailed",
-        "--compile-commands-dir=$[workspacefolder]"
-    ],
-    "zig.path": "zig",
-    "zig.zls.enableAutofix": true,
-    "zig.zls.enableBuildOnSave": true,
-    "zig.zls.dangerousComptimeExperimentsDoNotEnable": true,
-    "zig.zls.highlightGlobalVarDeclarations": true,
-    "fittencode.languagePreference.displayPreference": "en",
-    "fittencode.languagePreference.commentPreference": "en",
-    "terminal.integrated.cursorBlinking": true,
-    "javascript.inlayHints.enumMemberValues.enabled": true,
-    "typescript.inlayHints.enumMemberValues.enabled": true,
-    "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-    "typescript.inlayHints.parameterNames.enabled": "literals",
-    "typescript.inlayHints.parameterTypes.enabled": true,
-    "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-    "typescript.inlayHints.variableTypes.enabled": true,
-    "typescript.referencesCodeLens.showOnAllFunctions": true,
-    "typescript.preferences.preferTypeOnlyAutoImports": true,
-    "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-    "javascript.inlayHints.parameterTypes.enabled": true,
-    "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-    "javascript.inlayHints.variableTypes.enabled": true,
-    "typescript.tsserver.web.typeAcquisition.enabled": true,
-    "html.format.indentHandlebars": true,
-    "html.format.indentInnerHtml": true,
-    "html-css-class-completion.enableEmmetSupport": true,
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1
-    },
-    // neovim settings
-    "vim.neovimPath": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
-    "workbench.settings.applyToAllProfiles": [
-        "vim.neovimPath",
-        "julia.enableTelemetry"
-    ],
-    "vscode-neovim.compositeKeys": {
-        "jj": {
-            "command": "vscode-neovim.escape",
-        },
-    },
-    "svelte.enable-ts-plugin": true,
-    // fittencode
-    "fittencode.delayCompletion.delaytime": 500,
-    "fittencode.inlineCompletion.disableCompletionWhenDelete": true,
-    "fittencode.inlineCompletion.disableCompletionWithinTheLine": true,
-    "fittencode.inlineCompletion.enable": false,
-    "cSpell.userWords": [
-        "astype",
-        "collidepoint",
-        "fsolve",
-        "isna",
-        "lineplot",
-        "odeint",
-        "popleft",
-        "PROBS",
-        "pygame",
-        "setrecursionlimit",
-        "tictactoe"
-    ],
-    "python.analysis.inlayHints.callArgumentNames": "partial",
-    "python.analysis.inlayHints.functionReturnTypes": true,
-    "python.analysis.inlayHints.pytestParameters": true,
-    "python.analysis.inlayHints.variableTypes": true,
-    "python.analysis.importFormat": "relative",
-    "python.testing.pytestEnabled": true,
-    "python.testing.unittestEnabled": true,
-    "debugpy.showPythonInlineValues": true,
-    "pythonIndent.trimLinesWithOnlyWhitespace": true,
-    "python.analysis.typeEvaluation.enableExperimentalFeatures": true,
-    "python.analysis.autoImportCompletions": true,
-    "python.analysis.autoFormatStrings": true,
-    "python.analysis.completeFunctionParens": true,
-    "python.analysis.typeEvaluation.enableReachabilityAnalysis": true,
-    "python.diagnostics.sourceMapsEnabled": true,
-    "python.analysis.packageIndexDepths": [
-        {
-            "name": "sklearn",
-            "depth": 2
-        },
-        {
-            "name": "matplotlib",
-            "depth": 2
-        },
-        {
-            "name": "scipy",
-            "depth": 2
-        },
-        {
-            "name": "django",
-            "depth": 2
-        },
-        {
-            "name": "flask",
-            "depth": 2
-        },
-        {
-            "name": "fastapi",
-            "depth": 2
-        }
-    ],
-    "notebook.cellToolbarVisibility": "hover",
-    "terminal.integrated.fontWeight": "bold",
-    "rust-analyzer.lens.references.adt.enable": true,
-    "rust-analyzer.lens.references.method.enable": true,
-    "rust-analyzer.lens.references.trait.enable": true,
-    "rust-analyzer.diagnostics.styleLints.enable": true,
-    "rust-analyzer.diagnostics.previewRustcOutput": true,
-    "rust-analyzer.rustfmt.rangeFormatting.enable": true,
-    "editor.suggest.localityBonus": true,
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.accessibilitySupport": "off",
-    "git.ignoreRebaseWarning": true,
-    "search.showLineNumbers": true,
-    "notebook.lineNumbers": "on",
-    "notebook.diff.overviewRuler": true,
-    "notebook.experimental.remoteSave": true,
-    "notebook.formatOnCellExecution": true,
-    "notebook.formatOnSave.enabled": true,
-    "notebook.outline.showCodeCells": true,
-    "notebook.stickyScroll.enabled": true,
-    "notebook.experimental.generate": true,
-    "search.experimental.closedNotebookRichContentResults": true,
-    "go.coverOnSave": true,
-    "go.inlayHints.assignVariableTypes": true,
-    "go.inlayHints.compositeLiteralFields": true,
-    "go.inlayHints.compositeLiteralTypes": true,
-    "go.inlayHints.constantValues": true,
-    "go.inlayHints.functionTypeParameters": true,
-    "go.inlayHints.parameterNames": true,
-    "go.inlayHints.rangeVariableTypes": true,
-    "go.testOnSave": true,
-    "go.testExplorer.showDynamicSubtestsInEditor": true,
-    "go.toolsManagement.autoUpdate": true,
-    "rust-analyzer.diagnostics.experimental.enable": true,
-    "rust-analyzer.completion.termSearch.enable": true,
-    "typescript.experimental.updateImportsOnPaste": true,
-    "typescript.enablePromptUseWorkspaceTsdk": true,
-    "typescript.format.insertSpaceAfterTypeAssertion": true,
-    "typescript.experimental.expandableHover": true,
-    "typescript.implementationsCodeLens.enabled": true,
-    "typescript.implementationsCodeLens.showOnInterfaceMethods": true,
-    "typescript.tsserver.enableTracing": true,
+    */
+    // Todo Tag(Depcreated)
     "todo-tree.general.tags": [
         "BUG",
         "HACK",
@@ -264,12 +19,7 @@
         "[x]",
         "Modify PetApp, make db for backend event independent"
     ],
-    "typescript.referencesCodeLens.enabled": true,
-    "editor.unicodeHighlight.invisibleCharacters": false,
-    "moonbit.ai.telemetry": "on",
-    "zig.zls.enabled": "on",
-    "rust-analyzer.inlayHints.rangeExclusiveHints.enable": true,
-    "workbench.startupEditor": "none",
+    // File 
     "files.associations": {
         "*.json.tmpl": "json",
         ".*.json.tmpl": "json",
@@ -288,6 +38,230 @@
         "*.bat.tmpl": "bat",
         "*.lua.tmpl": "lua",
     },
+    "files.watcherExclude": {
+        "**/.metals": true,
+        "**/.bloop": true,
+        "**/.ammonite": true
+    },
+    "files.autoSaveDelay": 500,
+    "files.autoSave": "afterDelay",
+    // Neovim settings
+    "workbench.settings.applyToAllProfiles": [
+        "notebook.formatOnSave.enabled",
+        "markdown.updateLinksOnFileMove.enabled"
+    ],
+    "vscode-neovim.compositeKeys": {
+        "jj": {
+            "command": "vscode-neovim.escape",
+        },
+    },
+    // Font
+    "editor.codeLensFontFamily": "\"0xProto Nerd Font Mono\"",
+    "editor.fontFamily": "\"0xProto Nerd Font Mono\"",
+    "terminal.integrated.fontWeight": "bold",
+    "terminal.integrated.fontFamily": "\"0xProto Nerd Font Mono\"",
+    // Workbench
+    "workbench.colorTheme": "Atom One Dark",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.startupEditor": "none",
+    "workbench.list.smoothScrolling": true,
+    "window.dialogStyle": "custom",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "security.workspace.trust.untrustedFiles": "open",
+    "search.showLineNumbers": true,
+    "search.experimental.closedNotebookRichContentResults": true,
+    "search.smartCase": true,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "explorer.confirmDelete": false,
+    "emmet.triggerExpansionOnTab": true,
+    // Editor
+    "editor.wordWrap": "on",
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "editor.suggestSelection": "recentlyUsedByPrefix",
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
+    "editor.suggest.localityBonus": true,
+    "editor.smoothScrolling": true,
+    "editor.mouseWheelZoom": true,
+    "editor.lineNumbers": "relative",
+    "editor.lineHeight": 1.5,
+    "editor.insertSpaces": false,
+    "editor.guides.bracketPairs": true,
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.cursorSmoothCaretAnimation": "explicit",
+    "editor.cursorBlinking": "smooth",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.autoClosingBrackets": "beforeWhitespace",
+    "editor.accessibilitySupport": "off",
+    "editor.acceptSuggestionOnEnter": "smart",
+    "notebook.formatOnSave.enabled": true,
+    // Terminal
+    "terminal.sourceControlRepositoriesKind": "both",
+    "terminal.integrated.stickyScroll.enabled": true,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "terminal.explorerKind": "both",
+    // surround
+    "surround.custom": {
+        "warp()": {
+            "label": "warp()",
+            "description": "warp with ()",
+            "snippet": "${1}(${TM_SELECTED_TEXT})",
+            "languageIds": [
+                "*"
+            ],
+        },
+        "warp{}": {
+            "label": "warp{}",
+            "description": "warp with {}",
+            "snippet": "${1}{${TM_SELECTED_TEXT}}",
+            "languageIds": [
+                "*"
+            ],
+        },
+        "warp**": {
+            "label": "warp**",
+            "description": "warp with **",
+            "snippet": "${1}**${TM_SELECTED_TEXT}**",
+            "languageIds": [
+                "*"
+            ],
+        }
+    },
+    // Lang
+    "zig.zls.highlightGlobalVarDeclarations": true,
+    "zig.zls.enabled": "on",
+    "zig.zls.enableBuildOnSave": true,
+    "zig.zls.enableAutofix": true,
+    "zig.zls.dangerousComptimeExperimentsDoNotEnable": true,
+    "zig.path": "zig",
+    "typescript.tsserver.web.typeAcquisition.enabled": true,
+    "typescript.tsserver.enableTracing": true,
+    "typescript.referencesCodeLens.showOnAllFunctions": true,
+    "typescript.referencesCodeLens.enabled": true,
+    "typescript.preferences.preferTypeOnlyAutoImports": true,
+    "typescript.inlayHints.variableTypes.enabled": true,
+    "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "typescript.inlayHints.parameterTypes.enabled": true,
+    "typescript.inlayHints.parameterNames.enabled": "literals",
+    "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "typescript.inlayHints.enumMemberValues.enabled": true,
+    "typescript.implementationsCodeLens.showOnInterfaceMethods": true,
+    "typescript.implementationsCodeLens.enabled": true,
+    "typescript.format.insertSpaceAfterTypeAssertion": true,
+    "typescript.experimental.updateImportsOnPaste": true,
+    "typescript.experimental.expandableHover": true,
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "tailwindCSS.includeLanguages": {
+        "rust": "html"
+    },
+    "tailwindCSS.experimental.classRegex": [
+        "class: \"(.*)\""
+    ],
+    "svelte.enable-ts-plugin": true,
+    "sort-json.settings.objectSortType": "Key",
+    "rust-analyzer.rustfmt.rangeFormatting.enable": true,
+    "rust-analyzer.procMacro.ignored": {
+        "leptos_macro": [
+            // optional:
+            // "component",
+            "server"
+        ]
+    },
+    "rust-analyzer.lens.references.trait.enable": true,
+    "rust-analyzer.lens.references.method.enable": true,
+    "rust-analyzer.lens.references.adt.enable": true,
+    "rust-analyzer.inlayHints.rangeExclusiveHints.enable": true,
+    "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
+    "rust-analyzer.inlayHints.discriminantHints.enable": "fieldless",
+    "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "with_block",
+    "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
+    "rust-analyzer.diagnostics.styleLints.enable": true,
+    "rust-analyzer.diagnostics.previewRustcOutput": true,
+    "rust-analyzer.diagnostics.experimental.enable": true,
+    "rust-analyzer.debug.openDebugPane": true,
+    "rust-analyzer.completion.termSearch.enable": true,
+    "rescript.settings.inlayHints.enable": true,
+    "rescript.settings.incrementalTypechecking.enabled": true,
+    "rescript.settings.incrementalTypechecking.debugLogging": true,
+    "rescript.settings.incrementalTypechecking.acrossFiles": true,
+    "rescript.settings.codeLens": true,
+    "redhat.telemetry.enabled": true,
+    "raku.trace.server": "verbose",
+    "pythonIndent.trimLinesWithOnlyWhitespace": true,
+    "python.testing.unittestEnabled": true,
+    "python.testing.pytestEnabled": true,
+    "python.diagnostics.sourceMapsEnabled": true,
+    "python.analysis.typeEvaluation.enableReachabilityAnalysis": true,
+    "python.analysis.typeEvaluation.enableExperimentalFeatures": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.inlayHints.pytestParameters": true,
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.callArgumentNames": "partial",
+    "python.analysis.importFormat": "relative",
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.autoFormatStrings": true,
+    "moonbit.ai.telemetry": "on",
+    "metals.serverVersion": "1.4.2+62-8377cbec-SNAPSHOT",
+    "metals.javaVersion": "21",
+    "metals.inlayHints.typeParameters.enable": true,
+    "metals.inlayHints.inferredTypes.enable": true,
+    "metals.inlayHints.implicitArguments.enable": true,
+    "metals.inlayHints.hintsInPatternMatch.enable": true,
+    "julia.focusPlotNavigator": true,
+    "json.maxItemsComputed": 8000,
+    "javascript.inlayHints.variableTypes.enabled": true,
+    "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "javascript.inlayHints.parameterTypes.enabled": true,
+    "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "javascript.inlayHints.enumMemberValues.enabled": true,
+    "html.format.indentInnerHtml": true,
+    "html.format.indentHandlebars": true,
+    "html-css-class-completion.enableEmmetSupport": true,
+    "go.toolsManagement.autoUpdate": true,
+    "go.testOnSave": true,
+    "go.testExplorer.showDynamicSubtestsInEditor": true,
+    "go.inlayHints.rangeVariableTypes": true,
+    "go.inlayHints.parameterNames": true,
+    "go.inlayHints.functionTypeParameters": true,
+    "go.inlayHints.constantValues": true,
+    "go.inlayHints.compositeLiteralTypes": true,
+    "go.inlayHints.compositeLiteralFields": true,
+    "go.inlayHints.assignVariableTypes": true,
+    "go.coverOnSave": true,
+    "git.terminalAuthentication": false,
+    "git.ignoreRebaseWarning": true,
+    "git.autofetch": true,
+    "flix.explain.enabled": true,
+    "debugpy.showPythonInlineValues": true,
+    "clangd.checkUpdates": true,
+    "clangd.arguments": [
+        "--completion-style=detailed",
+        "--compile-commands-dir=$[workspacefolder]",
+        "--background-index"
+    ],
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "markdown-preview-enhanced.revealjsTheme": "night.css",
+    "markdown-preview-enhanced.codeBlockTheme": "one-dark.css",
+    "markdown-preview-enhanced.previewTheme": "atom-dark.css",
+    "markdown-preview-enhanced.enablePreviewZenMode": true,
+    "markdown.updateLinksOnFileMove.enabled": "prompt",
+    "markdown.extension.completion.enabled": true,
+    "markdown.extension.print.theme": "dark",
+    "markdown.extension.theming.decoration.renderParagraph": true,
+    "settingsSync.ignoredSettings": [
+        "-markdown-preview-enhanced.pandocPath"
+    ],
+    "markdown-preview-enhanced.enableExtendedTableSyntax": true,
+    "remote.autoForwardPortsSource": "hybrid",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "tinymist.preview.cursorIndicator": true,
     "terminal.integrated.enablePersistentSessions": false,
-    "editor.experimentalEditContextEnabled": false
 }

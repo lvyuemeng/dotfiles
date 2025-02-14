@@ -1,0 +1,11 @@
+# Dir with '/'
+#
+[global]
+target = "~/.local/bin/"
+{{- if eq .chezmoi.os "windows" }}
+system = "windows/amd64"
+{{- else }}
+system = "linux/amd64"
+{{- end }}
+upgrade_only = true
+show_hash = true

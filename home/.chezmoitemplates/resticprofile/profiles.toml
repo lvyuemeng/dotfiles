@@ -1,0 +1,90 @@
+{{/* Load data.toml to access encrypted data */}}
+{{- $secret := includeTemplate "data" . | fromToml -}}
+{{- $repo := $secret.S3.repository -}}
+{{- $AWS_ACCESS_KEY_ID := $secret.S3.AWS_ACCESS_KEY_ID -}}
+{{- $AWS_SECRET_ACCESS_KEY := $secret.S3.AWS_SECRET_ACCESS_KEY -}}
+
+version = "1"
+
+[groups]
+all = ["lib","draw","vivaldi","Tableau"]
+
+[default]
+repository = {{ quote $repo }}
+password-file = ".restic_pw"
+
+[default.backup]
+verbose = true
+schedule = ["weekly"]
+schedule-lock-wait = "1h"
+
+[default.env]
+AWS_ACCESS_KEY_ID = {{ quote $AWS_ACCESS_KEY_ID }}
+AWS_SECRET_ACCESS_KEY = {{ quote $AWS_SECRET_ACCESS_KEY }}
+
+[default.forget]
+keep-monthly = 1
+keep-weekly = 4
+prune = true
+schedule = ["monthly"]
+schedule-permission = "user"
+schedule-lock-wait = "1h"
+
+[default.prune]
+schedule = ["monthly"]
+schedule-permission = "user"
+schedule-lock-wait = "1h"
+
+[lib]
+inherit = "default"
+
+[lib.backup]
+tag = ["tag:LibDb"]
+source = ["$LibDb"]
+
+[lib.snapshots]
+tag = ["tag:LibDb"]
+
+[lib.restore]
+target = ["$LibDb"]
+overwrite = "if-changed"
+
+[draw]
+inherit = "default"
+
+[draw.backup]
+tag = ["tag:Draw"]
+source = ["$Draw"]
+
+[draw.snapshots]
+tag = ["tag:Draw"]
+
+[draw.restore]
+target = ["$Draw"]
+
+[vivaldi]
+inherit = "default"
+
+[vivaldi.backup]
+tag = ["tag:Vivaldi"]
+source = ["%LOCALAPPDATA%/Vivaldi/User Data/Default"]
+
+[vivaldi.snapshots]
+tag = ["tag:Vivaldi"]
+
+[vivaldi.restore]
+target = ["%LOCALAPPDATA%/Vivaldi/User Data/Default"]
+overwrite = "if-changed"
+
+[Tableau]
+inherit = "default"
+
+[Tableau.backup]
+tag = ["tag:Tableau"]
+source = ["$Tableau"]
+
+[Tableau.snapshots]
+tag = ["tag:Tableau"]
+
+[Tableau.restore]
+target = ["$Tableau"]

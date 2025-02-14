@@ -1,0 +1,9 @@
+if (-Not (Test-Path "$HOME/.config/chezmoi/key.txt")) {
+	New-Item -ItemType Directory -Path "$HOME/.config/chezmoi" -Force | Out-Null
+	# ensure rage is installed
+	if (-Not (Get-Command "rage" -ErrorAction SilentlyContinue)) {
+		Write-Error "rage is not installed. Please install it and try again."
+		exit 1
+	}
+	& rage -d -o "$HOME/.config/chezmoi/key.txt" "{{ .chezmoi.sourceDir }}/key.txt.rage"
+} 

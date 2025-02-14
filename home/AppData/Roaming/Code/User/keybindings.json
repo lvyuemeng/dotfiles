@@ -1,5 +1,126 @@
-[ // ===== Alt: Window/Split Operations ===== 
-    // Split creation
+// - default <leader> is <alt>
+// - default <localleader> is <\>
+[
+    // Neovim Refactor
+    {
+        "key": "ctrl+w unknown",
+        "command": "-workbench.action.increaseViewWidth",
+        "when": "!editorTextFocus && !isAuxiliaryWindowFocusedContext && !terminalFocus && neovim.mode != 'cmdline'"
+    },
+    {
+        "key": "ctrl+w unknown",
+        "command": "-workbench.action.increaseViewHeight",
+        "when": "!editorTextFocus && !isAuxiliaryWindowFocusedContext && !terminalFocus && neovim.mode != 'cmdline'"
+    },
+    {
+        "key": "ctrl+w unknown",
+        "command": "-workbench.action.decreaseViewWidth",
+        "when": "!editorTextFocus && !isAuxiliaryWindowFocusedContext && !terminalFocus && neovim.mode != 'cmdline'"
+    },
+    {
+        "key": "ctrl+w -",
+        "command": "-workbench.action.decreaseViewHeight",
+        "when": "!editorTextFocus && !isAuxiliaryWindowFocusedContext && !terminalFocus && neovim.mode != 'cmdline'"
+    },
+    // ==== Edit ====
+    // Edit Line
+    {
+        "key": "alt+j",
+        "command": "editor.action.moveLinesDownAction",
+        "when": "editorTextFocus",
+    },
+    {
+        "key": "alt+k",
+        "command": "editor.action.moveLinesUpAction",
+        "when": "editorTextFocus",
+    },
+    {
+        "key": "shift+alt+a",
+        "command": "-editor.action.blockComment",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    // Fold/UnFold
+    {
+        "key": "ctrl+s oem_4",
+        "command": "editor.fold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+s oem_6",
+        "command": "editor.unfold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    // Hover
+    {
+        "key": "shift+k",
+        "command": "editor.action.hideHover",
+        "when": "editorHoverFocused && editorHoverFocused"
+    },
+    // Comment
+    // You should use `gc` to toggle comment in selection by nvim
+    {
+        "key": "ctrl+k ctrl+c",
+        "command": "-editor.action.addCommentLine",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+k ctrl+alt+c",
+        "command": "-workbench.action.addComment",
+        "when": "activeCursorHasCommentingRange"
+    },
+    {
+        "key": "alt+f10",
+        "command": "-editor.action.nextCommentedRangeAction",
+        "when": "activeEditorHasCommentingRange"
+    },
+    {
+        "key": "ctrl+/",
+        "command": "-editor.action.commentLine",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    // ===== Search Navigation =====
+    {
+        "key": "alt+f f",
+        "command": "actions.find",
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-actions.find",
+        "when": "editorFocus || editorIsOpen"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-workbench.action.terminal.focusFind",
+        "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+    },
+    {
+        "key": "alt+f shift+f",
+        "command": "workbench.action.findInFiles"
+    },
+    {
+        "key": "ctrl+shift+f",
+        "command": "-workbench.action.findInFiles"
+    },
+    {
+        "key": "alt+f shift+r",
+        "command": "workbench.action.replaceInFiles"
+    },
+    {
+        "key": "alt+down",
+        "command": "search.action.focusNextSearchResult",
+        "when": "searchViewletVisible"
+    },
+    {
+        "key": "alt+up",
+        "command": "search.action.focusPreviousSearchResult",
+        "when": "searchViewletVisible"
+    },
+    {
+        "key": "alt+enter",
+        "command": "search.action.openResult",
+        "when": "searchViewletVisible"
+    },
+    // ==== Buffer Operations ====
     {
         "key": "alt+\\",
         "command": "workbench.action.splitEditorRight"
@@ -8,26 +129,149 @@
         "key": "alt+-",
         "command": "workbench.action.splitEditorDown"
     },
-    // ===== Window/Split Management =====
     {
-        "key": "alt+h",
-        "command": "workbench.action.navigateLeft",
-        "when": "!terminalFocus"
+        "key": "alt+q",
+        "command": "workbench.action.closeActiveEditor"
     },
     {
-        "key": "alt+l",
-        "command": "workbench.action.navigateRight",
-        "when": "!terminalFocus"
+        "key": "alt+=",
+        "command": "workbench.action.focusActiveEditorGroup",
+    },
+    // Buffer Close
+    {
+        "key": "ctrl+w a",
+        "command": "workbench.action.closeAllEditors"
     },
     {
-        "key": "alt+k",
-        "command": "workbench.action.navigateUp",
-        "when": "!terminalFocus"
+        "key": "ctrl+left",
+        "command": "workbench.action.decreaseViewWidth",
     },
     {
-        "key": "alt+j",
-        "command": "workbench.action.navigateDown",
-        "when": "!terminalFocus"
+        "key": "ctrl+right",
+        "command": "workbench.action.increaseViewWidth",
+    },
+    {
+        "key": "ctrl+up",
+        "command": "workbench.action.decreaseViewHeight",
+    },
+    {
+        "key": "ctrl+down",
+        "command": "workbench.action.increaseViewHeight",
+    },
+    // Buffer Switch
+    {
+        "key": "alt+[",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "alt+]",
+        "command": "workbench.action.nextEditor"
+    },
+    // Buffer Focus
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.focusBelowGroup"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.focusAboveGroup"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.focusRightGroup"
+    },
+    // Group Movement
+    {
+        "key": "ctrl+w down",
+        "command": "workbench.action.moveActiveEditorGroupDown"
+    },
+    {
+        "key": "ctrl+k down",
+        "command": "-workbench.action.moveActiveEditorGroupDown"
+    },
+    {
+        "key": "ctrl+w left",
+        "command": "workbench.action.moveActiveEditorGroupLeft"
+    },
+    {
+        "key": "ctrl+k left",
+        "command": "-workbench.action.moveActiveEditorGroupLeft"
+    },
+    {
+        "key": "ctrl+w right",
+        "command": "workbench.action.moveActiveEditorGroupRight"
+    },
+    {
+        "key": "ctrl+k right",
+        "command": "-workbench.action.moveActiveEditorGroupRight"
+    },
+    {
+        "key": "ctrl+w up",
+        "command": "workbench.action.moveActiveEditorGroupUp"
+    },
+    {
+        "key": "ctrl+k up",
+        "command": "-workbench.action.moveActiveEditorGroupUp"
+    },
+    // Buffer Movement
+    {
+        "key": "ctrl+w shift+k",
+        "command": "workbench.action.moveEditorToAboveGroup"
+    },
+    {
+        "key": "ctrl+w shift+h",
+        "command": "workbench.action.moveEditorToLeftGroup"
+    },
+    {
+        "key": "ctrl+w shift+l",
+        "command": "workbench.action.moveEditorToRightGroup"
+    },
+    {
+        "key": "ctrl+w shift+j",
+        "command": "workbench.action.moveEditorToBelowGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+shift+w",
+        "command": "-workbench.action.closeAllGroups"
+    },
+    {
+        "key": "ctrl+k w",
+        "command": "-workbench.action.closeEditorsInGroup"
+    },
+    {
+        "key": "ctrl+k u",
+        "command": "-workbench.action.closeUnmodifiedEditors"
+    },
+    {
+        "key": "ctrl+w q",
+        "command": "workbench.action.closeEditorsAndGroup",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+w q",
+        "command": "-workbench.action.closeActiveEditor",
+        "when": "!editorTextFocus && !filesExplorerFocus && !searchViewletFocus && !terminalFocus && neovim.mode != 'cmdline'"
+    },
+    // Delegation
+    {
+        "key": "ctrl+alt+left",
+        "command": "-workbench.action.moveEditorToPreviousGroup"
+    },
+    {
+        "key": "ctrl+alt+right",
+        "command": "-workbench.action.moveEditorToNextGroup"
+    },
+    {
+        "key": "shift+alt+9",
+        "command": "-workbench.action.moveEditorToLastGroup"
+    },
+    {
+        "key": "shift+alt+1",
+        "command": "-workbench.action.moveEditorToFirstGroup"
     },
     // ===== Terminal =====
     {
@@ -45,10 +289,57 @@
         "when": "terminalFocus"
     },
     {
-        "key": "alt+-", // Split terminal down
-        "command": "workbench.action.terminal.splitDown",
-        "when": "terminalFocus"
+        "key": "ctrl+w",
+        "command": "-workbench.action.terminal.killEditor",
+        "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated || terminalEditorFocus && terminalFocus && terminalProcessSupported"
     },
+    {
+        "key": "ctrl+f4",
+        "command": "-workbench.action.terminal.killEditor",
+        "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated || terminalEditorFocus && terminalFocus && terminalProcessSupported"
+    },
+    // Terminal Text
+    {
+        "key": "alt+y",
+        "command": "workbench.action.terminal.copyAndClearSelection",
+        "when": "terminalTextSelectedInFocused || terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected || terminalFocus && terminalTextSelected && terminalTextSelectedInFocused || terminalHasBeenCreated && terminalTextSelected && terminalTextSelectedInFocused || terminalProcessSupported && terminalTextSelected && terminalTextSelectedInFocused"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-workbench.action.terminal.copyAndClearSelection",
+        "when": "terminalTextSelectedInFocused || terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected || terminalFocus && terminalTextSelected && terminalTextSelectedInFocused || terminalHasBeenCreated && terminalTextSelected && terminalTextSelectedInFocused || terminalProcessSupported && terminalTextSelected && terminalTextSelectedInFocused"
+    },
+    {
+        "key": "alt+shift+y",
+        "command": "workbench.action.terminal.copySelection",
+        "when": "terminalTextSelectedInFocused || terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected || terminalFocus && terminalTextSelected && terminalTextSelectedInFocused || terminalHasBeenCreated && terminalTextSelected && terminalTextSelectedInFocused || terminalProcessSupported && terminalTextSelected && terminalTextSelectedInFocused"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "-workbench.action.terminal.copySelection",
+        "when": "terminalTextSelectedInFocused || terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected || terminalFocus && terminalTextSelected && terminalTextSelectedInFocused || terminalHasBeenCreated && terminalTextSelected && terminalTextSelectedInFocused || terminalProcessSupported && terminalTextSelected && terminalTextSelectedInFocused"
+    },
+    {
+        "key": "ctrl+shift+v",
+        "command": "-workbench.action.terminal.paste",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "alt+p",
+        "command": "workbench.action.terminal.paste",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+v",
+        "command": "-workbench.action.terminal.paste",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "alt+f f",
+        "command": "workbench.action.terminal.focusFind",
+        "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+    },
+    // Terminal Buffer Movement
     {
         "key": "alt+h", // Focus left terminal
         "command": "workbench.action.terminal.focusPreviousPane",
@@ -59,6 +350,27 @@
         "command": "workbench.action.terminal.focusNextPane",
         "when": "terminalFocus"
     },
+    {
+        "key": "alt+up",
+        "command": "workbench.action.terminal.resizePaneUp",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+down",
+        "command": "workbench.action.terminal.resizePaneDown",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+left",
+        "command": "workbench.action.terminal.resizePaneLeft",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+right",
+        "command": "workbench.action.terminal.resizePaneRight",
+        "when": "terminalFocus"
+    },
+    // Terminal Scroll
     {
         "key": "ctrl+k", // Scroll up (in terminal)
         "command": "workbench.action.terminal.scrollUp",
@@ -94,31 +406,7 @@
         "command": "workbench.action.terminal.scrollUpPage",
         "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
     },
-    {
-        "key": "ctrl+oem_5",
-        "command": "workbench.action.terminal.focusTabs",
-        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported || terminalHasBeenCreated && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
-    },
-    {
-        "key": "alt+up",
-        "command": "workbench.action.terminal.resizePaneUp",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "alt+down",
-        "command": "workbench.action.terminal.resizePaneDown",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "alt+left",
-        "command": "workbench.action.terminal.resizePaneLeft",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "alt+right",
-        "command": "workbench.action.terminal.resizePaneRight",
-        "when": "terminalFocus"
-    },
+    // Terminal Font Resize 
     {
         "key": "ctrl+oem_plus",
         "command": "workbench.action.terminal.fontZoomIn",
@@ -134,80 +422,66 @@
         "command": "workbench.action.terminal.fontZoomReset",
         "when": "terminalFocus"
     },
-    // ===== Quick Actions =====
+    // Terminal Focus
     {
-        "key": "ctrl+b",
+        "key": "alt+`",
+        "command": "workbench.action.terminal.focus",
+        "when": "terminalHasBeenCreated && editorFocus && !terminalFocus && !terminalAltBufferActive"
+    },
+    {
+        "key": "alt+`",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalHasBeenCreated && terminalFocus"
+    },
+    // ===== Sections =====
+    // Side Bar
+    {
+        "key": "ctrl+b b",
         "command": "workbench.action.toggleSidebarVisibility"
     },
-    // ===== Resize Actions =====
     {
-        "key": "alt+left",
-        "command": "workbench.action.decreaseViewWidth",
-        "when": "editorFocus"
+        "key": "ctrl+b shift+b",
+        "command": "workbench.action.toggleAuxiliaryBar"
     },
     {
-        "key": "alt+right",
-        "command": "workbench.action.increaseViewWidth",
-        "when": "editorFocus"
+        "key": "ctrl+alt+b",
+        "command": "-workbench.action.toggleAuxiliaryBar"
     },
     {
-        "key": "alt+up",
-        "command": "workbench.action.decreaseViewHeight",
-        "when": "editorFocus"
+        "key": "ctrl+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
     },
     {
-        "key": "alt+down",
-        "command": "workbench.action.increaseViewHeight",
-        "when": "editorFocus"
-    },
-    // Buffer navigation (VSCode tabs)
-    {
-        "key": "ctrl+tab",
-        "command": "workbench.action.nextEditor"
+        "key": "alt+e e",
+        "command": "workbench.view.explorer",
+        "when": "viewContainer.workbench.view.explorer.enabled"
     },
     {
-        "key": "ctrl+shift+tab",
-        "command": "workbench.action.previousEditor"
-    },
-    // ===== Search Navigation =====
-    {
-        "key": "alt+f",
-        "command": "workbench.action.findInFiles"
+        "key": "ctrl+shift+e",
+        "command": "-workbench.view.explorer",
+        "when": "viewContainer.workbench.view.explorer.enabled"
     },
     {
-        "key": "alt+shift+f",
-        "command": "workbench.action.replaceInFiles"
+        "key": "alt+e d",
+        "command": "workbench.view.debug",
+        "when": "viewContainer.workbench.view.debug.enabled"
     },
     {
-        "key": "alt+down",
-        "command": "search.action.focusNextSearchResult",
-        "when": "searchViewletVisible"
+        "key": "ctrl+shift+d",
+        "command": "-workbench.view.debug",
+        "when": "viewContainer.workbench.view.debug.enabled"
     },
     {
-        "key": "alt+up",
-        "command": "search.action.focusPreviousSearchResult",
-        "when": "searchViewletVisible"
+        "key": "alt+e x",
+        "command": "workbench.view.extensions",
+        "when": "viewContainer.workbench.view.extensions.enabled"
     },
     {
-        "key": "alt+enter",
-        "command": "search.action.openResult",
-        "when": "searchViewletVisible"
+        "key": "ctrl+shift+x",
+        "command": "-workbench.view.extensions",
+        "when": "viewContainer.workbench.view.extensions.enabled"
     },
-    // ===== Git Operations =====
-    {
-        "key": "alt+g",
-        "command": "workbench.view.scm" // Open Git panel
-    },
-    {
-        "key": "alt+b",
-        "command": "git.checkout" // Switch Git branch
-    },
-    {
-        "key": "alt+shift+b",
-        "command": "workbench.action.quickOpen", // Open Git branches quickly
-        "args": "git branch"
-    },
-    // ==== Section ====
+    // Functionality View
     {
         "key": "f1",
         "command": "workbench.actions.view.problems"
@@ -224,21 +498,20 @@
         "key": "f4",
         "command": "workbench.action.terminal.toggleTerminal"
     },
+    // ===== Git Operations =====
+    {
+        "key": "alt+g g",
+        "command": "workbench.view.scm" // Open Git panel
+    },
+    {
+        "key": "alt+g c",
+        "command": "git.checkout" // Switch Git branch
+    },
     // ==== File Operation ====
     {
-        "key": "shift+alt+p",
-        "command": "copyFilePath",
-        "when": "!editorFocus"
-    },
-    {
-        "key": "shift+alt+p",
+        "key": "alt+f p",
         "command": "copyFilePath",
         "when": "editorFocus"
-    },
-    {
-        "key": "shift+alt+p",
-        "command": "search.action.copyPath",
-        "when": "fileMatchOrFolderMatchWithResourceFocus"
     },
     {
         "key": "shift+alt+c",
@@ -246,35 +519,8 @@
         "when": "fileMatchOrFolderMatchWithResourceFocus"
     },
     {
-        "key": "shift+alt+l",
-        "command": "copyRelativeFilePath",
-        "when": "!editorFocus"
-    },
-    {
-        "key": "shift+alt+l",
+        "key": "alt+f shift+p",
         "command": "copyRelativeFilePath",
         "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+w u",
-        "command": "workbench.action.closeUnmodifiedEditors"
-    },
-    {
-        "key": "ctrl+w a",
-        "command": "workbench.action.closeAllEditors"
-    },
-    {
-        "key": "ctrl+w a",
-        "command": "workbench.action.closeEditorsInGroup"
-    },
-    {
-        "key": "ctrl+s oem_4",
-        "command": "editor.fold",
-        "when": "editorTextFocus && foldingEnabled"
-    },
-    {
-        "key": "ctrl+s oem_6",
-        "command": "editor.unfold",
-        "when": "editorTextFocus && foldingEnabled"
     },
 ]

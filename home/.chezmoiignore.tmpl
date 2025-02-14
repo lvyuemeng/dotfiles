@@ -1,8 +1,7 @@
 # general
 key.txt.rage
 
-# chezmoi 
-
+# OS specific
 {{ if ne .chezmoi.os "linux" }}
 
 .chezmoiscripts/linux/**/*
@@ -11,32 +10,32 @@ key.txt.rage
 {{ if ne .chezmoi.os "windows" }}
 
 .chezmoiscripts/windows/**/*
-.local/bin/**/*
+# Net Related
+.curlrc
+.dev-sidecar
 
 {{ end }}
-
-# OS specific
 
 {{ if eq .chezmoi.os "windows" }}
 
-.font/**/*
-
-.tmux.conf
-.zprofile
-.zshenv
-.zshrc
-.zshenv_private
-.zsh_history
+.font/
+.npm-global/
+.config/nvim/
+.config/nvim/**
+.config/fish/
+.config/fish/**
 
 {{ else }}
 
-AppData/**/*
-.config/shell/**/*
-.config/scoop/**/*
+AppData/
+AppData/**
+OneDrive/
+OneDrive/**
+.config/shell/pwsh
+.config/scoop/
+.config/scoop/**
+scoop/
 
 .wslconfig
+
 {{ end }}
-
-
-
-

@@ -1,0 +1,22 @@
+{{ if eq .chezmoi.os "windows" }}
+["AppData/Local/nvim"]
+{{ else }}
+[".config/nvim"]
+{{ end }}
+type = "git-repo"
+url = "git@github.com:{{ .githubUserName }}/nvim-config.git"
+
+[".local/share/fonts/0xProto"]
+type = "archive"
+url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/0xProto.zip"
+exact = true
+include = ["0xProtoNerdFontMono-*.ttf"] 
+
+# {{ if eq .chezmoi.os "windows" }}
+# ["AppData/Roaming/alacritty/themes/catppuccin/"]
+# {{ else }}
+# [".config/alacritty/themes/catppuccin/"]
+# {{ end }}
+# type = "git-repo"
+# url = "https://github.com/catppuccin/alacritty.git"
+

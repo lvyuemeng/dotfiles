@@ -1,29 +1,84 @@
+{{/*
+  chezmoi config should be independent of chezmoidata
+*/}}
 {{/* System Range */}}
 
 {{/* Default Static Values */}}
 
-{{ $ragePubKey := "age1t8mdnrcvhvv9zqsnt5wmnglxj3fx62k7kt4m26x2zatnsczt3pgq9h2wmd" }}
+{{- $global_pubkey := "age15qzze3ywx4ml4n007n6p9guzn3exxvqmwmv7tg7ue408dknlu46qtcumg6" -}}
 
 {{/* Default Dynamic Values */}}
 
 {{ $shell := "" }}
+{{ $editor := "" }}
+{{- $pre := "" -}}
 {{- if eq .chezmoi.os "windows" -}}
-  {{- $shell = "pwsh" -}}
+  {{- if lookPath "pwsh" -}}
+    {{- $shell = "pwsh" -}}
+  {{- else -}}
+    {{- $shell = "powershell" -}}
+  {{- end -}}
+  {{- $editor = "code" -}}
+  {{- $pre = ".local/share/chezmoi/home/scripts/.prepare.ps1" -}}
 {{- else -}}
-  {{- $shell = "zsh" -}}
+  {{- if lookPath "fish" -}}
+    {{- $shell = "fish" -}}
+  {{- else -}}
+    {{- $shell = "bash" -}}
+  {{- end -}}
+  {{- if lookPath "nvim" -}}
+    {{- $editor = "nvim" -}}
+  {{- else -}}
+    {{- $editor = "vi" -}}
+  {{- end -}}
+  {{- $pre = ".local/share/chezmoi/home/scripts/.prepare.sh" -}}
 {{- end -}}
 
 encryption = "age"
 [age]
 	command = "rage"
   identity = "~/.config/chezmoi/key.txt"
-  recipient = "{{ "$ragePubKey" }}"
+  recipient = {{ $global_pubkey | quote }}
   
 [data]
   githubUserName = "lvyuemeng"
-  email = "lv15623448685@gmail.com"
+  gmail = "lv15623448685@gmail.com"
+  olmail = "Nostalume@outlook.com"
+  shell = {{ $shell | quote }}
+
+[cd]
+command = {{ $shell | quote }}
+
+# **pwsh** is required
+[interpreters.ps1]
+command = "pwsh"
+args = ["-NoLogo"]
+
+[completion]
+custom = true
+
+[edit]
+command = {{ $editor | quote }}
+
+[merge]
+  # escape "{{" and "}}"
+  command = "nvim"
+  args = [
+      "-d",
+      {{ printf "%q" "{{ .Destination }}" }},
+      {{ printf "%q" "{{ .Source }}" }},
+      {{ printf "%q" "{{ .Target }}" }},
+  ]
 
 [git]
 autoAdd = true # Add changes to the source state after any change
 autoCommit = false
 autoPush = false
+
+[hooks.read-source-state.pre]
+{{- if eq .chezmoi.os "windows" }}
+command = "powershell"
+{{- else }}
+command = "bash"
+{{- end }}
+args = {{ $pre | quote }}

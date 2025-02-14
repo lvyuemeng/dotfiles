@@ -1,0 +1,24 @@
+# pkgs hash: {{ include ".chezmoidata/pkgs.yml" | sha256sum }}
+
+Write-Host "Installing packages..."
+
+{{- range $role := .enabled_roles }}
+    {{- with (index $.roles $role "scoop") }}
+        {{- range $pkg := . }}
+
+& scoop install {{ $pkg.name }} {{ with (index $pkg "args") }}{{ . }}{{ end }}
+if ($LASTEXITCODE -ne 0) { Write-Error "Failed to install {{ $pkg.name }}" }
+
+        {{- end }}
+    {{- end }}
+
+    {{- with (index $.roles $role "winget") }}
+        {{- range $pkg := . }}
+
+& winget install {{ $pkg.name }} {{ with (index $pkg "args") }}{{ . }}{{ end }} 
+if ($LASTEXITCODE -ne 0) { Write-Error "Failed to install {{ $pkg.name }}" }
+
+        {{- end }}
+    {{- end }}
+{{- end }}
+    

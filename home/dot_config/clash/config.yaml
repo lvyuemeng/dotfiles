@@ -1,0 +1,5 @@
+mixed-port: 9911
+allow-lan: false
+external-controller: 127.0.0.1:64341
+secret: 75203bae-5555-46d3-864b-d950525162a4
+ipv6: true

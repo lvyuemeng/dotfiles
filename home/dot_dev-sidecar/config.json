@@ -1,0 +1,241 @@
+{
+	"server": {
+		"intercepts": {
+			"github.com": {
+				"^(/[\\w-.]+){2,}/?(\\?.*)?$": {
+					"tampermonkeyScript": "https://gitee.com/wangliang181230/dev-sidecar/raw/scripts/tampermonkey.js",
+					"script": "https://gitee.com/wangliang181230/dev-sidecar/raw/scripts/GithubEnhanced-High-Speed-Download.user.js",
+					"remark": "注：上面所使用的脚本地址，为高速镜像地址。",
+					"desc": "油猴脚本：高速下载 Git Clone/SSH、Release、Raw、Code(ZIP) 等文件 (公益加速)、项目列表单文件快捷下载、添加 git clone 命令"
+				},
+				"^((/[^/]+){2,})/raw((/[^/]+)+\\.(jpg|jpeg|png|gif))(\\?.*)?$": {
+					"proxy": "https://raw.githubusercontent.com${m[1]}${m[3]}",
+					"sni": "baidu.com",
+					"cacheDays": 7,
+					"desc": "仓库内图片，重定向改为代理，并缓存7天。"
+				},
+				"^((/[^/]+){2,})/raw((/[^/]+)+\\.js)(\\?.*)?$": {
+					"proxy": "https://raw.githubusercontent.com${m[1]}${m[3]}",
+					"sni": "baidu.com",
+					"desc": "仓库内脚本，重定向改为代理，并设置响应头Content-Type。作用：方便script拦截器直接使用，避免引起跨域问题和脚本内容限制问题。"
+				},
+				"^(/[^/]+){2,}/?(\\?.*)?$": null,
+				"^(/[^/]+){2}/releases/download/.*$": null,
+				"^(/[^/]+){2}/archive/.*\\.(zip|tar.gz)$": null
+			},
+			"github.githubassets.com": {
+				".*": {
+					"proxy": null,
+					"responseReplace": null
+				},
+				"^(/[^/]+)*/[^./]+\\.(svg|png|gif|jpg|jpeg|ico|js|css)(\\?.*)?$": null
+			},
+			"collector.github.com": {
+				"/github/collect": null
+			},
+			"login.docker.com": {
+				".*": null
+			},
+			"opengraph.githubassets.com": null,
+			"*.githubusercontent.com": null,
+			"gist.github.com": null,
+			"*.github.io": null,
+			"*.gravatar.com": null,
+			"*.windows.net": null,
+			"www.docker.com": null,
+			"*.pixiv.net": null,
+			"*.pixiv.org": null,
+			"*.pximg.net": null,
+			"*.ads-pixiv.net": null,
+			"*.nikke-global.com": null,
+			"i.pximg.net": null,
+			"cdn.jsdelivr.net": null,
+			"*.msecnd.net": null,
+			"jsd.proxy.aks.moe": null,
+			"fastly.jsdelivr.net": null,
+			"jsdelivr.pai233.top": null,
+			"raw.incept.pw": null
+		},
+		"preSetIpList": {
+			"hub.docker.com": {
+				"44.221.37.199": true,
+				"52.44.227.212": true,
+				"54.156.140.159": true,
+				"54.208.73.48": null,
+				"54.156.14.194": null,
+				"100.29.167.200": null
+			},
+			"sessions-bugsnag.docker.com": {
+				"44.221.37.199": true,
+				"52.44.227.212": true,
+				"54.156.140.159": true,
+				"100.29.167.200": null,
+				"54.156.14.194": null,
+				"54.208.73.48": null
+			},
+			"gist.github.com": null,
+			"i.pximg.net": null,
+			"a.pixiv.org": null
+		},
+		"whiteList": {
+			"*deepseek*": true,
+			"192.168.*": true,
+			"*.icloud.com": null,
+			"*.lenovo.net": null,
+			"localhost": null,
+			"127.*.*.*": null,
+			"192.168.*.*": null
+		},
+		"dns": {
+			"mapping": {
+				"*.rust-lang.org": "quad9",
+				"*.googleapis.com": "quad9",
+				"*.youtube.com": "quad9",
+				"*.eccdnx.com": "quad9",
+				"*.steampowered.com": "quad9",
+				"*.docker.com": "quad9",
+				"*.docker.io": "quad9",
+				"*.greasyfork.org": "quad9",
+				"*.mega.*.nz": "quad9",
+				"*.imgur.com": "quad9",
+				"*.vercel.app": "quad9",
+				"*.minecrafet.net": "quad9",
+				"*.mod.io": "quad9",
+				"*.twitch.tv": "quad9",
+				"*discord.gg": "quad9",
+				"*discrodapp.net": "quad9",
+				"*discord*": "quad9",
+				"patreon.com": "quad9",
+				"*huggingface.co": "quad9",
+				"*.github.com": "quad9",
+				"*github*.com": "quad9",
+				"*.github.io": "quad9",
+				"*.stackoverflow.com": "quad9",
+				"*.electronjs.org": "quad9",
+				"*.amazonaws.com": "quad9",
+				"*.yarnpkg.com": "quad9",
+				"*.cloudfront.net": "quad9",
+				"*.cloudflare.com": "quad9",
+				"img.shields.io": "quad9",
+				"*.vuepress.vuejs.org": "quad9",
+				"*.gh.docmirror.top": "quad9",
+				"*.v2ex.com": "quad9",
+				"*.pypi.org": "quad9",
+				"*.jetbrains.com": "quad9",
+				"*.azureedge.net": "quad9",
+				"*.pixiv.org": null,
+				"*.pximg.net": null,
+				"*.onesignal.com": null
+			},
+			"speedTest": {
+				"interval": 300000,
+				"dnsProviders": [
+					"cloudflare",
+					"safe360",
+					"rubyfish"
+				],
+				"hostnameList": [
+					"discord.com",
+					"github.com"
+				]
+			}
+		}
+	},
+	"proxy": {
+		"excludeDomesticDomainAllowList": true,
+		"remoteDomesticDomainAllowListFileUrl": "https://raw.githubusercontent.com/pluwen/china-domain-allowlist/refs/heads/main/allow-list.sorl",
+		"excludeIpList": {
+			"challenges.cloudflare.com": true,
+			"*.ghproxy.net": null,
+			"*.ghp.ci": null,
+			"*.dgithub.xyz": null,
+			"pages.github.com": null,
+			"help.github.com": null,
+			"docs.github.com": null,
+			"*.github.blog": null,
+			"analytics.githubassets.com": null,
+			"ghcc.githubassets.com": null,
+			"www.docker.com": null,
+			"login.docker.com": null,
+			"api.dso.docker.com": null,
+			"desktop.docker.com": null,
+			"*.s-microsoft.com": null,
+			"*.xboxlive.com": null,
+			"*.mihoyo.com": null,
+			"*.elastic.co": null,
+			"*.bilicomic.com": null,
+			"[2049:8c54:813:10c::140]": null,
+			"[2409:8a0c:a442:ff40:a51f:4b9c:8b41:25ea]": null,
+			"[2606:2800:147:120f:30c:1ba0:fc6:265a]": null,
+			"*.cmicapm.com": null,
+			"*.cloudflare-cn.com": null,
+			"*.microsoftonline.com": null,
+			"*.msedge.net": null,
+			"*kaspersky*.com": null,
+			"*.upd.kaspersky.com": null,
+			"*.lanhuapp.com": null,
+			"*.soboten.com": null,
+			"*.sandboxie-plus.com": null,
+			"*.wuyou.net": null,
+			"*.pyecharts.org": null,
+			"*.bcloudlink.com": null,
+			"*.qijishow.com": null,
+			"*.z-lib.fo": null,
+			"*.finalshell.com": null,
+			"*.minebbs.com": null,
+			"*.spigotmc.org": null,
+			"*.virustotal.com": null,
+			"*.gitlab.com": null,
+			"*.deepseek.com": null,
+			"*.youdemai.com": null,
+			"*.casualthink.com": null,
+			"44.239.165.12": null,
+			"3.164.110.117": null
+		},
+		"setEnv": true
+	},
+	"plugin": {
+		"overwall": {
+			"targets": {
+				"*.gitbook.io": null,
+				"*.nodejs.org": null,
+				"*.npmjs.com": null,
+				"*.z-library.sk": null,
+				"*.zlibrary*.se": null,
+				"*.wikipedia-on-ipfs.org": null,
+				"*.chatgpt.com": null,
+				"*.oaiusercontent.com": null,
+				"*.huggingface.co": null,
+				"*.pixiv.org": null,
+				"*.fanbox.cc": null,
+				"*.onesignal.com": null
+			},
+			"pac": {
+				"pacFileUpdateUrl": "https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt"
+			}
+		},
+		"pip": {
+			"setting": {
+				"trustedHost": "mirrors.aliyun.com",
+				"registry": "https://mirrors.aliyun.com/pypi/simple/"
+			}
+		},
+		"git": {
+			"enabled": true
+		}
+	},
+	"help": {
+		"dataList": [
+			{
+				"title": "查看DevSidecar的说明文档（Wiki）",
+				"url": "https://github.com/docmirror/dev-sidecar/wiki"
+			},
+			{
+				"title": "为了展示更多帮助信息，请启用 “远程配置” 功能！！！"
+			}
+		]
+	},
+	"app": {
+		"closeStrategy": 1
+	}
+}

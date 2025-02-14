@@ -1,0 +1,3 @@
+# Data(Toml) is auto generated from .config/data.toml, Do not edit directly.
+#
+{{ joinPath .chezmoi.sourceDir "dot_config/encrypted_data.toml.age" | include | decrypt }}

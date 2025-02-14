@@ -1,0 +1,12 @@
+enabled_roles:
+  - base
+
+roles:
+  base:
+    scoop:
+      - name: "ansicon"
+  #  winget:
+  #   Microsoft.PowerShell:
+  #    - name: "PowerShell"
+  #      args: "-i"
+  
