@@ -4,18 +4,36 @@ key.txt.rage
 # chezmoi 
 
 {{ if ne .chezmoi.os "linux" }}
+
 .chezmoiscripts/linux/**/*
+
 {{ end }}
 {{ if ne .chezmoi.os "windows" }}
+
 .chezmoiscripts/windows/**/*
 .local/bin/**/*
+
 {{ end }}
 
 # OS specific
 
 {{ if eq .chezmoi.os "windows" }}
+
+.font/**/*
+
+.tmux.conf
+.zprofile
+.zshenv
+.zshrc
+.zshenv_private
+.zsh_history
+
 {{ else }}
+
 AppData/**/*
+.config/shell/**/*
+.config/scoop/**/*
+
 .wslconfig
 {{ end }}
 
