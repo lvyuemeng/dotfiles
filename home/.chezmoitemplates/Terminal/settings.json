@@ -1,11 +1,9 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema-preview",
-    "actions": 
-    [
+    "actions": [
         {
-            "command": 
-            {
+            "command": {
                 "action": "copy",
                 "singleLine": false
             },
@@ -16,8 +14,7 @@
             "id": "User.paste"
         },
         {
-            "command": 
-            {
+            "command": {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -34,8 +31,7 @@
     "copyOnSelect": false,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "experimental.enableColorSelection": false,
-    "keybindings": 
-    [
+    "keybindings": [
         {
             "id": "Terminal.ScrollDownPage",
             "keys": "ctrl+shift+d"
@@ -346,21 +342,17 @@
         }
     ],
     "minimizeToNotificationArea": false,
-    "newTabMenu": 
-    [
+    "newTabMenu": [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
-    {
-        "defaults": 
-        {
+    "profiles": {
+        "defaults": {
             "adjustIndistinguishableColors": "always",
             "colorScheme": "One Dark Pro",
             "cursorShape": "filledBox",
-            "font": 
-            {
+            "font": {
                 "face": "0xProto Nerd Font Mono",
                 "weight": "semi-bold"
             },
@@ -368,8 +360,7 @@
             "opacity": 93,
             "useAcrylic": true
         },
-        "list": 
-        [
+        "list": [
             {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -421,8 +412,7 @@
             }
         ]
     },
-    "schemes": 
-    [
+    "schemes": [
         {
             "background": "#282C34",
             "black": "#3F4451",

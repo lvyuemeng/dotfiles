@@ -24,10 +24,6 @@
 				"^(/[^/]+){2}/archive/.*\\.(zip|tar.gz)$": null
 			},
 			"github.githubassets.com": {
-				".*": {
-					"proxy": null,
-					"responseReplace": null
-				},
 				"^(/[^/]+)*/[^./]+\\.(svg|png|gif|jpg|jpeg|ico|js|css)(\\?.*)?$": null
 			},
 			"collector.github.com": {
@@ -192,7 +188,7 @@
 			"44.239.165.12": null,
 			"3.164.110.117": null
 		},
-		"setEnv": true
+		"proxyHttp": true
 	},
 	"plugin": {
 		"overwall": {
