@@ -7,7 +7,7 @@
 version = "1"
 
 [groups]
-all = ["lib","draw","vivaldi","Tableau"]
+all = ["lib","depic","vivaldi"]
 
 [default]
 repository = {{ quote $repo }}
@@ -49,18 +49,18 @@ tag = ["tag:LibDb"]
 target = ["$LibDb"]
 overwrite = "if-changed"
 
-[draw]
+[depic]
 inherit = "default"
 
-[draw.backup]
-tag = ["tag:Draw"]
-source = ["$Draw"]
+[depic.backup]
+tag = ["tag:Depic"]
+source = ["$Depic"]
 
-[draw.snapshots]
-tag = ["tag:Draw"]
+[depic.snapshots]
+tag = ["tag:Depic"]
 
-[draw.restore]
-target = ["$Draw"]
+[depic.restore]
+target = ["$Depic"]
 
 [vivaldi]
 inherit = "default"
@@ -75,16 +75,3 @@ tag = ["tag:Vivaldi"]
 [vivaldi.restore]
 target = ["%LOCALAPPDATA%/Vivaldi/User Data/Default"]
 overwrite = "if-changed"
-
-[Tableau]
-inherit = "default"
-
-[Tableau.backup]
-tag = ["tag:Tableau"]
-source = ["$Tableau"]
-
-[Tableau.snapshots]
-tag = ["tag:Tableau"]
-
-[Tableau.restore]
-target = ["$Tableau"]

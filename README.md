@@ -4,12 +4,12 @@ Mine dotfiles based on [`chezmoi`](https://www.chezmoi.io) which is a well-known
 
 It's mainly for `Windows` and `linux` part is still under-developing.
 
-Some *Windows for* apps list:
+Some *custom* dev apps list:
 
 - terminal: Terminal(*Windows Native*)
 - shell: powershell(=5.0)/pwsh(>=7.0)
 - package manager: winget(*Windows Native*)/scoop/UniGet(GUI)
-- editor: vscode/neovim (*list completeness only*)
+- editor: vscode/neovim (*own setting*)
 
 Selected special apps list:
 

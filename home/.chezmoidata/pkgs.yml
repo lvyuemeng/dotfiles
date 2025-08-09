@@ -4,7 +4,7 @@ enabled_roles:
 roles:
   base:
     scoop:
-      - name: "ansicon"
+      - name: "7zip"
   #  winget:
   #   Microsoft.PowerShell:
   #    - name: "PowerShell"
