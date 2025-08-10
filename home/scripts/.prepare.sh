@@ -1,57 +1,75 @@
-#!/usr/bin/env bash
-# Script to install rage for chezmoi init preparation
+#!/bin/bash
 
-if command -v rage &>/dev/null; then
-    echo "rage is already installed!"
-    exit 0
-fi
+detect_distro() {
+  [ -f "/etc/os-release" ] && . /etc/os-release
+  echo "${ID:-unknown}"
+}
 
-# Define brew prefix based on OS
-if [[ $(uname) == "Darwin" ]]; then
-    BREW_PREFIX="/usr/local"
-else 
-    BREW_PREFIX="/home/linuxbrew/.linuxbrew"
-fi
+DISTRO=$(detect_distro)
 
-# Install rage via brew if it exists
-if command -v brew &>/dev/null; then
-    echo "brew is already installed, installing rage..."
-    brew install rage
-    exit 0
-fi
+command_exists() {
+  command -v "$1" &>/dev/null
+}
 
-# Setup brew environment if brew needs to be installed
-echo "Setting up environment for brew installation..."
-{
-    echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"'
-    echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"'
-    echo 'export HOMEBREW_INSTALL_FROM_API=1'
-} >> ~/.bashrc
+install_homebrew() {
+  if command_exists brew; then
+    echo "homebrew installed."
+    return 0
+  fi
 
-if [[ ! -d "${BREW_PREFIX}/bin" ]]; then
-    echo "Installing brew..."
-    git clone --depth=1 https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/install.git brew-install
-    /bin/bash brew-install/install.sh
-    rm -rf brew-install
-fi
+  export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+  export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
+  export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+  export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 
-echo "Configuring brew in shell environment..."
-# Handle different potential brew locations
-if [[ -d ~/.linuxbrew ]]; then
-    eval "$(~/.linuxbrew/bin/brew shellenv)"
-elif [[ -d /home/linuxbrew/.linuxbrew ]]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
+  /bin/bash -c "$(curl -fsSL https://mirrors.ustc.edu.cn/misc/brew-install.sh)"
 
-# Add brew to shell profile files if they exist
-for profile in ~/.bash_profile ~/.profile ~/.zprofile; do
-    if [[ -r $profile ]]; then
-        echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> "$profile"
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  echo "eval \"\$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\"" >> ~/.bash_profile
+  return 0
+}
+
+install_package() {
+  local package_name="$1"
+  local use_homebrew="${2:-false}"
+
+  echo "Install '$package_name'..."
+  
+  if [[ "$use_homebrew" == "true" ]]; then
+    if ! command_exists brew ; then
+      echo "install homebrew..."
+      install_homebrew || {
+        echo "Homebrew setup failed."
+        return 1
+      }
     fi
-done
+    brew install "$package_name"
+    return 0
+  fi
 
-echo "brew installation complete, installing rage..."
+  case "$DISTRO" in
+  ubuntu | debian)
+    sudo apt update && sudo apt install -y "$package_name"
+    ;;
+  fedora | centos | rhel | almalinux | rocky)
+    sudo dnf install -y "$package_name"
+    ;;
+  arch | manjaro)
+    sudo pacman -Sy --noconfirm "$package_name"
+    ;;
+  opensuse-leap | opensuse-tumbleweed)
+    sudo zypper install -y "$package_name"
+    ;;
+  *)
+    echo "Unsupported distribution for install: $DISTRO." >&2
+    return 1
+    ;;
+  esac
+  return 0
+}
 
-echo "Installing rage..."
-brew install rage
-echo "rage installation complete!"
+if command_exists rage; then
+    echo "rage installed."
+else
+    install_package "rage" true
+fi
