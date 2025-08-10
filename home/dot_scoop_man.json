@@ -1,0 +1,163 @@
+{
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://gh-proxy.com/https://github.com/ScoopInstaller/Main.git",
+            "Updated": "2025-09-18T16:30:35+08:00",
+            "Manifests": 1402
+        },
+        {
+            "Name": "extras",
+            "Source": "https://gh-proxy.com/https://github.com/ScoopInstaller/Extras",
+            "Updated": "2025-09-18T16:29:50+08:00",
+            "Manifests": 2183
+        },
+        {
+            "Name": "versions",
+            "Source": "https://gh-proxy.com/https://github.com/ScoopInstaller/Versions",
+            "Updated": "2025-09-18T16:43:30+08:00",
+            "Manifests": 510
+        },
+        {
+            "Name": "spc",
+            "Source": "https://gh-proxy.com/https://github.com/duzyn/scoop-cn",
+            "Updated": "2025-09-18T16:14:59+08:00",
+            "Manifests": 5985
+        }
+    ],
+    "apps": [
+        {
+            "Version": "25.01",
+            "Source": "spc",
+            "Updated": "2025-09-16T12:02:40.7529666+08:00",
+            "Info": "",
+            "Name": "7zip"
+        },
+        {
+            "Version": "2.54.1",
+            "Source": "spc",
+            "Updated": "2025-09-17T19:10:57.1263446+08:00",
+            "Info": "",
+            "Name": "aqua"
+        },
+        {
+            "Version": "1.37.0-1",
+            "Source": "spc",
+            "Updated": "2025-09-16T12:02:40.7742221+08:00",
+            "Info": "",
+            "Name": "aria2"
+        },
+        {
+            "Version": "0.25.0",
+            "Source": "spc",
+            "Updated": "2025-09-16T12:02:40.7745922+08:00",
+            "Info": "",
+            "Name": "bat"
+        },
+        {
+            "Version": "2.4.2",
+            "Source": "spc",
+            "Updated": "2025-09-16T12:02:40.7988731+08:00",
+            "Info": "",
+            "Name": "clash-verge-rev"
+        },
+        {
+            "Version": "3.14.1",
+            "Source": "spc",
+            "Updated": "2025-09-16T12:02:40.8055913+08:00",
+            "Info": "",
+            "Name": "dark"
+        },
+        {
+            "Version": "1.3.4",
+            "Source": "spc",
+            "Updated": "2025-09-16T12:02:40.8137005+08:00",
+            "Info": "",
+            "Name": "eget"
+        },
+        {
+            "Version": "0.23.3",
+            "Source": "spc",
+            "Updated": "2025-09-16T12:02:40.8448844+08:00",
+            "Info": "",
+            "Name": "eza"
+        },
+        {
+            "Version": "10.3.0",
+            "Source": "spc",
+            "Updated": "2025-09-16T12:02:40.8596182+08:00",
+            "Info": "",
+            "Name": "fd"
+        },
+        {
+            "Version": "0.150.0",
+            "Source": "spc",
+            "Updated": "2025-09-16T12:02:40.8911959+08:00",
+            "Info": "",
+            "Name": "hugo-extended"
+        },
+        {
+            "Version": "2.65.2",
+            "Source": "spc",
+            "Updated": "2025-09-16T12:02:40.9133008+08:00",
+            "Info": "",
+            "Name": "innounp"
+        },
+        {
+            "Version": "1.4.4",
+            "Source": "spc",
+            "Updated": "2025-09-16T12:02:40.9196615+08:00",
+            "Info": "",
+            "Name": "mkcert"
+        },
+        {
+            "Version": "4.1.2",
+            "Source": "spc",
+            "Updated": "2025-09-16T12:02:40.9276703+08:00",
+            "Info": "",
+            "Name": "openlist"
+        },
+        {
+            "Version": "3.0.7",
+            "Source": "spc",
+            "Updated": "2025-09-16T12:02:40.9307396+08:00",
+            "Info": "",
+            "Name": "pot"
+        },
+        {
+            "Version": "0.11.1",
+            "Source": "spc",
+            "Updated": "2025-09-16T12:02:40.9342415+08:00",
+            "Info": "",
+            "Name": "rage"
+        },
+        {
+            "Version": "0.18.0",
+            "Source": "spc",
+            "Updated": "2025-09-16T12:02:40.9371393+08:00",
+            "Info": "",
+            "Name": "restic"
+        },
+        {
+            "Version": "0.31.0",
+            "Source": "spc",
+            "Updated": "2025-09-16T12:02:40.9425743+08:00",
+            "Info": "",
+            "Name": "resticprofile"
+        },
+        {
+            "Version": "14.1.1",
+            "Source": "spc",
+            "Updated": "2025-09-16T12:02:40.9455931+08:00",
+            "Info": "",
+            "Name": "ripgrep"
+        },
+        {
+            "Version": "2.1.0",
+            "Source": "spc",
+            "Updated": "2025-09-16T12:02:40.9481006+08:00",
+            "Info": "",
+            "Name": "scoop-search"
+        }
+    ]
+}

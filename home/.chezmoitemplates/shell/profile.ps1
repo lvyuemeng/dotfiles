@@ -16,8 +16,6 @@ function Clear-PSReadLineHistory {
 function Initialize-Env {
     # explorer
     Set-Alias -Name e -Value explorer.exe -Scope Global
-    # vfox
-    Invoke-Expression "$(vfox activate pwsh)"
     # starship
     Invoke-Expression (&starship init powershell)
 

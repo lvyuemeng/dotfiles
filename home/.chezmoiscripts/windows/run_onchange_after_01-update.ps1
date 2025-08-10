@@ -3,6 +3,7 @@
 Write-Host "updating scoop manifests..."
 
 # overwrite >
-& scoop export > $HOME/.config/scoop/manifest.json
+& scoop export > $HOME/.scoop_man.json
+& winget export -o $HOME/.winget_man.json
 
 Write-Host "done."

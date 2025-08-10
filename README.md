@@ -6,14 +6,13 @@ It's mainly for `Windows` and `linux` part is still under-developing.
 
 Some *custom* dev apps list:
 
-- terminal: Terminal(*Windows Native*)
-- shell: powershell(=5.0)/pwsh(>=7.0)
-- package manager: winget(*Windows Native*)/scoop/UniGet(GUI)
+- terminal: Terminal(*Windows Native*)/Alacritty
+- shell: powershell(=5.0)/pwsh(>=7.0)/fish
+- package manager: winget(*Windows Native*)/scoop/UniGet(GUI)/os-native
 - editor: vscode/neovim (*own setting*)
 
 Selected special apps list:
 
-- dev-sidecar: a side car to cross *wall*. (GUI)
 - openlist: a open source support multiple storage connection in cloud. (CLI)
 - eget: easy pre-built binary installation (CLI)
 - aria2c: a lightweight downloader (CLI)
