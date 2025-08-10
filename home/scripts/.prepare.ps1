@@ -1,31 +1,30 @@
 # For preparation of chezmoi init only
 # installation of rage
 #
-
 if (Get-Command "rage" -ErrorAction SilentlyContinue) {
-	Write-Output "rage is already installed"
+	Write-Output "rage installed."
 	exit 0
 } 
 
 if (Get-Command "scoop" -ErrorAction SilentlyContinue) {
-	Write-Output "Scoop is already installed, installing rage..."
+	Write-Output "installing rage by scoop..."
 	# Set bucket mirror
-	& scoop bucket add easy-win https://gitee.com/easy-win/scoop-mirror
-	& scoop install rage
+	& scoop bucket add easy-win "https://gitee.com/easy-win/scoop-mirror"
+	& scoop install easy-win/rage
+
+	Write-Host "rage installed."
 	exit 0
 } 
 
-Write-Output "Scoop is not installed, installing scoop..."
+Write-Output "Installing scoop..."
 
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-irm scoop.201704.xyz -outfile 'install.ps1'
-.\install.ps1
+
+Invoke-WebRequest https://ghfast.top/raw.githubusercontent.com/lzwme/scoop-proxy-cn/main/install.ps1 | Invoke-Expression
 
 # Set repo/bucker mirror
 & scoop config SCOOP_REPO "https://gitee.com/scoop-installer/scoop"
-& scoop bucket add easy-win https://gitee.com/easy-win/scoop-mirror
-
-Write-Output "Scoop installation complete, installing rage..."
+& scoop bucket add easy-win "https://gitee.com/easy-win/scoop-mirror"
 & scoop install easy-win/rage
 
-echo "rage installation complete!"
+Write-Host "rage installed."

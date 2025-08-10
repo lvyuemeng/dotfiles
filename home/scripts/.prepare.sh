@@ -1,57 +1,47 @@
-#!/usr/bin/env bash
-# Script to install rage for chezmoi init preparation
+#!/bin/bash
+# For preparation of chezmoi init only
+# installation of rage
+set -euo pipefail
 
-if command -v rage &>/dev/null; then
-    echo "rage is already installed!"
-    exit 0
+readonly RELEASE_VERSION="v0.11.1"
+readonly BASE_URL="https://github.com/str4d/rage/releases/download/${RELEASE_VERSION}"
+
+readonly INSTALL_DIR="/usr/local/bin"
+
+# ---
+
+if command -v rage &> /dev/null; then
+	echo "rage is installed"
+	exit 0
 fi
 
-# Define brew prefix based on OS
-if [[ $(uname) == "Darwin" ]]; then
-    BREW_PREFIX="/usr/local"
-else 
-    BREW_PREFIX="/home/linuxbrew/.linuxbrew"
+ARCH=$(uname -m)
+case "$ARCH" in
+    x86_64)
+        FILE_NAME="rage-${RELEASE_VERSION}-x86_64-linux.tar.gz"
+        ;;
+    aarch64)
+        FILE_NAME="rage-${RELEASE_VERSION}-aarch64-linux.tar.gz"
+        ;;
+    *)
+        echo "Error: Unsupported architecture: $ARCH"
+        echo "Error: Only supports x86_64 and aarch64."
+        exit 1
+        ;;
+esac
+	
+DOWNLOAD_URL="${BASE_URL}/${FILE_NAME}"
+
+echo "Downloading rage for ${ARCH} from ${DOWNLOAD_URL}..."
+if curl -fsSL "${DOWNLOAD_URL}" | tar -xzf - -C /tmp; then
+	if [ -f "tmp/rage" ]; then
+		echo "Moving rage to ${INSTALL_DIR}"
+		sudo mv /tmp/rage  "${INSTALL_DIR}/rage"
+	else
+		echo "Error: rage executable not found in the download archive"
+		exit 1
+	fi
+else
+	echo "Error: Failed to download or extract the archive"
+	exit 1
 fi
-
-# Install rage via brew if it exists
-if command -v brew &>/dev/null; then
-    echo "brew is already installed, installing rage..."
-    brew install rage
-    exit 0
-fi
-
-# Setup brew environment if brew needs to be installed
-echo "Setting up environment for brew installation..."
-{
-    echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"'
-    echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"'
-    echo 'export HOMEBREW_INSTALL_FROM_API=1'
-} >> ~/.bashrc
-
-if [[ ! -d "${BREW_PREFIX}/bin" ]]; then
-    echo "Installing brew..."
-    git clone --depth=1 https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/install.git brew-install
-    /bin/bash brew-install/install.sh
-    rm -rf brew-install
-fi
-
-echo "Configuring brew in shell environment..."
-# Handle different potential brew locations
-if [[ -d ~/.linuxbrew ]]; then
-    eval "$(~/.linuxbrew/bin/brew shellenv)"
-elif [[ -d /home/linuxbrew/.linuxbrew ]]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
-
-# Add brew to shell profile files if they exist
-for profile in ~/.bash_profile ~/.profile ~/.zprofile; do
-    if [[ -r $profile ]]; then
-        echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> "$profile"
-    fi
-done
-
-echo "brew installation complete, installing rage..."
-
-echo "Installing rage..."
-brew install rage
-echo "rage installation complete!"
