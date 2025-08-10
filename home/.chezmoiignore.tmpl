@@ -1,4 +1,4 @@
-# general
+# entry key 
 key.txt.rage
 
 # OS specific
@@ -10,32 +10,21 @@ key.txt.rage
 {{ if ne .chezmoi.os "windows" }}
 
 .chezmoiscripts/windows/**/*
-# Net Related
-.curlrc
-.dev-sidecar
 
 {{ end }}
 
 {{ if eq .chezmoi.os "windows" }}
 
 .font/
-.npm-global/
 .config/nvim/
-.config/nvim/**
 .config/fish/
-.config/fish/**
 
 {{ else }}
 
 AppData/
-AppData/**
 OneDrive/
-OneDrive/**
-.config/shell/pwsh
 .config/scoop/
-.config/scoop/**
 scoop/
-
 .wslconfig
 
 {{ end }}

@@ -37,10 +37,3 @@
 # == net ==
 [http]
 sslverify = false
-
-# == safe ==
-{{ if eq .chezmoi.os "windows" }}
-[safe]
-directory = H:/LibDb
-directory = E:/Proj/**/
-{{ end }}

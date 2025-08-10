@@ -345,6 +345,21 @@
     "newTabMenu": [
         {
             "type": "remainingProfiles"
+        },
+        {
+            "allowEmpty": false,
+            "entries": [
+                {
+                    "commandline": null,
+                    "name": null,
+                    "source": "Windows.Terminal.SSH",
+                    "type": "matchProfiles"
+                }
+            ],
+            "icon": "\ue969",
+            "inline": "auto",
+            "name": "SSH",
+            "type": "folder"
         }
     ],
     "profiles": {
@@ -409,6 +424,18 @@
                 "hidden": false,
                 "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{d83b884d-8731-575a-83d6-c6554ff098e6}",
+                "hidden": false,
+                "name": "SSH - github.com",
+                "source": "Windows.Terminal.SSH"
+            },
+            {
+                "guid": "{34b14d5e-a2f3-5890-9689-285a4b0fb74b}",
+                "hidden": false,
+                "name": "openSUSE-Tumbleweed",
+                "source": "Microsoft.WSL"
             }
         ]
     },
