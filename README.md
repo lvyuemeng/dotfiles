@@ -2,20 +2,26 @@
 
 Mine dotfiles based on [`chezmoi`](https://www.chezmoi.io) which is a well-known dotfiles manager. It's suggested that acquire the basic knowledge of operation by `chezmoi` first.
 
-It's mainly for `Windows` and `linux` part is still under-developing.
+It's mainly for `Windows` and `Unix` part is still under-developing.
 
-Some *custom* dev apps list:
-
-- terminal: Terminal(*Windows Native*)/Alacritty
-- shell: powershell(=5.0)/pwsh(>=7.0)/fish
-- package manager: winget(*Windows Native*)/scoop/UniGet(GUI)/os-native
-- editor: vscode/neovim (*own setting*)
+- terminal: 
+  - windows: Terminal(*Native*)
+  - unix: alacritty 
+- shell: 
+  - windows: pwsh
+  - unix: fish
+- package manager: 
+  - windows: winget(*Native*) (GUI related), scoop (CLI related)
+  - unix: *Native*
+  - cross: aqua (code development)
 
 Selected special apps list:
 
-- openlist: a open source support multiple storage connection in cloud. (CLI)
-- eget: easy pre-built binary installation (CLI)
-- aria2c: a lightweight downloader (CLI)
+**CLI**:
+- restic: a open source backup program.
+- openlist: a open source support multiple storage connection in cloud.
+- eget: easy pre-built binary installation.
+- aria2c: a lightweight downloader.
 
 ---
 
@@ -151,7 +157,7 @@ Wrong:
 (index .roles $role "winget")
 ```
 
-Otherwise it will output error that `.roles is {}`, but such case only *occur* when you use variable field like `$role` above. It's fine to use `(index .roles "something")`.
+Otherwise it will output error that `.roles is {}`, but such case only *occur* when you use variable field like `$role` above. It's fine to use `(index .roles "something")` for predefined instance.
 
 ---
 
