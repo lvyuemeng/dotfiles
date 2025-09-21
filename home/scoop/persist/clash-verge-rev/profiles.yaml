@@ -1,6 +1,6 @@
 # Profiles Config for Clash Verge
 
-current: R8gZjmES6YI5
+current: RzCWfAFvTeXa
 items:
 - uid: Merge
   type: merge
@@ -46,7 +46,7 @@ items:
   selected:
   - name: 🚀 节点选择
     now: 乌克兰【机场推荐：https://a0a.xyz/】8
-  updated: 1758355114
+  updated: 1758454150
   option:
     with_proxy: false
     self_proxy: false
@@ -92,7 +92,7 @@ items:
     now: US_speednode_0037
   - name: 🚀 选择代理
     now: 🔰 延迟最低
-  updated: 1758342256
+  updated: 1758454148
   option:
     with_proxy: false
     self_proxy: false
@@ -134,7 +134,7 @@ items:
   selected:
   - name: 🚀 节点选择
     now: 🇺🇸 美国 V2CROSS.COM 2
-  updated: 1758342257
+  updated: 1758454148
   option:
     update_interval: 1440
     merge: mEqIIP7vDEsF
@@ -176,7 +176,7 @@ items:
   selected:
   - name: 🚀 节点选择
     now: ♻️ 自动选择
-  updated: 1758342256
+  updated: 1758454148
   option:
     with_proxy: false
     self_proxy: false
@@ -219,7 +219,7 @@ items:
   selected:
   - name: 🔰 节点选择
     now: at|9d9a|puddincat07@Telegram
-  updated: 1758342257
+  updated: 1758454148
   option:
     with_proxy: false
     self_proxy: false
@@ -258,7 +258,7 @@ items:
   name: Jsnzkpg
   file: RzCWfAFvTeXa.yaml
   url: https://gh-proxy.com/https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg
-  updated: 1758342256
+  updated: 1758454149
   option:
     merge: myAfmFwNURCc
     script: sXfLsW37QRjg
