@@ -182,7 +182,7 @@
     "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
     "rust-analyzer.diagnostics.styleLints.enable": true,
     "rust-analyzer.diagnostics.previewRustcOutput": true,
-    "rust-analyzer.diagnostics.experimental.enable": true,
+    // "rust-analyzer.diagnostics.experimental.enable": true,
     "rust-analyzer.debug.openDebugPane": true,
     "rust-analyzer.completion.termSearch.enable": true,
     "rescript.settings.inlayHints.enable": true,
@@ -265,4 +265,10 @@
     "tinymist.preview.cursorIndicator": true,
     "terminal.integrated.enablePersistentSessions": false,
     "rust-analyzer.imports.preferNoStd": true,
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
 }

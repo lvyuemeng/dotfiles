@@ -68,6 +68,7 @@ inherit = "default"
 [vivaldi.backup]
 tag = ["tag:Vivaldi"]
 source = ["%LOCALAPPDATA%/Vivaldi/User Data/Default"]
+exclude = ["*cache*", "*Cache*"]
 
 [vivaldi.snapshots]
 tag = ["tag:Vivaldi"]

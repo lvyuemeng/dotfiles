@@ -1,14 +1,26 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2025-09-20T16:30:58.150-00:00",
+	"CreationDate" : "2025-11-14T18:42:54.920-00:00",
 	"Sources" : 
 	[
 		{
 			"Packages" : 
 			[
 				{
-					"PackageIdentifier" : "Git.Git"
-				},
+					"PackageIdentifier" : "XPDNH1FMW7NB40"
+				}
+			],
+			"SourceDetails" : 
+			{
+				"Argument" : "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
+				"Identifier" : "StoreEdgeFD",
+				"Name" : "msstore",
+				"Type" : "Microsoft.Rest"
+			}
+		},
+		{
+			"Packages" : 
+			[
 				{
 					"PackageIdentifier" : "Mozilla.Firefox.zh-CN"
 				},
@@ -28,13 +40,7 @@
 					"PackageIdentifier" : "DigitalScholar.Zotero"
 				},
 				{
-					"PackageIdentifier" : "Neovim.Neovim"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x64"
-				},
-				{
-					"PackageIdentifier" : "GitHub.cli"
 				},
 				{
 					"PackageIdentifier" : "Eassos.DiskGenius"
@@ -44,6 +50,21 @@
 				},
 				{
 					"PackageIdentifier" : "Nvidia.PhysX"
+				},
+				{
+					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
+				},
+				{
+					"PackageIdentifier" : "GitHub.cli"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.PowerShell"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.GameInput"
+				},
+				{
+					"PackageIdentifier" : "Neovim.Neovim"
 				},
 				{
 					"PackageIdentifier" : "GnuPG.GnuPG"
@@ -70,7 +91,10 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.PowerShell"
+					"PackageIdentifier" : "Microsoft.DotNet.AspNetCore.8"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x86"
@@ -79,22 +103,16 @@
 					"PackageIdentifier" : "Intel.IntelDriverAndSupportAssistant"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.Runtime.8"
-				},
-				{
-					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2005.x86"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
 				},
 				{
 					"PackageIdentifier" : "MartiCliment.UniGetUI"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x86"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.Runtime.8"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
@@ -106,9 +124,6 @@
 					"PackageIdentifier" : "Microsoft.DotNet.SDK.9"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.AspNetCore.8"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
 				},
 				{
@@ -116,6 +131,9 @@
 				},
 				{
 					"PackageIdentifier" : "Anki.Anki"
+				},
+				{
+					"PackageIdentifier" : "BrechtSanders.WinLibs.POSIX.UCRT"
 				},
 				{
 					"PackageIdentifier" : "Rustlang.Rustup"
@@ -131,9 +149,6 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VisualStudioCode"
-				},
-				{
-					"PackageIdentifier" : "Canonical.Ubuntu.2404"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.AppInstaller"
@@ -161,22 +176,7 @@
 				"Name" : "winget",
 				"Type" : "Microsoft.PreIndexed.Package"
 			}
-		},
-		{
-			"Packages" : 
-			[
-				{
-					"PackageIdentifier" : "XPDNH1FMW7NB40"
-				}
-			],
-			"SourceDetails" : 
-			{
-				"Argument" : "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
-				"Identifier" : "StoreEdgeFD",
-				"Name" : "msstore",
-				"Type" : "Microsoft.Rest"
-			}
 		}
 	],
-	"WinGetVersion" : "1.11.430"
+	"WinGetVersion" : "1.12.350"
 }

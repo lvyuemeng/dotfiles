@@ -1,6 +1,6 @@
 # Profiles Config for Clash Verge
 
-current: R8gZjmES6YI5
+current: R1QMFvhUmDSO
 items:
 - uid: Merge
   type: merge
@@ -45,12 +45,13 @@ items:
   url: https://www.xrayvip.com/free.yaml
   selected:
   - name: 🚀 节点选择
-    now: 乌克兰【机场推荐：https://a0a.xyz/】8
-  updated: 1758355114
+    now: 【机场推荐：https://a0a.xyz/】17
+  updated: 1763116252
   option:
     with_proxy: false
     self_proxy: false
     update_interval: 120
+    allow_auto_update: true
     merge: m3CgeDRg54DS
     script: sy0eKcY3HAZS
     rules: rpai4sJId1bk
@@ -92,10 +93,11 @@ items:
     now: US_speednode_0037
   - name: 🚀 选择代理
     now: 🔰 延迟最低
-  updated: 1758342256
+  updated: 1763115088
   option:
     with_proxy: false
     self_proxy: false
+    allow_auto_update: true
     merge: miH3RBfEKcR7
     script: s0mdHtB06q26
     rules: r2BWpD5kNY6E
@@ -134,9 +136,10 @@ items:
   selected:
   - name: 🚀 节点选择
     now: 🇺🇸 美国 V2CROSS.COM 2
-  updated: 1758342257
+  updated: 1763115088
   option:
     update_interval: 1440
+    allow_auto_update: true
     merge: mEqIIP7vDEsF
     script: s9p3hAGop1aa
     rules: r0NR7tnSLk13
@@ -175,11 +178,12 @@ items:
   url: https://gh-proxy.com/raw.githubusercontent.com/shaoyouvip/free/main/mihomo.yaml
   selected:
   - name: 🚀 节点选择
-    now: ♻️ 自动选择
-  updated: 1758342256
+    now: 🇺🇲 美国节点
+  updated: 1763098928
   option:
     with_proxy: false
     self_proxy: false
+    allow_auto_update: true
     merge: m17flY2wkJGN
     script: s1KfOCTWvLUn
     rules: rsv811pc6MtC
@@ -218,11 +222,13 @@ items:
   url: https://gh-proxy.com/raw.githubusercontent.com/PuddinCat/BestClash/refs/heads/main/proxies.yaml
   selected:
   - name: 🔰 节点选择
-    now: at|9d9a|puddincat07@Telegram
-  updated: 1758342257
+    now: kr|c7fe|puddincat07@Telegram
+  updated: 1763115090
   option:
     with_proxy: false
     self_proxy: false
+    update_interval: 60
+    allow_auto_update: true
     merge: mxS2b0kO6yAb
     script: s0fpUyDWeOdo
     rules: rs8Xe4v35XPl
@@ -257,9 +263,21 @@ items:
   type: remote
   name: Jsnzkpg
   file: RzCWfAFvTeXa.yaml
+  desc: ''
   url: https://gh-proxy.com/https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg
-  updated: 1758342256
+  selected:
+  - name: 🚀 手动切换
+    now: ♻️ 自动选择
+  - name: 🚀 节点选择
+    now: '29'
+  - name: Haita Cloud
+    now: '4'
+  updated: 1763098953
   option:
+    with_proxy: false
+    self_proxy: false
+    update_interval: 60
+    allow_auto_update: true
     merge: myAfmFwNURCc
     script: sXfLsW37QRjg
     rules: rknzgllLIBI5

@@ -17,10 +17,19 @@ function Initialize-Env {
     # explorer
     Set-Alias -Name e -Value explorer.exe -Scope Global
     # starship
-    Invoke-Expression (&starship init powershell)
+    if (Get-Command starship -ErrorAction SilentlyContinue) {
+        Invoke-Expression (& starship init powershell)
+        $ENV:STARSHIP_CONFIG = "$HOME\.config\starship.toml"
+    }
+    
+    if (Get-Command zoxide -ErrorAction SilentlyContinue) {
+        Invoke-Expression (& { (zoxide init powershell | Out-String) })
+    }
 
-    $ENV:STARSHIP_CONFIG = "$HOME\.config\starship.toml"
-    $ENV:EDITOR = "code.cmd"
+    if (Get-Command code -ErrorAction SilentlyContinue) {
+        $ENV:EDITOR = "code.cmd"
+    }
+
     $ENV:SHELL = "pwsh"
 }
 
@@ -66,8 +75,10 @@ function Initialize-Modules {
         if ($line -like " *") {
             return $false
         }
-        $ignore_psreadline = @("user", "pass", "account")
-        foreach ($ignore in $ignore_psreadline) {
+
+        $ignores = @("user", "pass", "account", "apikey", "token")
+
+        foreach ($ignore in $ignores) {
             if ($line -match $ignore) {
                 return $false
             }
@@ -76,23 +87,41 @@ function Initialize-Modules {
     }
 
     $PSReadLineOptions = @{
-        EditMode             = "Vi"
-        AddToHistoryHandler  = $historyFilter
-        ExtraPromptLineCount = $true
-        HistoryNoDuplicates  = $true
-        MaximumHistoryCount  = 5000
-        PredictionSource     = "HistoryAndPlugin"
-        PredictionViewStyle  = "ListView"
-        ShowToolTips         = $true
-        BellStyle            = "None"
+        EditMode                      = "Vi"
+        AddToHistoryHandler           = $historyFilter
+        ShowToolTips                  = $true
+        ExtraPromptLineCount          = $true
+        HistoryNoDuplicates           = $true
+        HistorySearchCursorMovesToEnd = $true
+        MaximumHistoryCount           = 5000
+        PredictionSource              = "HistoryAndPlugin"
+        PredictionViewStyle           = "ListView"
+        BellStyle                     = "None"
+        Colors                        = @{
+            Command   = '#87CEEB'  # SkyBlue (pastel)
+            Parameter = '#98FB98'  # PaleGreen (pastel)
+            Operator  = '#FFB6C1'  # LightPink (pastel)
+            Variable  = '#DDA0DD'  # Plum (pastel)
+            String    = '#FFDAB9'  # PeachPuff (pastel)
+            Number    = '#B0E0E6'  # PowderBlue (pastel)
+            Type      = '#F0E68C'  # Khaki (pastel)
+            Comment   = '#D3D3D3'  # LightGray (pastel)
+            Keyword   = '#8367c7'  # Violet (pastel)
+            Error     = '#FF6347'  # Tomato (keeping it close to red for visibility)
+    
+        }
     }
+    
+    Set-PSReadLineOption @PSReadLineOptions
 
-    Set-PSReadLineKeyHandler -Key "Ctrl+j" -Function ViCommandMode
-    Set-PSReadLineKeyHandler -Key "Ctrl+p" -Function HistorySearchBackward
-    Set-PSReadLineKeyHandler -Key "Ctrl+n" -Function HistorySearchForward
-    Set-PSReadLineKeyHandler -Key "Ctrl+b" -Function BackwardDeleteWord
-    Set-PSReadLineKeyHandler -Key "Ctrl+RightArrow" -Function ForwardWord
-    Set-PSReadLineKeyHandler -Key "Ctrl+LeftArrow" -Function BackwardWord
+    Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
+    Set-PSReadLineKeyHandler -Key "Alt+j" -Function ViCommandMode
+    Set-PSReadLineKeyHandler -Key "Alt+d" -Function ShellKillWord
+    Set-PSReadLineKeyHandler -Key "Alt+Backspace" -Function ShellBackwardKillWord
+    Set-PSReadLineKeyHandler -Key "Alt+b" -Function ShellBackwardWord
+    Set-PSReadLineKeyHandler -Key "Alt+e" -Function ShellForwardWord
+    Set-PSReadLineKeyHandler -Key "Alt+B" -Function SelectShellBackwardWord
+    Set-PSReadLineKeyHandler -Key "Alt+E" -Function SelectShellForwardWord
 }
 
 function setup {
