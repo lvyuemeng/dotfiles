@@ -1,28 +1,16 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2025-11-14T18:42:54.920-00:00",
+	"CreationDate" : "2026-01-02T11:07:58.704-00:00",
 	"Sources" : 
 	[
 		{
 			"Packages" : 
 			[
 				{
-					"PackageIdentifier" : "XPDNH1FMW7NB40"
-				}
-			],
-			"SourceDetails" : 
-			{
-				"Argument" : "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
-				"Identifier" : "StoreEdgeFD",
-				"Name" : "msstore",
-				"Type" : "Microsoft.Rest"
-			}
-		},
-		{
-			"Packages" : 
-			[
+					"PackageIdentifier" : "GnuPG.GnuPG"
+				},
 				{
-					"PackageIdentifier" : "Mozilla.Firefox.zh-CN"
+					"PackageIdentifier" : "Mozilla.Firefox.en-CA"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.Office"
@@ -49,13 +37,13 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
 				},
 				{
+					"PackageIdentifier" : "GitHub.cli"
+				},
+				{
 					"PackageIdentifier" : "Nvidia.PhysX"
 				},
 				{
 					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
-				},
-				{
-					"PackageIdentifier" : "GitHub.cli"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.PowerShell"
@@ -65,9 +53,6 @@
 				},
 				{
 					"PackageIdentifier" : "Neovim.Neovim"
-				},
-				{
-					"PackageIdentifier" : "GnuPG.GnuPG"
 				},
 				{
 					"PackageIdentifier" : "GnuPG.Gpg4win"
@@ -106,7 +91,13 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2005.x86"
 				},
 				{
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.9"
+				},
+				{
 					"PackageIdentifier" : "MartiCliment.UniGetUI"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2008.x86"
@@ -121,13 +112,7 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2010.x86"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.SDK.9"
-				},
-				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2012.x64"
-				},
-				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
 				},
 				{
 					"PackageIdentifier" : "Anki.Anki"
@@ -175,6 +160,21 @@
 				"Identifier" : "Microsoft.Winget.Source_8wekyb3d8bbwe",
 				"Name" : "winget",
 				"Type" : "Microsoft.PreIndexed.Package"
+			}
+		},
+		{
+			"Packages" : 
+			[
+				{
+					"PackageIdentifier" : "XPDNH1FMW7NB40"
+				}
+			],
+			"SourceDetails" : 
+			{
+				"Argument" : "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
+				"Identifier" : "StoreEdgeFD",
+				"Name" : "msstore",
+				"Type" : "Microsoft.Rest"
 			}
 		}
 	],

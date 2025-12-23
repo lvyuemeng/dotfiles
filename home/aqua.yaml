@@ -9,11 +9,11 @@
 #   - all
 registries:
 - type: standard
-  ref: v4.433.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.451.0 # renovate: depName=aquaproj/aqua-registry
 packages:
 - name: gesquive/git-user@v2.0.6
-- name: typst/typst@v0.14.0
-- name: oven-sh/bun@bun-v1.3.2
-- name: nodejs/node@v25.1.0
-- name: astral-sh/uv@0.9.8
-- name: golang/go@go1.25.4
+- name: typst/typst@v0.14.2
+- name: oven-sh/bun@bun-v1.3.5
+- name: nodejs/node@v25.2.1
+- name: astral-sh/uv@0.9.21
+- name: golang/go@go1.25.5

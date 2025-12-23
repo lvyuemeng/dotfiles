@@ -1,6 +1,6 @@
 # Profiles Config for Clash Verge
 
-current: R1QMFvhUmDSO
+current: RzCWfAFvTeXa
 items:
 - uid: Merge
   type: merge
@@ -45,8 +45,12 @@ items:
   url: https://www.xrayvip.com/free.yaml
   selected:
   - name: 🚀 节点选择
-    now: 【机场推荐：https://a0a.xyz/】17
-  updated: 1763116252
+    now: "【机场推荐：https://a0a.xyz/】8\r"
+  - name: 🔰 节点选择
+    now: xx|14c9|puddincat07@Telegram
+  - name: ♻️ 自动选择
+    now: 【机场推荐：https://a0a.xyz/】100
+  updated: 1767319256
   option:
     with_proxy: false
     self_proxy: false
@@ -57,52 +61,6 @@ items:
     rules: rpai4sJId1bk
     proxies: pSv6Mivkj8LR
     groups: gnq77WchVAFz
-- uid: miH3RBfEKcR7
-  type: merge
-  name: null
-  file: miH3RBfEKcR7.yaml
-  updated: 1756019798
-- uid: s0mdHtB06q26
-  type: script
-  name: null
-  file: s0mdHtB06q26.js
-  updated: 1756019798
-- uid: r2BWpD5kNY6E
-  type: rules
-  name: null
-  file: r2BWpD5kNY6E.yaml
-  updated: 1756019798
-- uid: pEvFG5PfngfJ
-  type: proxies
-  name: null
-  file: pEvFG5PfngfJ.yaml
-  updated: 1756019798
-- uid: gZfDAIzoUcwN
-  type: groups
-  name: null
-  file: gZfDAIzoUcwN.yaml
-  updated: 1756019798
-- uid: R2G8kmYN81lx
-  type: remote
-  name: list.yml
-  file: R2G8kmYN81lx.yaml
-  desc: ''
-  url: https://gh-proxy.com/raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.yml
-  selected:
-  - name: ♻ 自动选择
-    now: US_speednode_0037
-  - name: 🚀 选择代理
-    now: 🔰 延迟最低
-  updated: 1763115088
-  option:
-    with_proxy: false
-    self_proxy: false
-    allow_auto_update: true
-    merge: miH3RBfEKcR7
-    script: s0mdHtB06q26
-    rules: r2BWpD5kNY6E
-    proxies: pEvFG5PfngfJ
-    groups: gZfDAIzoUcwN
 - uid: mEqIIP7vDEsF
   type: merge
   name: null
@@ -135,8 +93,12 @@ items:
   url: https://api.wcc.best/sub?target=clash&url=https:%2F%2Fproxy.v2gh.com%2Fhttps:%2F%2Fraw.githubusercontent.com%2FPawdroid%2FFree-servers%2Fmain%2Fsub&insert=false&config=https:%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online.ini&emoji=true&list=false&tfo=false&scv=true&fdn=false&expand=true&sort=false&new_name=true
   selected:
   - name: 🚀 节点选择
-    now: 🇺🇸 美国 V2CROSS.COM 2
-  updated: 1763115088
+    now: 🇯🇵 日本节点
+  - name: 🚀 选择代理
+    now: ♻ 自动选择
+  - name: ♻️ 自动选择
+    now: tr|3367|puddincat07@Telegram
+  updated: 1767319258
   option:
     update_interval: 1440
     allow_auto_update: true
@@ -175,11 +137,15 @@ items:
   name: mihomo.yaml
   file: R8gZjmES6YI5.yaml
   desc: ''
-  url: https://gh-proxy.com/raw.githubusercontent.com/shaoyouvip/free/main/mihomo.yaml
+  url: https://gh-proxy.org/raw.githubusercontent.com/shaoyouvip/free/main/mihomo.yaml
   selected:
   - name: 🚀 节点选择
-    now: 🇺🇲 美国节点
-  updated: 1763098928
+    now: 🚀 手动切换
+  - name: 🚀 手动切换
+    now: 🇺🇸US_2|1.1MB/s
+  - name: ♻️ 自动选择
+    now: 🇳🇱NL_3|1.9MB/s
+  updated: 1767319255
   option:
     with_proxy: false
     self_proxy: false
@@ -219,11 +185,13 @@ items:
   name: proxies.yaml
   file: R676f6Ss0Sjy.yaml
   desc: ''
-  url: https://gh-proxy.com/raw.githubusercontent.com/PuddinCat/BestClash/refs/heads/main/proxies.yaml
+  url: https://gh-proxy.org/raw.githubusercontent.com/PuddinCat/BestClash/refs/heads/main/proxies.yaml
   selected:
   - name: 🔰 节点选择
-    now: kr|c7fe|puddincat07@Telegram
-  updated: 1763115090
+    now: xx|df58|puddincat07@Telegram
+  - name: ♻️ 自动选择
+    now: xx|0df1|puddincat07@Telegram
+  updated: 1767319255
   option:
     with_proxy: false
     self_proxy: false
@@ -264,15 +232,19 @@ items:
   name: Jsnzkpg
   file: RzCWfAFvTeXa.yaml
   desc: ''
-  url: https://gh-proxy.com/https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg
+  url: https://gh-proxy.org/https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg
   selected:
   - name: 🚀 手动切换
-    now: ♻️ 自动选择
+    now: 🇫🇷FR_2|1.2MB/s
   - name: 🚀 节点选择
-    now: '29'
+    now: 🚀 手动切换
   - name: Haita Cloud
-    now: '4'
-  updated: 1763098953
+    now: 官网地址https://kelayun.notepin.co
+  - name: 🔰 节点选择
+    now: us|607a|puddincat07@Telegram
+  - name: 自动选择
+    now: 官网地址https://kelayun.notepin.co
+  updated: 1767319252
   option:
     with_proxy: false
     self_proxy: false
@@ -283,3 +255,88 @@ items:
     rules: rknzgllLIBI5
     proxies: pKE9L0oCTEsP
     groups: gJYIY1zOyjZs
+- uid: m3kStCZES4OO
+  type: merge
+  name: null
+  file: m3kStCZES4OO.yaml
+  updated: 1763605415
+- uid: sxIcjTLuDoVI
+  type: script
+  name: null
+  file: sxIcjTLuDoVI.js
+  updated: 1763605415
+- uid: r7LimxXOI78b
+  type: rules
+  name: null
+  file: r7LimxXOI78b.yaml
+  updated: 1763605415
+- uid: pooOIH02hHEr
+  type: proxies
+  name: null
+  file: pooOIH02hHEr.yaml
+  updated: 1763605415
+- uid: gam20kDdzk1L
+  type: groups
+  name: null
+  file: gam20kDdzk1L.yaml
+  updated: 1763605415
+- uid: Riq04bVZSqC1
+  type: remote
+  name: 11clash
+  file: Riq04bVZSqC1.yaml
+  desc: ''
+  url: https://gh-proxy.org/https://raw.githubusercontent.com/ggborr/FREEE-VPN/refs/heads/main/11clash
+  selected:
+  - name: 🚀 节点选择
+    now: 🇬🇧 GB英国
+  updated: 1767319255
+  option:
+    with_proxy: false
+    self_proxy: false
+    allow_auto_update: true
+    merge: m3kStCZES4OO
+    script: sxIcjTLuDoVI
+    rules: r7LimxXOI78b
+    proxies: pooOIH02hHEr
+    groups: gam20kDdzk1L
+- uid: moAUGs2e9TRa
+  type: merge
+  name: null
+  file: moAUGs2e9TRa.yaml
+  updated: 1765712487
+- uid: sKJEZZNHrno1
+  type: script
+  name: null
+  file: sKJEZZNHrno1.js
+  updated: 1765712487
+- uid: rRmZafm16Wwk
+  type: rules
+  name: null
+  file: rRmZafm16Wwk.yaml
+  updated: 1765712487
+- uid: pCh4xbwWseOr
+  type: proxies
+  name: null
+  file: pCh4xbwWseOr.yaml
+  updated: 1765712487
+- uid: gjkHkO3KqD2G
+  type: groups
+  name: null
+  file: gjkHkO3KqD2G.yaml
+  updated: 1765712487
+- uid: RX0QsdMN538J
+  type: remote
+  name: clash
+  file: RX0QsdMN538J.yaml
+  desc: ''
+  url: https://gh-proxy.org//https://raw.githubusercontent.com/ts-sf/fly/main/clash
+  updated: 1767319255
+  option:
+    with_proxy: false
+    self_proxy: false
+    allow_auto_update: true
+    merge: moAUGs2e9TRa
+    script: sKJEZZNHrno1
+    rules: rRmZafm16Wwk
+    proxies: pCh4xbwWseOr
+    groups: gjkHkO3KqD2G

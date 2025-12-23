@@ -1,191 +1,191 @@
 {
     "apps": [
         {
+            "Info": "",
             "Version": "25.01",
             "Updated": "2025-11-09T18:00:59.2341333+08:00",
-            "Name": "7zip",
             "Source": "spc",
-            "Info": ""
+            "Name": "7zip"
         },
         {
-            "Version": "2.55.1",
-            "Updated": "2025-11-09T18:00:59.2459226+08:00",
-            "Name": "aqua",
+            "Info": "",
+            "Version": "0.30.0",
+            "Updated": "2026-01-01T16:38:49.5186294+08:00",
             "Source": "spc",
-            "Info": ""
+            "Name": "aichat"
         },
         {
+            "Info": "",
+            "Version": "2.56.1",
+            "Updated": "2025-12-27T22:47:44.6529024+08:00",
+            "Source": "spc",
+            "Name": "aqua"
+        },
+        {
+            "Info": "",
             "Version": "1.37.0-1",
             "Updated": "2025-11-09T18:00:59.2459226+08:00",
-            "Name": "aria2",
             "Source": "spc",
-            "Info": ""
+            "Name": "aria2"
         },
         {
-            "Version": "0.26.0",
-            "Updated": "2025-11-09T18:00:59.2553568+08:00",
-            "Name": "bat",
+            "Info": "",
+            "Version": "0.26.1",
+            "Updated": "2025-12-03T13:03:29.0477077+08:00",
             "Source": "spc",
-            "Info": ""
+            "Name": "bat"
         },
         {
-            "Version": "2.4.3",
-            "Updated": "2025-11-09T18:00:59.2686415+08:00",
-            "Name": "clash-verge-rev",
+            "Info": "",
+            "Version": "2.4.4",
+            "Updated": "2025-12-19T22:25:18.6469887+08:00",
             "Source": "spc",
-            "Info": ""
+            "Name": "clash-verge-rev"
         },
         {
+            "Info": "",
             "Version": "3.14.1",
             "Updated": "2025-11-09T18:00:59.2714359+08:00",
-            "Name": "dark",
             "Source": "spc",
-            "Info": ""
+            "Name": "dark"
         },
         {
+            "Info": "",
             "Version": "1.3.4",
             "Updated": "2025-11-09T18:00:59.2747863+08:00",
-            "Name": "eget",
             "Source": "spc",
-            "Info": ""
+            "Name": "eget"
         },
         {
+            "Info": "",
             "Version": "10.3.0",
-            "Updated": "2025-11-09T18:00:59.2923654+08:00",
-            "Name": "fd",
+            "Updated": "2025-11-16T11:40:44.4506119+08:00",
             "Source": "spc",
-            "Info": ""
+            "Name": "fd"
         },
         {
-            "Version": "0.66.1",
-            "Updated": "2025-11-09T18:00:59.2990025+08:00",
-            "Name": "fzf",
+            "Info": "",
+            "Version": "0.67.0",
+            "Updated": "2025-11-17T23:09:20.2578551+08:00",
             "Source": "spc",
-            "Info": ""
+            "Name": "fzf"
         },
         {
-            "Version": "2.51.2",
-            "Updated": "2025-11-09T18:00:59.3012611+08:00",
-            "Name": "git",
+            "Info": "",
+            "Version": "2.52.0",
+            "Updated": "2025-11-18T12:14:24.5756907+08:00",
             "Source": "spc",
-            "Info": ""
+            "Name": "git"
         },
         {
-            "Version": "1.16.0",
-            "Updated": "2025-11-14T13:25:29.4812639+08:00",
-            "Name": "gopass",
+            "Info": "",
+            "Version": "1.16.1",
+            "Updated": "2025-12-14T09:56:42.2955455+08:00",
             "Source": "spc",
-            "Info": ""
+            "Name": "gopass"
         },
         {
-            "Version": "0.152.2",
-            "Updated": "2025-11-09T18:00:59.3348643+08:00",
-            "Name": "hugo-extended",
+            "Info": "",
+            "Version": "0.154.1",
+            "Updated": "2026-01-02T10:02:44.438336+08:00",
             "Source": "spc",
-            "Info": ""
+            "Name": "hugo-extended"
         },
         {
-            "Version": "2.66.0",
-            "Updated": "2025-11-14T13:26:12.1341405+08:00",
-            "Name": "innounp",
+            "Info": "",
+            "Version": "2.66.1",
+            "Updated": "2025-11-22T10:24:07.656318+08:00",
             "Source": "spc",
-            "Info": ""
+            "Name": "innounp"
         },
         {
-            "Version": "4.1.7",
-            "Updated": "2025-11-11T11:04:27.3061925+08:00",
-            "Name": "openlist",
+            "Info": "",
+            "Version": "4.1.9",
+            "Updated": "2026-01-02T10:02:35.0353876+08:00",
             "Source": "spc",
-            "Info": ""
+            "Name": "openlist"
         },
         {
+            "Info": "",
             "Version": "3.0.7",
             "Updated": "2025-11-09T18:00:59.3592183+08:00",
-            "Name": "pot",
             "Source": "spc",
-            "Info": ""
+            "Name": "pot"
         },
         {
+            "Info": "",
             "Version": "0.11.1",
-            "Updated": "2025-11-09T18:00:59.3602956+08:00",
-            "Name": "rage",
+            "Updated": "2025-11-17T23:08:56.1929246+08:00",
             "Source": "spc",
-            "Info": ""
+            "Name": "rage"
         },
         {
+            "Info": "",
             "Version": "0.18.1",
-            "Updated": "2025-11-09T18:00:59.3637637+08:00",
-            "Name": "restic",
+            "Updated": "2025-11-16T22:42:38.4702785+08:00",
             "Source": "spc",
-            "Info": ""
+            "Name": "restic"
         },
         {
+            "Info": "",
             "Version": "0.32.0",
             "Updated": "2025-11-09T18:00:59.3672801+08:00",
-            "Name": "resticprofile",
             "Source": "spc",
-            "Info": ""
+            "Name": "resticprofile"
         },
         {
+            "Info": "",
             "Version": "15.1.0",
             "Updated": "2025-11-09T18:00:59.3720743+08:00",
-            "Name": "ripgrep",
             "Source": "spc",
-            "Info": ""
+            "Name": "ripgrep"
         },
         {
+            "Info": "",
             "Version": "2.1.0",
             "Updated": "2025-11-09T18:00:59.3741542+08:00",
-            "Name": "scoop-search",
             "Source": "spc",
-            "Info": ""
+            "Name": "scoop-search"
         },
         {
-            "Version": "1.24.0",
-            "Updated": "2025-11-09T18:00:59.3770787+08:00",
-            "Name": "starship",
+            "Info": "",
+            "Version": "1.24.2",
+            "Updated": "2025-12-31T10:06:47.6831259+08:00",
             "Source": "spc",
-            "Info": ""
+            "Name": "starship"
         },
         {
-            "Version": "0.25.10",
-            "Updated": "2025-11-09T18:00:59.3794437+08:00",
-            "Name": "tree-sitter",
+            "Info": "",
+            "Version": "0.26.3",
+            "Updated": "2025-12-14T09:56:48.2588057+08:00",
             "Source": "spc",
-            "Info": ""
-        },
-        {
-            "Version": "0.9.8",
-            "Updated": "2025-11-14T18:33:11.7586088+08:00",
-            "Name": "zoxide",
-            "Source": "main",
-            "Info": ""
+            "Name": "tree-sitter"
         }
     ],
     "buckets": [
         {
             "Name": "main",
-            "Source": "https://gh-proxy.com/https://github.com/ScoopInstaller/Main.git",
-            "Updated": "2025-11-14T16:30:00+08:00",
-            "Manifests": 1410
+            "Source": "https://gh-proxy.org/https://github.com/ScoopInstaller/Main.git",
+            "Updated": "2026-01-02T04:29:55+08:00",
+            "Manifests": 1412
         },
         {
             "Name": "extras",
-            "Source": "https://gh-proxy.com/https://github.com/ScoopInstaller/Extras",
-            "Updated": "2025-11-14T16:29:47+08:00",
-            "Manifests": 2208
+            "Source": "https://gh-proxy.org/https://github.com/ScoopInstaller/Extras",
+            "Updated": "2026-01-02T08:45:47+08:00",
+            "Manifests": 2241
         },
         {
             "Name": "versions",
-            "Source": "https://gh-proxy.com/https://github.com/ScoopInstaller/Versions",
-            "Updated": "2025-11-14T16:44:15+08:00",
-            "Manifests": 534
+            "Source": "https://gh-proxy.org/https://github.com/ScoopInstaller/Versions",
+            "Updated": "2026-01-02T10:30:45+08:00",
+            "Manifests": 551
         },
         {
             "Name": "spc",
-            "Source": "https://github.com/lvyuemeng/scoop-cn",
-            "Updated": "2025-11-14T16:23:27+08:00",
-            "Manifests": 6074
+            "Source": "https://gh-proxy.org/https://github.com/lvyuemeng/scoop-cn",
+            "Updated": "2026-01-02T09:26:39+08:00",
+            "Manifests": 6132
         }
     ]
 }

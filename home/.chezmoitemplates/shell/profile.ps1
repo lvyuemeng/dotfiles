@@ -26,9 +26,11 @@ function Initialize-Env {
         Invoke-Expression (& { (zoxide init powershell | Out-String) })
     }
 
-    if (Get-Command code -ErrorAction SilentlyContinue) {
-        $ENV:EDITOR = "code.cmd"
+    # nvim
+    if (Get-Command nvim -ErrorAction SilentlyContinue) {
+        $ENV:EDITOR = "nvim"
     }
+    # vscode: change `nvim` -> `code.cmd`
 
     $ENV:SHELL = "pwsh"
 }
