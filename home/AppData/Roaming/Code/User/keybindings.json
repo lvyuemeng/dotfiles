@@ -82,6 +82,12 @@
     {
         "key": "alt+f f",
         "command": "actions.find",
+        "when": "!findWidgetVisible || !findInputFocussed"
+    },
+    {
+        "key": "alt+f f",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "findInputFocussed"
     },
     {
         "key": "ctrl+f",

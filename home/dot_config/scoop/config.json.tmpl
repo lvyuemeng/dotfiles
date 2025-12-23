@@ -2,8 +2,9 @@
 {{- $secret := includeTemplate "data" . | fromToml -}}
 {{- $v_api := $secret.virustotal.api_key -}}
 {
-    "last_update": "2025-08-09T13:33:38.3386661+08:00",
+    "last_update": "2025-12-23T09:55:06.9554363+08:00",
     "scoop_repo": "https://gitee.com/scoop-installer/scoop",
     "scoop_branch": "master",
-    "virustotal_api_key": "{{ $v_api }}"
+    "virustotal_api_key": "{{ $v_api }}",
+    "aria2-enabled": true
 }
