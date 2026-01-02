@@ -2,20 +2,7 @@
 
 Mine dotfiles based on [`chezmoi`](https://www.chezmoi.io) which is a well-known dotfiles manager. It's suggested that acquire the basic knowledge of operation by `chezmoi` first.
 
-It's mainly for `Windows` and `Unix` part is still under-developing.
-
-- terminal: 
-  - windows: Terminal(*Native*)
-  - unix: alacritty 
-- shell: 
-  - windows: pwsh
-  - unix: fish
-- package manager: 
-  - windows: winget(*Native*) (GUI related), scoop (CLI related)
-  - unix: *Native*
-  - cross: aqua (code development)
-
-Selected special apps list:
+Selected special apps list in case:
 
 **CLI**:
 - restic: a open source backup program.
@@ -60,21 +47,27 @@ encryption = "age" # this should be on top of the config file to avoid variable 
 
 With [powershell](./.chezmoiscripts/windows/run_once_before_00-decrypt-home.ps1.tmpl) and [bash](./.chezmoiscripts/linux/run_once_before_00-decrypt-home.sh.tmpl) script in attribute `run_once_before` to automatically achieve the decryption for public key in initiation.
 
-> You should remove `key.txt.rage` first and customize your key.
+#### Re-modify Encryption
+
+- Do not forget removing original decrypted key identity in your path for ease.
+
+- Remove your original key in source and the related configuration in `chezmoi`. Then follows the previous procedure to add a new key.
+
+- Apply `chezmoi init` to reload your key identity.
 
 ### Data Encryption
 
-You should configure **Home Encryption** first.
+> You should configure **Home Encryption** first.
 
-First configure your data with a format like `.toml/.yml` etc,
-we choose `toml` here.
+First configure your data text in `.chezmoidata` readable format, we choose `toml` here.
+
+Add the file into source in encryption.
 
 ```bash
 chezmoi add --encrypt [data path]
 ```
 
-Use the template functionality of `chezmoi` to decrypt it in [.chezmoitemplates](./.chezmoitemplates/data).
-It include the file in source home and decrypt it automatically.
+Use the template functionality of `chezmoi` to decrypt it in [.chezmoitemplates](./.chezmoitemplates/data) by including the file in source and decrypt it automatically.
 
 ```
 # ./.chezmoitemplates/(data name or any name you want)
@@ -88,15 +81,15 @@ Then you can apply the data to any template you want e.g.
 
 ```
 {{/* Load data.toml to access encrypted data */}}
-{{- $secret := includeTemplate "(template data path)" . | fromToml -}}
-{{- $something := $secret.(data access field) -}}
+{{- $secret := includeTemplate "path-to-your-data" . | fromToml -}}
+{{- $something := $secret.some-field -}}
 ```
 
 ### Auto Installation
 
-It's from [`chezmoi` tutorial](https://www.chezmoi.io/user-guide/advanced/install-packages-declaratively/).
+> Based on [`chezmoi` tutorial](https://www.chezmoi.io/user-guide/advanced/install-packages-declaratively/).
 
-First we declare a `pkg.toml/.yml` in [.chezmoidata](./.chezmoidata/pkgs.yml) in any nested structure you like:
+First declare a `pkg.toml/.yml` or any readable format in `chezmoidata`, with any nested structure you like in [pkgs.yml](./.chezmoidata/pkgs.yml):
 
 ```yml
 enabled_roles:
@@ -109,7 +102,7 @@ roles:
 ...
 ```
 
-I use a category design for selection ease.
+I apply a `roles` design in aid of selection.
 
 Then apply corresponding [powershell](./.chezmoiscripts/windows/run_onchange_after_00-install-pkg.ps1.tmpl) or [bash]() e.g.
 
@@ -137,38 +130,36 @@ if ($LASTEXITCODE -ne 0) { Write-Error "Failed to install {{ $pkg.name }}" }
 
 ### Q.A
 
-Some problem is a mixed of `go tmpl` plus `chezmoi` design. I list few I encounter as a memo.
+> Some problem is a mix of `go template` with `chezmoi` specific design. I list a few encountered as a memo.
 
 #### Go template
 
-`tmpl` design has few potential syntax fuzzy case:
+`tmpl` design has a few fuzzy cases in syntax:
 
 - When you want to index some `.chezmoidata`, you should use `(index $(data) (field))` e.g.
 
-Correct:
+**Correct**:
 
 ```
 (index $.roles $role "winget")
 ```
 
-Wrong:
+**Wrong**:
 
 ```
 (index .roles $role "winget")
 ```
 
-Otherwise it will output error that `.roles is {}`, but such case only *occur* when you use variable field like `$role` above. It's fine to use `(index .roles "something")` for predefined instance.
+Otherwise it will output error that `.roles is {}`, but such case only *occur* when you use **variable field** like `$role` above. It's fine to use `(index .roles "something")` for predefined instance.
 
----
-
-- When use `with`, you should check subfield like `with (index $pkg "args" )` rather `with $pkg.args`.
+- You should get fields by `with (index $pkg "args" )` rather than directly `with $pkg.args`.
 The latter case will cause same error above.
 
 ---
 
 #### Intepreters
 
-Some `ps1` script only works when you use `pwsh(>= 7.0)` rather `powershell(5.0)`. You want to use [interpreters](https://www.chezmoi.io/reference/configuration-file/interpreters/) to change the shell of the script.
+Some `ps1` script only works when you use `pwsh(>= 7.0)` rather `powershell(5.0)`. Bsed on [chezmoi:interpreters](https://www.chezmoi.io/reference/configuration-file/interpreters/) to change the shell of the script.
 
 > If you intend to use PowerShell Core (pwsh.exe) as the .ps1 interpreter, include the following in your config file:
 > 

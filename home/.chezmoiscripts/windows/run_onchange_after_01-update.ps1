@@ -1,4 +1,5 @@
-# Go template use a **reference date** to represent format.
+# Go template use the reference date to represent format.
+#
 # {{ now | date "2006-01-02" }}
 Write-Host "updating scoop manifests..."
 
