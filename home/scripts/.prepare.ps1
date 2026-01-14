@@ -6,7 +6,7 @@ if (Get-Command "rage" -ErrorAction SilentlyContinue) {
 	exit 0
 } 
 
-& ([scriptblock]::Create((irm "https://gitee.com/nostalgiaLiquid/SysKit-Win/raw/main/scoop-tool.ps1"))) install -s proxy
+& ([scriptblock]::Create((Invoke-RestMethod "https://codeberg.org/nostalgia/SysKit-Win/raw/branch/master/scoop-install.ps1"))) -Source proxy
 & scoop install spc/rage
 
 Write-Host "rage installed."
