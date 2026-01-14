@@ -6,3 +6,6 @@ registry = "sparse+https://mirrors.ustc.edu.cn/crates.io-index/"
 
 [registries.ustc]
 index = "sparse+https://mirrors.ustc.edu.cn/crates.io-index/"
+
+[http]
+check-revoke = false

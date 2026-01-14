@@ -50,7 +50,12 @@ items:
     now: xx|14c9|puddincat07@Telegram
   - name: ♻️ 自动选择
     now: 【机场推荐：https://a0a.xyz/】13
-  updated: 1768353648
+  extra:
+    upload: 4518581
+    download: 41779198033920
+    total: 1073740786892800
+    expire: 4102329600
+  updated: 1770430704
   option:
     with_proxy: false
     self_proxy: false
@@ -98,7 +103,7 @@ items:
     now: ♻ 自动选择
   - name: ♻️ 自动选择
     now: tr|3367|puddincat07@Telegram
-  updated: 1768353648
+  updated: 1770388547
   option:
     update_interval: 1440
     allow_auto_update: true
@@ -142,10 +147,10 @@ items:
   - name: 🚀 节点选择
     now: 🚀 手动切换
   - name: 🚀 手动切换
-    now: 🇩🇪DE_5|2.5MB/s
+    now: 🇺🇸US_15|3.1MB/s
   - name: ♻️ 自动选择
     now: 🇳🇱NL_3|1.9MB/s
-  updated: 1768353645
+  updated: 1770430704
   option:
     with_proxy: false
     self_proxy: false
@@ -191,7 +196,7 @@ items:
     now: xx|f8ad|puddincat07@Telegram
   - name: ♻️ 自动选择
     now: gb|1593|puddincat07@Telegram
-  updated: 1768353649
+  updated: 1770430704
   option:
     with_proxy: false
     self_proxy: false
@@ -239,12 +244,12 @@ items:
   - name: 🚀 节点选择
     now: 🚀 手动切换
   - name: Haita Cloud
-    now: 不限速不限设备
+    now: 最低月付2块钱1000G流量
   - name: 🔰 节点选择
     now: kr|71a5|puddincat07@Telegram
   - name: 自动选择
     now: 官网地址https://kelayun.notepin.co
-  updated: 1768353648
+  updated: 1770430724
   option:
     with_proxy: false
     self_proxy: false
@@ -289,7 +294,7 @@ items:
   selected:
   - name: 🚀 节点选择
     now: 🇬🇧 GB英国
-  updated: 1768353645
+  updated: 1770388552
   option:
     with_proxy: false
     self_proxy: false
@@ -335,7 +340,7 @@ items:
     now: 🇺🇲 美国节点
   - name: 🚀 手动切换
     now: 🇸🇬SG_3|1.7MB/s
-  updated: 1768353648
+  updated: 1770430704
   option:
     with_proxy: false
     self_proxy: false

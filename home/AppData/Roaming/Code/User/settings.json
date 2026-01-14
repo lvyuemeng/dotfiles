@@ -4,10 +4,10 @@
     "vim.useSystemClipboard": true,
     "vim.leader": "<space>",
     "vim.sneak": true,
-    "vim.surround": true,
-    "vim.easymotion": true,
-    "vim.enableNeovim": true,
-    */
+        "vim.surround": true,
+        "vim.easymotion": true,
+        "vim.enableNeovim": true,
+        */
     // Todo Tag(Depcreated)
     "todo-tree.general.tags": [
         "BUG",
@@ -48,7 +48,8 @@
     // Neovim settings
     "workbench.settings.applyToAllProfiles": [
         "notebook.formatOnSave.enabled",
-        "markdown.updateLinksOnFileMove.enabled"
+        "markdown.updateLinksOnFileMove.enabled",
+        "marimo.uv.path"
     ],
     "vscode-neovim.compositeKeys": {
         "jj": {
@@ -96,6 +97,10 @@
     "editor.autoClosingBrackets": "beforeWhitespace",
     "editor.accessibilitySupport": "off",
     "editor.acceptSuggestionOnEnter": "smart",
+    "remote.autoForwardPortsSource": "hybrid",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "tinymist.preview.cursorIndicator": true,
+    "terminal.integrated.enablePersistentSessions": false,
     "notebook.formatOnSave.enabled": true,
     // Terminal
     "terminal.sourceControlRepositoriesKind": "both",
@@ -245,9 +250,6 @@
         "--compile-commands-dir=$[workspacefolder]",
         "--background-index"
     ],
-    "[markdown]": {
-        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-    },
     "markdown-preview-enhanced.revealjsTheme": "night.css",
     "markdown-preview-enhanced.codeBlockTheme": "one-dark.css",
     "markdown-preview-enhanced.previewTheme": "atom-dark.css",
@@ -256,19 +258,57 @@
     "markdown.extension.completion.enabled": true,
     "markdown.extension.print.theme": "dark",
     "markdown.extension.theming.decoration.renderParagraph": true,
-    "settingsSync.ignoredSettings": [
-        "-markdown-preview-enhanced.pandocPath"
-    ],
     "markdown-preview-enhanced.enableExtendedTableSyntax": true,
-    "remote.autoForwardPortsSource": "hybrid",
-    "diffEditor.ignoreTrimWhitespace": false,
-    "tinymist.preview.cursorIndicator": true,
-    "terminal.integrated.enablePersistentSessions": false,
     "rust-analyzer.imports.preferNoStd": true,
-    "github.copilot.enable": {
-        "*": false,
-        "plaintext": false,
-        "markdown": false,
-        "scminput": false
+    "python.analysis.typeCheckingMode": "standard",
+    "claude-dev-experimental.api.currentModel": {
+        "uiId": "gpt-5.1-codex-mini",
+        "mode": "responsive"
     },
+    "claude-dev-experimental.ui.userRole": "engineer",
+    "claude-dev-experimental.ui.preferredLanguages": [],
+    "claude-dev-experimental.ui.costPerformancePreferences": {
+        "fast": false,
+        "smartest": true,
+        "cost": true
+    },
+    "claude-dev-experimental.features.enableCheckpoints": true,
+    "claude-dev-experimental.features.enableWebSearch": true,
+    "claude-dev-experimental.features.doNotDisturb": false,
+    "claude-dev-experimental.features.applyEditsInBackground": false,
+    "claude-dev-experimental.features.enableIsolatedFilesystemTasks": false,
+    "claude-dev-experimental.features.enableTaskMasterParallelTasks": false,
+    "claude-dev-experimental.features.parallelTasksTimeoutMinutes": 10,
+    "claude-dev-experimental.features.agentVerbosity": "chatty",
+    "claude-dev-experimental.features.chatPersonality": "default",
+    "claude-dev-experimental.git.strategyMode": "commit_light",
+    "claude-dev-experimental.git.customStrategy": "",
+    "claude-dev-experimental.codingPhilosophy.mode": "azad_aicoder",
+    "claude-dev-experimental.codingPhilosophy.customText": "",
+    "claude-dev-experimental.tools.dialect": "automatic",
+    "claude-dev-experimental.tools.approvalMode": "auto",
+    "claude-dev-experimental.tools.approvalHotkeys": {
+        "enabled": true,
+        "approveKey": "1",
+        "rejectKey": "2"
+    },
+    "claude-dev-experimental.tools.monitorFlags": {
+        "taskHandoff": false,
+        "writeMode": true,
+        "executeMode": true
+    },
+    "claude-dev-experimental.tools.shellBabysitterIdleSeconds": 5,
+    "claude-dev-experimental.tools.shellBabysitterMaxWaitSeconds": 10,
+    "yaml.schemas": {
+        "file:///c%3A/Users/nostalgia/.vscode/extensions/continue.continue-1.2.14-win32-x64/config-yaml-schema.json": [
+            ".continue/**/*.yaml"
+        ]
+    },
+    "kilo-code.debug": false,
+    "kilo-code.allowedCommands": [
+        "git log",
+        "git diff",
+        "git show"
+    ],
+    "kilo-code.deniedCommands": [],
 }

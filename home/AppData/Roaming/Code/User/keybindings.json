@@ -151,18 +151,22 @@
     {
         "key": "ctrl+left",
         "command": "workbench.action.decreaseViewWidth",
+        "when": "editorTextFocus" // Only works when editor has focus
     },
     {
         "key": "ctrl+right",
         "command": "workbench.action.increaseViewWidth",
+        "when": "editorTextFocus" // Only works when editor has focus
     },
     {
         "key": "ctrl+up",
         "command": "workbench.action.decreaseViewHeight",
+        "when": "editorTextFocus" // Only works when editor has focus
     },
     {
         "key": "ctrl+down",
         "command": "workbench.action.increaseViewHeight",
+        "when": "editorTextFocus" // Only works when editor has focus
     },
     // Buffer Switch
     {
