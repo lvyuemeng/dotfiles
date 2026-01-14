@@ -1,6 +1,6 @@
 #!/bin/bash
-# For preparation of chezmoi init only
-# installation of rage
+
+# Installation of Rage
 set -euo pipefail
 
 readonly RELEASE_VERSION="v0.11.1"
