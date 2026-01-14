@@ -1,6 +1,6 @@
 # Profiles Config for Clash Verge
 
-current: RzCWfAFvTeXa
+current: R8gZjmES6YI5
 items:
 - uid: Merge
   type: merge
@@ -45,12 +45,12 @@ items:
   url: https://www.xrayvip.com/free.yaml
   selected:
   - name: 🚀 节点选择
-    now: "【机场推荐：https://a0a.xyz/】8\r"
+    now: ♻️ 自动选择
   - name: 🔰 节点选择
     now: xx|14c9|puddincat07@Telegram
   - name: ♻️ 自动选择
-    now: 【机场推荐：https://a0a.xyz/】100
-  updated: 1767319256
+    now: 【机场推荐：https://a0a.xyz/】13
+  updated: 1768353648
   option:
     with_proxy: false
     self_proxy: false
@@ -98,7 +98,7 @@ items:
     now: ♻ 自动选择
   - name: ♻️ 自动选择
     now: tr|3367|puddincat07@Telegram
-  updated: 1767319258
+  updated: 1768353648
   option:
     update_interval: 1440
     allow_auto_update: true
@@ -142,10 +142,10 @@ items:
   - name: 🚀 节点选择
     now: 🚀 手动切换
   - name: 🚀 手动切换
-    now: 🇺🇸US_2|1.1MB/s
+    now: 🇩🇪DE_5|2.5MB/s
   - name: ♻️ 自动选择
     now: 🇳🇱NL_3|1.9MB/s
-  updated: 1767319255
+  updated: 1768353645
   option:
     with_proxy: false
     self_proxy: false
@@ -188,10 +188,10 @@ items:
   url: https://gh-proxy.org/raw.githubusercontent.com/PuddinCat/BestClash/refs/heads/main/proxies.yaml
   selected:
   - name: 🔰 节点选择
-    now: xx|df58|puddincat07@Telegram
+    now: xx|f8ad|puddincat07@Telegram
   - name: ♻️ 自动选择
-    now: xx|0df1|puddincat07@Telegram
-  updated: 1767319255
+    now: gb|1593|puddincat07@Telegram
+  updated: 1768353649
   option:
     with_proxy: false
     self_proxy: false
@@ -239,12 +239,12 @@ items:
   - name: 🚀 节点选择
     now: 🚀 手动切换
   - name: Haita Cloud
-    now: 官网地址https://kelayun.notepin.co
+    now: 不限速不限设备
   - name: 🔰 节点选择
-    now: us|607a|puddincat07@Telegram
+    now: kr|71a5|puddincat07@Telegram
   - name: 自动选择
     now: 官网地址https://kelayun.notepin.co
-  updated: 1767319252
+  updated: 1768353648
   option:
     with_proxy: false
     self_proxy: false
@@ -289,7 +289,7 @@ items:
   selected:
   - name: 🚀 节点选择
     now: 🇬🇧 GB英国
-  updated: 1767319255
+  updated: 1768353645
   option:
     with_proxy: false
     self_proxy: false
@@ -330,7 +330,12 @@ items:
   file: RX0QsdMN538J.yaml
   desc: ''
   url: https://gh-proxy.org//https://raw.githubusercontent.com/ts-sf/fly/main/clash
-  updated: 1767319255
+  selected:
+  - name: 🚀 节点选择
+    now: 🇺🇲 美国节点
+  - name: 🚀 手动切换
+    now: 🇸🇬SG_3|1.7MB/s
+  updated: 1768353648
   option:
     with_proxy: false
     self_proxy: false

@@ -7,7 +7,7 @@
 version = "1"
 
 [groups]
-all = ["lib","depic","vivaldi"]
+all = ["lib", "depic", "affair", "vivaldi"]
 
 [default]
 repository = {{ quote $repo }}
@@ -61,6 +61,19 @@ tag = ["tag:Depic"]
 
 [depic.restore]
 target = ["$Depic"]
+
+[affair]
+inherit = "default"
+
+[affair.backup]
+tag = ["tag:Affair"]
+source = ["$Affair"]
+
+[affair.snapshots]
+tag = ["tag:Addair"]
+
+[affair.restore]
+target = ["$Affair"]
 
 [vivaldi]
 inherit = "default"
