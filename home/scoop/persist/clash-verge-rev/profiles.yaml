@@ -55,7 +55,7 @@ items:
     download: 41779198033920
     total: 1073740786892800
     expire: 4102329600
-  updated: 1770430704
+  updated: 1771032511
   option:
     with_proxy: false
     self_proxy: false
@@ -103,7 +103,7 @@ items:
     now: ♻ 自动选择
   - name: ♻️ 自动选择
     now: tr|3367|puddincat07@Telegram
-  updated: 1770388547
+  updated: 1770975020
   option:
     update_interval: 1440
     allow_auto_update: true
@@ -147,10 +147,10 @@ items:
   - name: 🚀 节点选择
     now: 🚀 手动切换
   - name: 🚀 手动切换
-    now: 🇺🇸US_15|3.1MB/s
+    now: 🇫🇷FR_2|1.6MB/s
   - name: ♻️ 自动选择
     now: 🇳🇱NL_3|1.9MB/s
-  updated: 1770430704
+  updated: 1771032511
   option:
     with_proxy: false
     self_proxy: false
@@ -196,7 +196,7 @@ items:
     now: xx|f8ad|puddincat07@Telegram
   - name: ♻️ 自动选择
     now: gb|1593|puddincat07@Telegram
-  updated: 1770430704
+  updated: 1771032512
   option:
     with_proxy: false
     self_proxy: false
@@ -244,12 +244,12 @@ items:
   - name: 🚀 节点选择
     now: 🚀 手动切换
   - name: Haita Cloud
-    now: 最低月付2块钱1000G流量
+    now: 购买地址https://kelayun.notepin.co
   - name: 🔰 节点选择
     now: kr|71a5|puddincat07@Telegram
   - name: 自动选择
     now: 官网地址https://kelayun.notepin.co
-  updated: 1770430724
+  updated: 1770994358
   option:
     with_proxy: false
     self_proxy: false
@@ -294,7 +294,7 @@ items:
   selected:
   - name: 🚀 节点选择
     now: 🇬🇧 GB英国
-  updated: 1770388552
+  updated: 1770707622
   option:
     with_proxy: false
     self_proxy: false
@@ -340,7 +340,7 @@ items:
     now: 🇺🇲 美国节点
   - name: 🚀 手动切换
     now: 🇸🇬SG_3|1.7MB/s
-  updated: 1770430704
+  updated: 1771032511
   option:
     with_proxy: false
     self_proxy: false
