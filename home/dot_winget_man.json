@@ -1,6 +1,6 @@
 {
 	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate" : "2026-01-14T10:43:54.514-00:00",
+	"CreationDate" : "2026-02-14T10:15:41.149-00:00",
 	"Sources" : 
 	[
 		{
@@ -8,6 +8,9 @@
 			[
 				{
 					"PackageIdentifier" : "GnuPG.GnuPG"
+				},
+				{
+					"PackageIdentifier" : "GnuPG.Gpg4win"
 				},
 				{
 					"PackageIdentifier" : "Mozilla.Firefox.en-CA"
@@ -34,28 +37,22 @@
 					"PackageIdentifier" : "Eassos.DiskGenius"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
-				},
-				{
 					"PackageIdentifier" : "GitHub.cli"
 				},
 				{
-					"PackageIdentifier" : "Nvidia.PhysX"
+					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
 				},
 				{
 					"PackageIdentifier" : "EpicGames.EpicGamesLauncher"
+				},
+				{
+					"PackageIdentifier" : "Nvidia.PhysX"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.PowerShell"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.GameInput"
-				},
-				{
-					"PackageIdentifier" : "Neovim.Neovim"
-				},
-				{
-					"PackageIdentifier" : "GnuPG.Gpg4win"
 				},
 				{
 					"PackageIdentifier" : "LLVM.LLVM"
@@ -88,10 +85,10 @@
 					"PackageIdentifier" : "Intel.IntelDriverAndSupportAssistant"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2005.x86"
+					"PackageIdentifier" : "Microsoft.DotNet.SDK.9"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.SDK.9"
+					"PackageIdentifier" : "Microsoft.VCRedist.2005.x86"
 				},
 				{
 					"PackageIdentifier" : "MartiCliment.UniGetUI"
@@ -100,10 +97,10 @@
 					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.VCRedist.2008.x86"
+					"PackageIdentifier" : "Microsoft.DotNet.Runtime.8"
 				},
 				{
-					"PackageIdentifier" : "Microsoft.DotNet.Runtime.8"
+					"PackageIdentifier" : "Microsoft.VCRedist.2008.x86"
 				},
 				{
 					"PackageIdentifier" : "Microsoft.VCRedist.2013.x86"
@@ -152,6 +149,9 @@
 				},
 				{
 					"PackageIdentifier" : "Microsoft.WindowsTerminal"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WSL"
 				}
 			],
 			"SourceDetails" : 

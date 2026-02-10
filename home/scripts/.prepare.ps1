@@ -6,7 +6,7 @@ if (Get-Command "rage" -ErrorAction SilentlyContinue) {
 	exit 0
 } 
 
-& ([scriptblock]::Create((Invoke-RestMethod "https://codeberg.org/nostalgia/SysKit-Win/raw/branch/master/scoop-install.ps1"))) -Source proxy
+Invoke-WebRequest "https://gh-proxy.com/https://raw.githubusercontent.com/lvyuemeng/scoop-cn/master/installer.ps1" | Invoke-Expression
 & scoop install spc/rage
 
 Write-Host "rage installed."
