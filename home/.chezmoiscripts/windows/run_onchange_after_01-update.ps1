@@ -3,8 +3,8 @@
 # {{ now | date "2006-01-02" }}
 Write-Host "updating scoop manifests..."
 
-# overwrite >
-& scoop export > $HOME/.scoop_man.json
-& winget export -o $HOME/.winget_man.json
+# Export installed packages to ~/.config/scoop/export.json and ~/.config/winget/export.json
+& scoop export > $HOME/.config/scoop/export.json
+& winget export -o $HOME/.config/winget/export.json
 
 Write-Host "done."

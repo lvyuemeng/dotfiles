@@ -1,0 +1,52 @@
+# Install Nerd Fonts
+# This script uses the official nerd-fonts install script
+
+$fonts = @("0xProto")
+
+Write-Host "Installing Nerd Fonts..."
+
+# Check if already installed (simplified check)
+$fontDir = "$env:LOCALAPPDATA\Microsoft\Windows\Fonts"
+if (Test-Path $fontDir) {
+    $existingFonts = Get-ChildItem $fontDir -Filter "*.ttf" -ErrorAction SilentlyContinue
+    $alreadyInstalled = $true
+    foreach ($font in $fonts) {
+        if ($existingFonts.Name -like "*$font*") {
+            Write-Host "  $font already installed"
+        } else {
+            $alreadyInstalled = $false
+            break
+        }
+    }
+    if ($alreadyInstalled) {
+        Write-Host "All fonts already installed"
+        exit 0
+    }
+}
+
+# Download install script
+$scriptUrl = "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/refs/heads/master/install.ps1"
+$tempScript = "$env:TEMP\nerd-fonts-install.ps1"
+
+Write-Host "Downloading nerd-fonts install script..."
+try {
+    Invoke-WebRequest -Uri $scriptUrl -OutFile $tempScript -UseBasicParsing
+} catch {
+    Write-Error "Failed to download install script: $_"
+    exit 1
+}
+
+# Install fonts
+Write-Host "Installing fonts: $($fonts -join ', ')"
+foreach ($font in $fonts) {
+    Write-Host "  Installing $font..."
+    & $tempScript $font
+    if ($LASTEXITCODE -ne 0) {
+        Write-Warning "Failed to install $font"
+    }
+}
+
+# Cleanup
+Remove-Item $tempScript -ErrorAction SilentlyContinue
+
+Write-Host "Font installation complete."

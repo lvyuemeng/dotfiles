@@ -6,9 +6,5 @@
     // },
     "network": {
         "downloader": "do"
-    },
-    "experimentalFeatures": {
-        "fonts": true,
-        "listDetails": true
     }
 }

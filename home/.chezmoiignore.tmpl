@@ -1,30 +1,28 @@
-# entry key 
+# encryption key
 key.txt.rage
 
-# OS specific
+# OS-specific scripts
 {{ if ne .chezmoi.os "linux" }}
-
 .chezmoiscripts/linux/**/*
-
 {{ end }}
+
 {{ if ne .chezmoi.os "windows" }}
-
 .chezmoiscripts/windows/**/*
-
 {{ end }}
 
+# Windows paths (exclude on Unix)
 {{ if eq .chezmoi.os "windows" }}
-
 .font/
 .config/nvim/
 .config/fish/
+{{ end }}
 
-{{ else }}
-
+# Unix paths (exclude on Windows)
+{{ if ne .chezmoi.os "windows" }}
 AppData/
 OneDrive/
 .config/scoop/
+.config/winget/
 scoop/
 .wslconfig
-
 {{ end }}

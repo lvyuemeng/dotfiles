@@ -1,12 +1,63 @@
 enabled_roles:
   - base
+  - dev
+  - backup
+  - utils
 
 roles:
   base:
     scoop:
       - name: "7zip"
-  #  winget:
-  #   Microsoft.PowerShell:
-  #    - name: "PowerShell"
-  #      args: "-i"
-  
+      - name: "git"
+      - name: "starship"
+      - name: "rage"
+      - name: "neovim"
+      - name: "aria2"
+      - name: "bat"
+      - name: "fd"
+      - name: "fzf"
+      - name: "ripgrep"
+      - name: "tree-sitter"
+      - name: "scoop-search"
+      - name: "eget"
+    winget:
+      - name: "Microsoft.PowerToys"
+      - name: "Microsoft.PowerShell"
+      - name: "MartiCliment.UniGetUI"
+      - name: "Microsoft.VisualStudioCode"
+      - name: "Microsoft.WindowsTerminal"
+      - name: "GitHub.cli"
+
+  dev:
+    scoop:
+      - name: "just"
+      - name: "aqua"
+      - name: "pixi"
+      - name: "hugo-extended"
+      - name: "aichat"
+      - name: "opencode"
+    winget:
+      - name: "Rustlang.Rustup"
+      - name: "LLVM.LLVM"
+
+  runtime:
+    winget:
+      - name: "JetBrains.Toolbox"
+      - name: "Microsoft.DotNet.SDK.9"
+      - name: "Microsoft.DotNet.AspNetCore.8"
+      - name: "Microsoft.DotNet.DesktopRuntime.8"
+      - name: "Microsoft.DotNet.Runtime.8"
+
+  backup:
+    scoop:
+      - name: "restic"
+      - name: "resticprofile"
+      - name: "openlist"
+
+  utils:
+    scoop:
+      - name: "clash-verge-rev"
+      - name: "pot"
+    winget:
+      - name: "Anki.Anki"
+      - name: "DigitalScholar.Zotero"

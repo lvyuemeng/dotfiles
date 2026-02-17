@@ -1,4 +1,6 @@
-global:
-  proxy:
-    geph_proxy: "127.0.0.1:9910"
-    clash_proxy: "127.0.0.1:7897"
+# Global configuration for dotfiles
+
+# Mirror proxy for GitHub downloads (leave empty to disable)
+# Example: "https://gh-proxy.com"
+mirror:
+  github: "https://gh-proxy.com"

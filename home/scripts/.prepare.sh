@@ -34,7 +34,7 @@ DOWNLOAD_URL="${BASE_URL}/${FILE_NAME}"
 
 echo "Downloading rage for ${ARCH} from ${DOWNLOAD_URL}..."
 if curl -fsSL "${DOWNLOAD_URL}" | tar -xzf - -C /tmp; then
-	if [ -f "tmp/rage" ]; then
+	if [ -f "/tmp/rage" ]; then
 		echo "Moving rage to ${INSTALL_DIR}"
 		sudo mv /tmp/rage  "${INSTALL_DIR}/rage"
 	else

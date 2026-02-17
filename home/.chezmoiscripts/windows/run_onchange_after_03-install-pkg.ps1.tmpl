@@ -1,4 +1,11 @@
 # pkgs hash: {{ include ".chezmoidata/pkgs.yml" | sha256sum }}
+# mirror: {{ .mirror.github }}
+
+{{- $mirror := .mirror.github -}}
+{{- if $mirror }}
+# GitHub mirror enabled: {{ $mirror }}
+$env:GITHUB_MIRROR = "{{ $mirror }}"
+{{- end }}
 
 Write-Host "Installing packages..."
 
@@ -15,10 +22,11 @@ if ($LASTEXITCODE -ne 0) { Write-Error "Failed to install {{ $pkg.name }}" }
     {{- with (index $.roles $role "winget") }}
         {{- range $pkg := . }}
 
-& winget install {{ $pkg.name }} {{ with (index $pkg "args") }}{{ . }}{{ end }} 
+& winget install --silent --accept-source-agreements --accept-package-agreements {{ $pkg.name }} {{ with (index $pkg "args") }}{{ . }}{{ end }}
 if ($LASTEXITCODE -ne 0) { Write-Error "Failed to install {{ $pkg.name }}" }
 
         {{- end }}
     {{- end }}
 {{- end }}
-    
+
+Write-Host "Package installation complete."
