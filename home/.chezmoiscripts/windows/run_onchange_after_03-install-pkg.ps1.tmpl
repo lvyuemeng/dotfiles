@@ -1,11 +1,5 @@
+# Install pkgs
 # pkgs hash: {{ include ".chezmoidata/pkgs.yml" | sha256sum }}
-# mirror: {{ .mirror.github }}
-
-{{- $mirror := .mirror.github -}}
-{{- if $mirror }}
-# GitHub mirror enabled: {{ $mirror }}
-$env:GITHUB_MIRROR = "{{ $mirror }}"
-{{- end }}
 
 Write-Host "Installing packages..."
 

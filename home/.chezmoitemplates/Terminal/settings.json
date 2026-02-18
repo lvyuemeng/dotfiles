@@ -14,16 +14,16 @@
             "id": "User.paste"
         },
         {
-            "command": "find",
-            "id": "User.find"
-        },
-        {
             "command": {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
             },
             "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
         }
     ],
     "autoHideWindow": false,
@@ -33,24 +33,28 @@
     "experimental.enableColorSelection": false,
     "keybindings": [
         {
-            "id": "Terminal.ScrollUp",
-            "keys": "ctrl+shift+k"
+            "id": "Terminal.ScrollDownPage",
+            "keys": "ctrl+shift+d"
         },
         {
             "id": null,
             "keys": "ctrl+shift+tab"
         },
         {
-            "id": "Terminal.ScrollDownPage",
-            "keys": "ctrl+shift+d"
+            "id": "Terminal.ScrollUp",
+            "keys": "ctrl+shift+k"
         },
         {
             "id": null,
             "keys": "ctrl+shift+3"
         },
         {
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        },
+        {
             "id": null,
-            "keys": "ctrl+minus"
+            "keys": "ctrl+plus"
         },
         {
             "id": "Terminal.SelectAll",
@@ -58,11 +62,7 @@
         },
         {
             "id": null,
-            "keys": "ctrl+plus"
-        },
-        {
-            "id": "User.splitPane.A6751878",
-            "keys": "alt+shift+d"
+            "keys": "ctrl+minus"
         },
         {
             "id": null,
@@ -73,64 +73,64 @@
             "keys": "alt+shift+up"
         },
         {
-            "id": "Terminal.MoveFocusRight",
-            "keys": "alt+shift+i"
-        },
-        {
             "id": "Terminal.OpenNewWindow",
             "keys": "ctrl+alt+n"
         },
         {
-            "id": "Terminal.ResizePaneDown",
-            "keys": "alt+shift+down"
+            "id": "Terminal.MoveFocusRight",
+            "keys": "alt+shift+i"
         },
         {
             "id": null,
             "keys": "ctrl+tab"
         },
         {
-            "id": "Terminal.OpenNewTabProfile4",
-            "keys": "ctrl+alt+5"
+            "id": "Terminal.ResizePaneDown",
+            "keys": "alt+shift+down"
         },
         {
-            "id": "Terminal.ResizePaneRight",
-            "keys": "alt+shift+right"
+            "id": "Terminal.OpenNewTabProfile4",
+            "keys": "ctrl+alt+5"
         },
         {
             "id": null,
             "keys": "ctrl+shift+c"
         },
         {
-            "id": "Terminal.OpenNewTabProfile0",
-            "keys": "ctrl+alt+1"
+            "id": "Terminal.ResizePaneRight",
+            "keys": "alt+shift+right"
         },
         {
-            "id": "Terminal.ResizePaneLeft",
-            "keys": "alt+shift+left"
+            "id": "Terminal.OpenNewTabProfile0",
+            "keys": "ctrl+alt+1"
         },
         {
             "id": "Terminal.IncreaseFontSize",
             "keys": "ctrl+shift+plus"
         },
         {
-            "id": "Terminal.OpenSystemMenu",
-            "keys": "ctrl+space"
+            "id": "Terminal.ResizePaneLeft",
+            "keys": "alt+shift+left"
         },
         {
             "id": "Terminal.SwitchToTab0",
             "keys": "alt+shift+1"
         },
         {
-            "id": "Terminal.DecreaseFontSize",
-            "keys": "ctrl+shift+minus"
+            "id": "Terminal.OpenSystemMenu",
+            "keys": "ctrl+space"
+        },
+        {
+            "id": "Terminal.OpenNewTabProfile6",
+            "keys": "ctrl+alt+7"
         },
         {
             "id": "Terminal.OpenNewTabProfile3",
             "keys": "ctrl+alt+4"
         },
         {
-            "id": "Terminal.OpenNewTabProfile6",
-            "keys": "ctrl+alt+7"
+            "id": "Terminal.DecreaseFontSize",
+            "keys": "ctrl+shift+minus"
         },
         {
             "id": "Terminal.SwitchToTab1",
@@ -141,12 +141,12 @@
             "keys": "alt+shift+n"
         },
         {
-            "id": null,
-            "keys": "alt+space"
-        },
-        {
             "id": "Terminal.DuplicatePaneRight",
             "keys": "alt+shift+plus"
+        },
+        {
+            "id": null,
+            "keys": "alt+space"
         },
         {
             "id": "Terminal.DuplicatePaneDown",
@@ -166,11 +166,11 @@
         },
         {
             "id": null,
-            "keys": "ctrl+shift+pgup"
+            "keys": "ctrl+shift+pgdn"
         },
         {
             "id": null,
-            "keys": "ctrl+shift+pgdn"
+            "keys": "ctrl+shift+pgup"
         },
         {
             "id": null,
@@ -250,19 +250,19 @@
         },
         {
             "id": null,
-            "keys": "ctrl+shift+5"
-        },
-        {
-            "id": null,
             "keys": "ctrl+shift+2"
         },
         {
-            "id": "Terminal.SwitchToTab5",
-            "keys": "alt+shift+6"
+            "id": null,
+            "keys": "ctrl+shift+5"
         },
         {
             "id": "Terminal.OpenSettingsUI",
             "keys": "ctrl+shift+comma"
+        },
+        {
+            "id": "Terminal.SwitchToTab5",
+            "keys": "alt+shift+6"
         },
         {
             "id": "Terminal.OpenNewTabProfile5",
@@ -409,12 +409,6 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
-                "hidden": false,
-                "name": "Git Bash",
-                "source": "Git"
-            },
-            {
                 "guid": "{07369236-5fa3-593a-82f9-db84a73b1f79}",
                 "hidden": false,
                 "name": "Developer Command Prompt for VS 2022",
@@ -427,16 +421,17 @@
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
-                "guid": "{34b14d5e-a2f3-5890-9689-285a4b0fb74b}",
-                "hidden": false,
-                "name": "openSUSE-Tumbleweed",
-                "source": "Microsoft.WSL"
-            },
-            {
                 "guid": "{d83b884d-8731-575a-83d6-c6554ff098e6}",
                 "hidden": false,
                 "name": "SSH - github.com",
                 "source": "Windows.Terminal.SSH"
+            },
+            {
+                "guid": "{33e0da2b-ee25-5387-8a37-253bef89f6aa}",
+                "hidden": false,
+                "icon": "E:\\iso\\wsl\\opensuse\\shortcut.ico",
+                "name": "tumbleweed",
+                "source": "Microsoft.WSL"
             }
         ]
     },

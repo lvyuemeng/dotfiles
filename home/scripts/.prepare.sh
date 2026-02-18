@@ -11,7 +11,7 @@ readonly INSTALL_DIR="/usr/local/bin"
 # ---
 
 if command -v rage &> /dev/null; then
-	echo "rage is installed"
+	echo "rage is already installed"
 	exit 0
 fi
 
@@ -29,19 +29,18 @@ case "$ARCH" in
         exit 1
         ;;
 esac
-	
+
 DOWNLOAD_URL="${BASE_URL}/${FILE_NAME}"
+TEMP_DIR=$(mktemp -d)
 
 echo "Downloading rage for ${ARCH} from ${DOWNLOAD_URL}..."
-if curl -fsSL "${DOWNLOAD_URL}" | tar -xzf - -C /tmp; then
-	if [ -f "/tmp/rage" ]; then
-		echo "Moving rage to ${INSTALL_DIR}"
-		sudo mv /tmp/rage  "${INSTALL_DIR}/rage"
-	else
-		echo "Error: rage executable not found in the download archive"
-		exit 1
-	fi
+if curl -fsSL "${DOWNLOAD_URL}" | tar -xzf - -C "${TEMP_DIR}"; then
+	# The tarball extracts to a directory, move everything from that directory
+	sudo mv "${TEMP_DIR}"/*/* "${INSTALL_DIR}/"
+	echo "Installation complete!"
+	rm -rf "${TEMP_DIR}"
 else
 	echo "Error: Failed to download or extract the archive"
+	rm -rf "${TEMP_DIR}"
 	exit 1
 fi

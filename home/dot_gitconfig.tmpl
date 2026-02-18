@@ -31,10 +31,16 @@
 [receive]
 	fsckObjects = true
 # credenence cache
+{{- if eq .chezmoi.os "windows" }}
 [credential]
-	helper = manager
-[credential "helperselector"]
-	selected = manager
+    helper = manager
+{{- else if eq .chezmoi.os "darwin" }}
+[credential]
+    helper = osxkeychain
+{{- else if eq .chezmoi.os "linux" }}
+[credential]
+    helper = cache --timeout=7200
+{{- end }}
 [credential "https://codeberg.org"]
 	provider = generic
 
