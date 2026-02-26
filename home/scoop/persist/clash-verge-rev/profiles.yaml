@@ -1,6 +1,6 @@
 # Profiles Config for Clash Verge
 
-current: R676f6Ss0Sjy
+current: R8gZjmES6YI5
 items:
 - uid: Merge
   type: merge
@@ -55,7 +55,7 @@ items:
     download: 41779198033920
     total: 1073740786892800
     expire: 4102329600
-  updated: 1772029327
+  updated: 1772069797
   option:
     with_proxy: false
     self_proxy: false
@@ -66,52 +66,6 @@ items:
     rules: rpai4sJId1bk
     proxies: pSv6Mivkj8LR
     groups: gnq77WchVAFz
-- uid: mEqIIP7vDEsF
-  type: merge
-  name: null
-  file: mEqIIP7vDEsF.yaml
-  updated: 1757385964
-- uid: s9p3hAGop1aa
-  type: script
-  name: null
-  file: s9p3hAGop1aa.js
-  updated: 1757385964
-- uid: r0NR7tnSLk13
-  type: rules
-  name: null
-  file: r0NR7tnSLk13.yaml
-  updated: 1757385964
-- uid: pJWKr3eLRYV8
-  type: proxies
-  name: null
-  file: pJWKr3eLRYV8.yaml
-  updated: 1757385964
-- uid: gCx0PsY8JBWW
-  type: groups
-  name: null
-  file: gCx0PsY8JBWW.yaml
-  updated: 1757385964
-- uid: RJ22OWYRJ1Gs
-  type: remote
-  name: sub
-  file: RJ22OWYRJ1Gs.yaml
-  url: https://api.wcc.best/sub?target=clash&url=https:%2F%2Fproxy.v2gh.com%2Fhttps:%2F%2Fraw.githubusercontent.com%2FPawdroid%2FFree-servers%2Fmain%2Fsub&insert=false&config=https:%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online.ini&emoji=true&list=false&tfo=false&scv=true&fdn=false&expand=true&sort=false&new_name=true
-  selected:
-  - name: 🚀 节点选择
-    now: 🇯🇵 日本节点
-  - name: 🚀 选择代理
-    now: ♻ 自动选择
-  - name: ♻️ 自动选择
-    now: tr|3367|puddincat07@Telegram
-  updated: 1772029331
-  option:
-    update_interval: 1440
-    allow_auto_update: true
-    merge: mEqIIP7vDEsF
-    script: s9p3hAGop1aa
-    rules: r0NR7tnSLk13
-    proxies: pJWKr3eLRYV8
-    groups: gCx0PsY8JBWW
 - uid: m17flY2wkJGN
   type: merge
   name: null
@@ -147,10 +101,10 @@ items:
   - name: 🚀 节点选择
     now: 🚀 手动切换
   - name: 🚀 手动切换
-    now: 🇫🇷FR_3|3.2MB/s
+    now: 🇰🇷KR_1|2.4MB/s
   - name: ♻️ 自动选择
     now: 🇳🇱NL_3|1.9MB/s
-  updated: 1772029325
+  updated: 1772069826
   option:
     with_proxy: false
     self_proxy: false
@@ -193,10 +147,10 @@ items:
   url: https://gh-proxy.org/raw.githubusercontent.com/PuddinCat/BestClash/refs/heads/main/proxies.yaml
   selected:
   - name: 🔰 节点选择
-    now: sg|34fe|puddincat07@Telegram
+    now: xx|b2a2|puddincat07@Telegram
   - name: ♻️ 自动选择
     now: gb|1593|puddincat07@Telegram
-  updated: 1772029326
+  updated: 1772069814
   option:
     with_proxy: false
     self_proxy: false
@@ -249,7 +203,7 @@ items:
     now: kr|71a5|puddincat07@Telegram
   - name: 自动选择
     now: 官网地址https://kelayun.notepin.co
-  updated: 1772029324
+  updated: 1772069797
   option:
     with_proxy: false
     self_proxy: false
@@ -294,7 +248,7 @@ items:
   selected:
   - name: 🚀 节点选择
     now: 🇬🇧 GB英国
-  updated: 1772029324
+  updated: 1772069828
   option:
     with_proxy: false
     self_proxy: false
@@ -340,7 +294,7 @@ items:
     now: 🇺🇲 美国节点
   - name: 🚀 手动切换
     now: 🇸🇬SG_3|1.7MB/s
-  updated: 1772029324
+  updated: 1772069797
   option:
     with_proxy: false
     self_proxy: false

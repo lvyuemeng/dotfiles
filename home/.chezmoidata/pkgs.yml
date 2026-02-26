@@ -20,6 +20,7 @@ roles:
       - name: "tree-sitter"
       - name: "scoop-search"
       - name: "eget"
+      - name: "just"
     winget:
       - name: "Microsoft.PowerToys"
       - name: "Microsoft.PowerShell"
@@ -30,7 +31,6 @@ roles:
 
   dev:
     scoop:
-      - name: "just"
       - name: "aqua"
       - name: "pixi"
       - name: "hugo-extended"
