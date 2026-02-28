@@ -11,7 +11,7 @@
       packages.${system}.default = pkgs.buildEnv {
         name = "my-packages";
         paths = with pkgs; [
-          # List your packages here
+          # coreutils
           git
           starship
           neovim
@@ -21,8 +21,12 @@
           fzf
           fd
           ripgrep
-          eget
           just
+          eget
+          # fonts
+          maple-mono.truetype
+          maple-mono.NF-unhinted
+          maple-mono.NF-CN-unhinted
         ];
       };
     };

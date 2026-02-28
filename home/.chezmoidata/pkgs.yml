@@ -21,6 +21,9 @@ roles:
       - name: "scoop-search"
       - name: "eget"
       - name: "just"
+      - name: "Maple-Mono"
+      - name: "Maple-Mono-NF"
+      - name: "Maple-Mono-NF-CN"
     winget:
       - name: "Microsoft.PowerToys"
       - name: "Microsoft.PowerShell"

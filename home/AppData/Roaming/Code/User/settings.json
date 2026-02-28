@@ -57,10 +57,10 @@
         },
     },
     // Font
-    "editor.codeLensFontFamily": "\"0xProto Nerd Font Mono\"",
-    "editor.fontFamily": "\"0xProto Nerd Font Mono\"",
+    "editor.codeLensFontFamily": "\"Maple Mono\"",
+    "editor.fontFamily": "\"Maple Mono\"",
+    "terminal.integrated.fontFamily": "\"Maple Mono\"",
     "terminal.integrated.fontWeight": "bold",
-    "terminal.integrated.fontFamily": "\"0xProto Nerd Font Mono\"",
     // Workbench
     "workbench.colorTheme": "Atom One Dark",
     "workbench.iconTheme": "material-icon-theme",

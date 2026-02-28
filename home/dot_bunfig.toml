@@ -1,2 +1,2 @@
 [install]
-registry = "https://npmreg.proxy.ustclug.org/"
+registry = "https://registry.npmmirror.com/"
