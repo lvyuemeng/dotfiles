@@ -30,20 +30,22 @@
 	fsckObjects = true
 [receive]
 	fsckObjects = true
-# credenence cache
-{{- if eq .chezmoi.os "windows" }}
-[credential]
-    helper = manager
-{{- else if eq .chezmoi.os "darwin" }}
-[credential]
-    helper = osxkeychain
-{{- else if eq .chezmoi.os "linux" }}
-[credential]
-    helper = cache --timeout=7200
-{{- end }}
-[credential "https://codeberg.org"]
-	provider = generic
 
 # == net ==
 [http]
 sslverify = false
+# credenence cache
+[credential]
+{{- if eq .chezmoi.os "windows" }}
+	helper = wincred 
+{{- else if eq .chezmoi.os "darwin" }}
+	helper = osxkeychain
+{{- else if eq .chezmoi.os "linux" }}
+	helper = cache --timeout=7200
+{{- end }}
+{{- if eq .chezmoi.os "windows" }}
+[credential "helperselector"]
+	selected = wincred
+{{- end }}
+[credential "https://codeberg.org"]
+	provider = generic

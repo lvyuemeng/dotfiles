@@ -299,11 +299,6 @@
     },
     "claude-dev-experimental.tools.shellBabysitterIdleSeconds": 5,
     "claude-dev-experimental.tools.shellBabysitterMaxWaitSeconds": 10,
-    "yaml.schemas": {
-        "file:///c%3A/Users/nostalgia/.vscode/extensions/continue.continue-1.2.14-win32-x64/config-yaml-schema.json": [
-            ".continue/**/*.yaml"
-        ]
-    },
     "kilo-code.debug": false,
     "kilo-code.allowedCommands": [
         "git log",
@@ -311,7 +306,12 @@
         "git show",
         "cd",
         "ls",
-        "Invoke-Pester"
+        "Invoke-Pester",
+        "pwsh",
+        "git tag",
+        "powershell",
+        "dir",
+        "uv"
     ],
     "kilo-code.deniedCommands": [],
     "github.copilot.enable": {
@@ -321,4 +321,8 @@
         "scminput": false
     },
     "github.copilot.nextEditSuggestions.enabled": false,
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "chat.mcp.gallery.enabled": true,
 }

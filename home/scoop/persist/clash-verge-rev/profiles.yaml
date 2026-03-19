@@ -12,60 +12,6 @@ items:
   name: null
   file: Script.js
   updated: 1756019175
-- uid: m3CgeDRg54DS
-  type: merge
-  name: null
-  file: m3CgeDRg54DS.yaml
-  updated: 1756019786
-- uid: sy0eKcY3HAZS
-  type: script
-  name: null
-  file: sy0eKcY3HAZS.js
-  updated: 1756019786
-- uid: rpai4sJId1bk
-  type: rules
-  name: null
-  file: rpai4sJId1bk.yaml
-  updated: 1756019786
-- uid: pSv6Mivkj8LR
-  type: proxies
-  name: null
-  file: pSv6Mivkj8LR.yaml
-  updated: 1756019786
-- uid: gnq77WchVAFz
-  type: groups
-  name: null
-  file: gnq77WchVAFz.yaml
-  updated: 1756019786
-- uid: R1QMFvhUmDSO
-  type: remote
-  name: free.yaml
-  file: R1QMFvhUmDSO.yaml
-  desc: ''
-  url: https://www.xrayvip.com/free.yaml
-  selected:
-  - name: 🚀 节点选择
-    now: US【机场推荐：https://a0a.xyz】8
-  - name: 🔰 节点选择
-    now: xx|14c9|puddincat07@Telegram
-  - name: ♻️ 自动选择
-    now: 【机场推荐：https://a0a.xyz/】13
-  extra:
-    upload: 4518581
-    download: 41779198033920
-    total: 1073740786892800
-    expire: 4102329600
-  updated: 1772536105
-  option:
-    with_proxy: false
-    self_proxy: false
-    update_interval: 120
-    allow_auto_update: true
-    merge: m3CgeDRg54DS
-    script: sy0eKcY3HAZS
-    rules: rpai4sJId1bk
-    proxies: pSv6Mivkj8LR
-    groups: gnq77WchVAFz
 - uid: m17flY2wkJGN
   type: merge
   name: null
@@ -101,10 +47,10 @@ items:
   - name: 🚀 节点选择
     now: 🚀 手动切换
   - name: 🚀 手动切换
-    now: 🇩🇪DE_1|1.8MB/s
+    now: 🇹🇼TW_1|3.4MB/s
   - name: ♻️ 自动选择
     now: 🇳🇱NL_3|1.9MB/s
-  updated: 1772536105
+  updated: 1773929366
   option:
     with_proxy: false
     self_proxy: false
@@ -147,10 +93,10 @@ items:
   url: https://gh-proxy.org/raw.githubusercontent.com/PuddinCat/BestClash/refs/heads/main/proxies.yaml
   selected:
   - name: 🔰 节点选择
-    now: xx|e48b|puddincat07@Telegram
+    now: xx|9e7d|puddincat07@Telegram
   - name: ♻️ 自动选择
     now: gb|1593|puddincat07@Telegram
-  updated: 1772536106
+  updated: 1773931106
   option:
     with_proxy: false
     self_proxy: false
@@ -198,12 +144,12 @@ items:
   - name: 🚀 节点选择
     now: 🚀 手动切换
   - name: Haita Cloud
-    now: 下单地址https://kelayun.notepin.co
+    now: 19-🇺🇸US-vless-242ms
   - name: 🔰 节点选择
     now: kr|71a5|puddincat07@Telegram
   - name: 自动选择
     now: 官网地址https://kelayun.notepin.co
-  updated: 1772535769
+  updated: 1773931107
   option:
     with_proxy: false
     self_proxy: false
@@ -247,8 +193,8 @@ items:
   url: https://gh-proxy.org/https://raw.githubusercontent.com/ggborr/FREEE-VPN/refs/heads/main/2clash
   selected:
   - name: 🚀 节点选择
-    now: 🇬🇧 GB英国
-  updated: 1772536105
+    now: 🇺🇸 US美国
+  updated: 1773929367
   option:
     with_proxy: false
     self_proxy: false
@@ -294,7 +240,7 @@ items:
     now: 🇺🇲 美国节点
   - name: 🚀 手动切换
     now: 🇸🇬SG_3|1.7MB/s
-  updated: 1772536105
+  updated: 1773929368
   option:
     with_proxy: false
     self_proxy: false
@@ -304,3 +250,91 @@ items:
     rules: rRmZafm16Wwk
     proxies: pCh4xbwWseOr
     groups: gjkHkO3KqD2G
+- uid: mY3wtAG1LwFS
+  type: merge
+  name: null
+  file: mY3wtAG1LwFS.yaml
+  updated: 1773399680
+- uid: sFx2zTnclq0F
+  type: script
+  name: null
+  file: sFx2zTnclq0F.js
+  updated: 1773399680
+- uid: rvzhAziCnBAJ
+  type: rules
+  name: null
+  file: rvzhAziCnBAJ.yaml
+  updated: 1773399680
+- uid: pcGFv8PJJyNg
+  type: proxies
+  name: null
+  file: pcGFv8PJJyNg.yaml
+  updated: 1773399680
+- uid: g0WyTIUds2Ki
+  type: groups
+  name: null
+  file: g0WyTIUds2Ki.yaml
+  updated: 1773399680
+- uid: RrsdrdP7Opk4
+  type: remote
+  name: yudou66.yaml
+  file: RrsdrdP7Opk4.yaml
+  url: https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/yudou66.yaml
+  selected:
+  - name: 🚀 节点选择
+    now: 香港(yudou789.top 玉豆免费节点)_2
+  updated: 1773929367
+  option:
+    allow_auto_update: true
+    merge: mY3wtAG1LwFS
+    script: sFx2zTnclq0F
+    rules: rvzhAziCnBAJ
+    proxies: pcGFv8PJJyNg
+    groups: g0WyTIUds2Ki
+- uid: mKKC6O3s3uUa
+  type: merge
+  name: null
+  file: mKKC6O3s3uUa.yaml
+  updated: 1773672198
+- uid: stJH2KW6KYWy
+  type: script
+  name: null
+  file: stJH2KW6KYWy.js
+  updated: 1773672198
+- uid: rUn9gNynUH4Z
+  type: rules
+  name: null
+  file: rUn9gNynUH4Z.yaml
+  updated: 1773672198
+- uid: pWmpSZxk1hvD
+  type: proxies
+  name: null
+  file: pWmpSZxk1hvD.yaml
+  updated: 1773672198
+- uid: gnXTzvcNvWMM
+  type: groups
+  name: null
+  file: gnXTzvcNvWMM.yaml
+  updated: 1773672198
+- uid: Rwyq1fQ8AvD2
+  type: remote
+  name: 免费节点【日更版】
+  file: Rwyq1fQ8AvD2.yaml
+  url: https://www.xrayvip.com/free.yaml
+  selected:
+  - name: 🚀 节点选择
+    now: HK【机场推荐：https://a9a.xyz】30
+  extra:
+    upload: 4518581
+    download: 41779198033920
+    total: 1073740786892800
+    expire: 4102329600
+  updated: 1773929367
+  option:
+    update_interval: 720
+    allow_auto_update: true
+    merge: mKKC6O3s3uUa
+    script: stJH2KW6KYWy
+    rules: rUn9gNynUH4Z
+    proxies: pWmpSZxk1hvD
+    groups: gnXTzvcNvWMM
