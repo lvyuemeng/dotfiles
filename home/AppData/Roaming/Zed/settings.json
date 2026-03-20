@@ -39,40 +39,20 @@
 		"dark": "Catppuccin Mocha",
 	},
 	"file_types": {
-		"json": [
-			"*.json.tmpl",
-			".*.json.tmpl"
-		],
-		"yml": [
-			"*.yml.tmpl",
-			".*.yml.tmpl"
-		],
-		"shellscript": [
-			"*.sh.tmpl"
-		],
+		"json": ["*.json.tmpl", ".*.json.tmpl"],
+		"yml": ["*.yml.tmpl", ".*.yml.tmpl"],
+		"shellscript": ["*.sh.tmpl"],
 		"gitignore": [
 			"*chezmoiignore*",
 			"*chezmoiremove*",
 			"*gitignore*",
 			"*rgignore*",
 		],
-		"bat": [
-			"*.bat.tmpl"
-		],
-		"toml": [
-			"*.toml.tmpl",
-			".*.toml.tmpl"
-		],
-		"powershell": [
-			"*.ps1.tmpl"
-		],
-		"lua": [
-			"*.lua.tmpl"
-		],
-		"yaml": [
-			"*.ymal.tmpl",
-			".*.ymal.tmpl"
-		],
+		"bat": ["*.bat.tmpl"],
+		"toml": ["*.toml.tmpl", ".*.toml.tmpl"],
+		"powershell": ["*.ps1.tmpl"],
+		"lua": ["*.lua.tmpl"],
+		"yaml": ["*.ymal.tmpl", ".*.ymal.tmpl"],
 	},
 	"colorize_brackets": true,
 	"auto_indent_on_paste": true,

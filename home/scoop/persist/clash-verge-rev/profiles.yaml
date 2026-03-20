@@ -47,10 +47,10 @@ items:
   - name: 🚀 节点选择
     now: 🚀 手动切换
   - name: 🚀 手动切换
-    now: 🇹🇼TW_1|3.4MB/s
+    now: 🇰🇷KR_1|1.5MB/s
   - name: ♻️ 自动选择
     now: 🇳🇱NL_3|1.9MB/s
-  updated: 1773929366
+  updated: 1774057194
   option:
     with_proxy: false
     self_proxy: false
@@ -93,10 +93,10 @@ items:
   url: https://gh-proxy.org/raw.githubusercontent.com/PuddinCat/BestClash/refs/heads/main/proxies.yaml
   selected:
   - name: 🔰 节点选择
-    now: xx|9e7d|puddincat07@Telegram
+    now: cn|4a03|puddincat07@Telegram
   - name: ♻️ 自动选择
     now: gb|1593|puddincat07@Telegram
-  updated: 1773931106
+  updated: 1774073246
   option:
     with_proxy: false
     self_proxy: false
@@ -144,12 +144,12 @@ items:
   - name: 🚀 节点选择
     now: 🚀 手动切换
   - name: Haita Cloud
-    now: 19-🇺🇸US-vless-242ms
+    now: 故障转移
   - name: 🔰 节点选择
     now: kr|71a5|puddincat07@Telegram
   - name: 自动选择
     now: 官网地址https://kelayun.notepin.co
-  updated: 1773931107
+  updated: 1774073245
   option:
     with_proxy: false
     self_proxy: false
@@ -193,8 +193,8 @@ items:
   url: https://gh-proxy.org/https://raw.githubusercontent.com/ggborr/FREEE-VPN/refs/heads/main/2clash
   selected:
   - name: 🚀 节点选择
-    now: 🇺🇸 US美国
-  updated: 1773929367
+    now: 🇺🇸 US177｜机房｜低风险
+  updated: 1774057185
   option:
     with_proxy: false
     self_proxy: false
@@ -240,7 +240,7 @@ items:
     now: 🇺🇲 美国节点
   - name: 🚀 手动切换
     now: 🇸🇬SG_3|1.7MB/s
-  updated: 1773929368
+  updated: 1774020172
   option:
     with_proxy: false
     self_proxy: false
@@ -283,7 +283,7 @@ items:
   selected:
   - name: 🚀 节点选择
     now: 香港(yudou789.top 玉豆免费节点)_2
-  updated: 1773929367
+  updated: 1774057185
   option:
     allow_auto_update: true
     merge: mY3wtAG1LwFS
@@ -329,7 +329,7 @@ items:
     download: 41779198033920
     total: 1073740786892800
     expire: 4102329600
-  updated: 1773929367
+  updated: 1774020170
   option:
     update_interval: 720
     allow_auto_update: true

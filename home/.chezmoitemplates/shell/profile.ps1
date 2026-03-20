@@ -21,10 +21,6 @@ function Initialize-Env {
         Invoke-Expression (& starship init powershell)
         $ENV:STARSHIP_CONFIG = "$HOME\.config\starship.toml"
     }
-    
-    if (Get-Command zoxide -ErrorAction SilentlyContinue) {
-        Invoke-Expression (& { (zoxide init powershell | Out-String) })
-    }
 
     # nvim
     if (Get-Command nvim -ErrorAction SilentlyContinue) {

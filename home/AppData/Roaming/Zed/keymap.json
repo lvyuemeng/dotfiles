@@ -33,22 +33,10 @@
 			"shift-h": "pane::ActivatePreviousItem",
 			"shift-l": "pane::ActivateNextItem",
 			// resize
-			"ctrl-left": [
-				"vim::ResizePaneLeft",
-				"50"
-			],
-			"ctrl-right": [
-				"vim::ResizePaneRight",
-				"50"
-			],
-			"ctrl-up": [
-				"vim::ResizePaneUp",
-				"50"
-			],
-			"ctrl-down": [
-				"vim::ResizePaneDown",
-				"50"
-			],
+			"ctrl-left": ["vim::ResizePaneLeft", "50"],
+			"ctrl-right": ["vim::ResizePaneRight", "50"],
+			"ctrl-up": ["vim::ResizePaneUp", "50"],
+			"ctrl-down": ["vim::ResizePaneDown", "50"],
 		},
 	},
 	{
