@@ -10,9 +10,12 @@
 		"bindings": {},
 	},
 	{
-		"context": "Editor",
+		"context": "Dock || Editor && mode == full && (vim_mode==normal || vim_mode==helix_normal)",
 		"bindings": {
-			"space c f": "editor::Format",
+			"ctrl-h": "workspace::ActivatePaneLeft",
+			"ctrl-l": "workspace::ActivatePaneRight",
+			"ctrl-k": "workspace::ActivatePaneUp",
+			"ctrl-j": "workspace::ActivatePaneDown",
 		},
 	},
 	{
@@ -20,23 +23,43 @@
 		"bindings": {
 			"alt-k": "editor::MoveLineUp",
 			"alt-j": "editor::MoveLineDown",
-			// "space a a": "assistant::InlineAssist"
+			// disable
+			"ctrl-h": null,
 		},
 	},
 	{
 		"context": "Editor && mode==full && (vim_mode==normal || vim_mode==helix_normal)",
 		"bindings": {
+			// Code
+			"space c o": "outline::Toggle",
+			"space c f": "editor::Format",
 			"space c r": "editor::Rename",
 			"space c a": "editor::ToggleCodeActions",
+			// Search
+			"space s f": "buffer_search::Deploy",
+			"space s s": "pane::DeploySearch",
+			// File
 			"space f p": "workspace::CopyPath",
+			"space f e": "project_panel::ToggleFocus",
+			// Panel
+			"space k t": "terminal_panel::Toggle",
+			"space k p": "diagnostics::Deploy",
+			"space k P": "diagnostics::DeployCurrentFile",
+			"space k d": "debug_panel::ToggleFocus",
+			"space k a": "agent::ToggleFocus",
+			// Git
+			"space g g": "git_panel::ToggleFocus",
+			"space g c": "git::CheckoutBranch",
+			// Fold
+			"space z c": "editor::Fold",
+			"space z o": "editor::UnfoldLines",
+			"space z a": "editor::ToggleFold",
 			// Buffer
 			"shift-h": "pane::ActivatePreviousItem",
 			"shift-l": "pane::ActivateNextItem",
-			// resize
-			"ctrl-left": ["vim::ResizePaneLeft", "50"],
-			"ctrl-right": ["vim::ResizePaneRight", "50"],
-			"ctrl-up": ["vim::ResizePaneUp", "50"],
-			"ctrl-down": ["vim::ResizePaneDown", "50"],
+			"[ b": "pane::ActivatePreviousItem",
+			"] b": "pane::ActivateNextItem",
+			"ctrl-w d": "pane::CloseAllItems",
 		},
 	},
 	{
@@ -45,26 +68,20 @@
 			// Dock
 			"alt-b": "workspace::ToggleLeftDock",
 			"alt-B": "workspace::ToggleRightDock",
-			// Symbol
-			"space s s": "outline_panel::ToggleFocus",
-			"space s p": "project_symbols::Toggle",
-			// File
-			"space f t": "terminal_panel::Toggle",
-			// Section
-			"space k f": "pane::DeploySearch",
-			"space k e": "project_panel::ToggleFocus",
-			"space k g": "git_panel::ToggleFocus",
-			"space k p": "diagnostics::Deploy",
-			"space k P": "diagnostics::DeployCurrentFile",
-			"space k d": "debug_panel::ToggleFocus",
-			"space k a": "agent::ToggleFocus",
+			// resize
+			"ctrl-left": ["vim::ResizePaneLeft", "50"],
+			"ctrl-right": ["vim::ResizePaneRight", "50"],
+			"ctrl-up": ["vim::ResizePaneUp", "50"],
+			"ctrl-down": ["vim::ResizePaneDown", "50"],
 		},
 	},
 	// disable
 	{
 		"context": "Workspace",
 		"bindings": {
+			"ctrl-f": null,
 			"ctrl-shift-f": null,
+			"ctrl-/": null,
 		},
 	},
 	{
@@ -104,23 +121,16 @@
 	{
 		"context": "Terminal",
 		"bindings": {
-			"ctrl-`": "terminal_panel::ToggleFocus",
+			"ctrl-`": "terminal_panel::Toggle",
 			"alt-`": "terminal::ToggleViMode",
-		},
-	},
-	{
-		"context": "Dock",
-		"bindings": {
-			"ctrl-w h": "workspace::ActivatePaneLeft",
-			"ctrl-w l": "workspace::ActivatePaneRight",
-			"ctrl-w k": "workspace::ActivatePaneUp",
-			"ctrl-w j": "workspace::ActivatePaneDown",
-		},
-	},
-	{
-		"context": "Editor && vim_mode == insert",
-		"bindings": {
-			// "j k": "vim::NormalBefore"
+			"alt-\\": "pane::SplitRight",
+			"alt-=": "pane::SplitDown",
+			"alt-n": "workspace::NewTerminal",
+			"alt-[": "pane::ActivatePreviousItem",
+			"alt-]": "pane::ActivateNextItem",
+			"alt-q": "pane::CloseActiveItem",
+			"ctrl-shift-c": "terminal::Copy",
+			"ctrl-shift-v": "terminal::Paste",
 		},
 	},
 ]

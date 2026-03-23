@@ -1,0 +1,152 @@
+{
+  // ========== Files & Workspace ==========
+  "files.associations": {
+    "*.json.tmpl": "json",
+    ".*.json.tmpl": "json",
+    "*.toml.tmpl": "toml",
+    ".*.toml.tmpl": "toml",
+    "*.ymal.tmpl": "yaml",
+    ".*.ymal.tmpl": "yaml",
+    "*.yml.tmpl": "yml",
+    ".*.yml.tmpl": "yml",
+    "*chezmoiignore*": "gitignore",
+    "*chezmoiremove*": "gitignore",
+    "*gitignore*": "gitignore",
+    "*rgignore*": "gitignore",
+    "*.ps1.tmpl": "powershell",
+    "*.sh.tmpl": "shellscript",
+    "*.bat.tmpl": "bat",
+    "*.lua.tmpl": "lua"
+  },
+  "files.watcherExclude": {
+    "**/.metals": true,
+    "**/.bloop": true,
+    "**/.ammonite": true
+  },
+  "files.autoSaveDelay": 500,
+  "files.autoSave": "afterDelay",
+
+  // ========== Editor ==========
+  "editor.wordWrap": "on",
+  "editor.suggestSelection": "recentlyUsedByPrefix",
+  "editor.suggest.snippetsPreventQuickSuggestions": true,
+  "editor.suggest.localityBonus": true,
+  "editor.smoothScrolling": true,
+  "editor.mouseWheelZoom": true,
+  "editor.lineNumbers": "relative",
+  "editor.lineHeight": 1.5,
+  "editor.insertSpaces": false,
+  "editor.guides.bracketPairs": true,
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "editor.cursorSmoothCaretAnimation": "explicit",
+  "editor.cursorBlinking": "smooth",
+  "editor.autoClosingBrackets": "beforeWhitespace",
+  "editor.acceptSuggestionOnEnter": "smart",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "emmet.triggerExpansionOnTab": true,
+
+  // ========== Font ==========
+  "editor.codeLensFontFamily": "\"Maple Mono\"",
+  "editor.fontFamily": "\"Maple Mono\"",
+  "terminal.integrated.fontFamily": "\"Maple Mono\"",
+  "terminal.integrated.fontWeight": "bold",
+
+  // ========== UI & Workbench ==========
+  "workbench.colorTheme": "Atom One Dark",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none",
+  "workbench.list.smoothScrolling": true,
+  "window.dialogStyle": "custom",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "security.workspace.trust.untrustedFiles": "open",
+  "search.showLineNumbers": true,
+  "search.experimental.closedNotebookRichContentResults": true,
+  "search.smartCase": true,
+  "explorer.confirmDelete": false,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "workbench.settings.applyToAllProfiles": [
+    "notebook.formatOnSave.enabled",
+    "markdown.updateLinksOnFileMove.enabled",
+    "marimo.uv.path"
+  ],
+
+  // ========== Terminal ==========
+  "terminal.integrated.stickyScroll.enabled": true,
+  "terminal.integrated.cursorBlinking": true,
+
+  // ========== Notebooks & Markdown ==========
+  "notebook.formatOnSave.enabled": true,
+  "markdown.updateLinksOnFileMove.enabled": "prompt",
+  "markdown-preview-enhanced.revealjsTheme": "night.css",
+  "markdown-preview-enhanced.codeBlockTheme": "one-dark.css",
+  "markdown-preview-enhanced.previewTheme": "atom-dark.css",
+  "markdown-preview-enhanced.enablePreviewZenMode": true,
+  "markdown-preview-enhanced.enableExtendedTableSyntax": true,
+  "markdown.extension.completion.enabled": true,
+  "markdown.extension.print.theme": "dark",
+  "markdown.extension.theming.decoration.renderParagraph": true,
+
+  // ========== Language‑Specific Settings ==========
+  // Rust
+  "rust-analyzer.rustfmt.rangeFormatting.enable": true,
+  "rust-analyzer.procMacro.ignored": {
+    "leptos_macro": ["server"]
+  },
+  "rust-analyzer.lens.references.trait.enable": true,
+  "rust-analyzer.lens.references.method.enable": true,
+  "rust-analyzer.lens.references.adt.enable": true,
+  "rust-analyzer.inlayHints.rangeExclusiveHints.enable": true,
+  "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
+  "rust-analyzer.inlayHints.discriminantHints.enable": "fieldless",
+  "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "with_block",
+  "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
+  "rust-analyzer.diagnostics.styleLints.enable": true,
+  "rust-analyzer.diagnostics.previewRustcOutput": true,
+  "rust-analyzer.debug.openDebugPane": true,
+  "rust-analyzer.completion.termSearch.enable": true,
+  "rust-analyzer.imports.preferNoStd": true,
+
+  // HTML / CSS
+  "html.format.indentInnerHtml": true,
+  "html.format.indentHandlebars": true,
+  "html-css-class-completion.enableEmmetSupport": true,
+
+  // Go
+  "go.toolsManagement.autoUpdate": true,
+  "go.testOnSave": true,
+  "go.testExplorer.showDynamicSubtestsInEditor": true,
+  "go.inlayHints.rangeVariableTypes": true,
+  "go.inlayHints.parameterNames": true,
+  "go.inlayHints.functionTypeParameters": true,
+  "go.inlayHints.constantValues": true,
+  "go.inlayHints.compositeLiteralTypes": true,
+  "go.inlayHints.compositeLiteralFields": true,
+  "go.inlayHints.assignVariableTypes": true,
+  "go.coverOnSave": true,
+
+  // Git
+  "git.terminalAuthentication": false,
+  "git.ignoreRebaseWarning": true,
+  "git.autofetch": true,
+
+  // Tinymist (Typst)
+  "tinymist.preview.cursorIndicator": true,
+
+  // Kilo Code (AI)
+  "kilo-code.allowedCommands": [
+    "git log",
+    "git diff",
+    "git show",
+    "cd",
+    "ls",
+    "Invoke-Pester",
+    "pwsh",
+    "git tag",
+    "powershell",
+    "dir",
+    "uv"
+  ]
+}

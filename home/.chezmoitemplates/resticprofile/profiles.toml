@@ -70,7 +70,7 @@ tag = ["tag:Affair"]
 source = ["$Affair"]
 
 [affair.snapshots]
-tag = ["tag:Addair"]
+tag = ["tag:Affair"]
 
 [affair.restore]
 target = ["$Affair"]

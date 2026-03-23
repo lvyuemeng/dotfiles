@@ -47,10 +47,10 @@ items:
   - name: 🚀 节点选择
     now: 🚀 手动切换
   - name: 🚀 手动切换
-    now: 🇰🇷KR_1|1.5MB/s
+    now: 🇺🇸US_1|1.7MB/s
   - name: ♻️ 自动选择
-    now: 🇳🇱NL_3|1.9MB/s
-  updated: 1774057194
+    now: sg|ab66|puddincat07@Telegram
+  updated: 1774242591
   option:
     with_proxy: false
     self_proxy: false
@@ -93,10 +93,10 @@ items:
   url: https://gh-proxy.org/raw.githubusercontent.com/PuddinCat/BestClash/refs/heads/main/proxies.yaml
   selected:
   - name: 🔰 节点选择
-    now: cn|4a03|puddincat07@Telegram
+    now: hk|033b|puddincat07@Telegram
   - name: ♻️ 自动选择
     now: gb|1593|puddincat07@Telegram
-  updated: 1774073246
+  updated: 1774242592
   option:
     with_proxy: false
     self_proxy: false
@@ -144,12 +144,12 @@ items:
   - name: 🚀 节点选择
     now: 🚀 手动切换
   - name: Haita Cloud
-    now: 故障转移
+    now: 下单地址https://kelayun.notepin.co
   - name: 🔰 节点选择
     now: kr|71a5|puddincat07@Telegram
   - name: 自动选择
     now: 官网地址https://kelayun.notepin.co
-  updated: 1774073245
+  updated: 1774242592
   option:
     with_proxy: false
     self_proxy: false
@@ -193,8 +193,8 @@ items:
   url: https://gh-proxy.org/https://raw.githubusercontent.com/ggborr/FREEE-VPN/refs/heads/main/2clash
   selected:
   - name: 🚀 节点选择
-    now: 🇺🇸 US177｜机房｜低风险
-  updated: 1774057185
+    now: 🇺🇸 US美国
+  updated: 1774242593
   option:
     with_proxy: false
     self_proxy: false
@@ -240,7 +240,7 @@ items:
     now: 🇺🇲 美国节点
   - name: 🚀 手动切换
     now: 🇸🇬SG_3|1.7MB/s
-  updated: 1774020172
+  updated: 1774242574
   option:
     with_proxy: false
     self_proxy: false
@@ -282,8 +282,8 @@ items:
   url: https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/yudou66.yaml
   selected:
   - name: 🚀 节点选择
-    now: 香港(yudou789.top 玉豆免费节点)_2
-  updated: 1774057185
+    now: 美国(yudou789.top 玉豆免费节点)_6
+  updated: 1774242572
   option:
     allow_auto_update: true
     merge: mY3wtAG1LwFS
@@ -329,7 +329,7 @@ items:
     download: 41779198033920
     total: 1073740786892800
     expire: 4102329600
-  updated: 1774020170
+  updated: 1774242594
   option:
     update_interval: 720
     allow_auto_update: true
