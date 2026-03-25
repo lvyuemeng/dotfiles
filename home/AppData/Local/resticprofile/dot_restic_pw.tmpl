@@ -1,1 +1,4 @@
-{{- includeTemplate "resticprofile/encrypted_dot_restic_pw.age" | decrypt -}}
+{{/* Load data.toml to access encrypted data */}}
+{{- $secret := includeTemplate "data" . | fromToml -}}
+{{- $pw := $secret.resticprofile.password -}}
+{{ $pw }}

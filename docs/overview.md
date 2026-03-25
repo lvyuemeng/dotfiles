@@ -4,7 +4,7 @@
 
 ## Directory Layout
 
-```
+```bash
 chezmoi/
 ├── .chezmoiroot              → redirects to home/
 ├── README.md                 → User guide
@@ -26,4 +26,3 @@ chezmoi/
 - **Shell priority**: `pwsh > powershell` (Windows), `fish > bash` (Unix)
 - **Editor priority**: `zed > nvim > code` (all platforms)
 - **Encryption**: `rage`/`age` for home key and secrets
-- **Roles-based**: Package installation driven by `.chezmoidata` roles

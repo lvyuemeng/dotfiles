@@ -1,50 +1,35 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
 {
-	// Core
 	"helix_mode": true,
 	"relative_line_numbers": "enabled",
 
-	// Editor behavior
 	"colorize_brackets": true,
 	"auto_indent_on_paste": true,
 	"use_on_type_format": true,
 	"soft_wrap": "editor_width",
 	"hard_tabs": true,
 
-	// Autosave
 	"autosave": {
 		"after_delay": {
-			"milliseconds": 500,
-		},
+			"milliseconds": 500
+		}
 	},
 
-	// Fonts
 	"ui_font_family": "Maple Mono",
 	"buffer_font_family": "Maple Mono NF",
 	"ui_font_size": 16,
 	"buffer_font_size": 15,
 
-	// Terminal
 	"terminal": {
 		"font_family": "Maple Mono NF",
-		"blinking": "on",
-		"shell": {{ .shell | quote }},
+		"blinking": "on"
 	},
-	// Theme & Icons
+
 	"theme": {
 		"mode": "system",
 		"light": "One Light",
-		"dark": "Catppuccin Mocha",
+		"dark": "Catppuccin Mocha"
 	},
 
-	// File type overrides
 	"file_types": {
 		"json": ["*.json.tmpl", ".*.json.tmpl"],
 		"yml": ["*.yml.tmpl", ".*.yml.tmpl"],
@@ -53,12 +38,12 @@
 			"*chezmoiignore*",
 			"*chezmoiremove*",
 			"*gitignore*",
-			"*rgignore*",
+			"*rgignore*"
 		],
 		"bat": ["*.bat.tmpl"],
 		"toml": ["*.toml.tmpl", ".*.toml.tmpl"],
 		"powershell": ["*.ps1.tmpl"],
 		"lua": ["*.lua.tmpl"],
-		"yaml": ["*.ymal.tmpl", ".*.ymal.tmpl"],
-	},
+		"yaml": ["*.ymal.tmpl", ".*.ymal.tmpl"]
+	}
 }

@@ -1,4 +1,4 @@
-chezmoi:modify-template
+{{- /* chezmoi:modify-template */ -}}
 {{- /* Load encrypted secrets */ -}}
 {{- $secret := includeTemplate "data" . | fromToml -}}
 {{- $v_api := $secret.api.virustotal -}}
@@ -17,7 +17,4 @@ chezmoi:modify-template
     "virustotal_api_key" $v_api
 ) -}}
 
-{{- /* Remove ephemeral fields */ -}}
-{{- $clean := omit $new "last_update" -}}
-
-{{ $clean | toPrettyJson }}
+{{ $new | toPrettyJson }}

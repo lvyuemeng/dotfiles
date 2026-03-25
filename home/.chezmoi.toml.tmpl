@@ -10,10 +10,10 @@
 {{/* Shell detection */}}
 {{- if eq .chezmoi.os "windows" -}}
   {{- if lookPath "pwsh" -}}{{- $shell = "pwsh" -}}{{- else -}}{{- $shell = "powershell" -}}{{- end -}}
-  {{- $pre = ".local/share/chezmoi/home/scripts/.prepare.ps1" -}}
+  {{- $pre = ".local/share/chezmoi/home/prepare/.prepare.ps1" -}}
 {{- else -}}
   {{- if lookPath "fish" -}}{{- $shell = "fish" -}}{{- else -}}{{- $shell = "bash" -}}{{- end -}}
-  {{- $pre = ".local/share/chezmoi/home/scripts/.prepare.sh" -}}
+  {{- $pre = ".local/share/chezmoi/home/prepare/.prepare.sh" -}}
 {{- end -}}
 
 {{/* Editor detection: zed > nvim > platform fallback */}}

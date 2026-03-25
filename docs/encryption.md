@@ -41,14 +41,14 @@ If you want to change your passphrase, re-apply above workflow again.
 
 Due to recipient changed, you should change all encrypted file again.
 
-```pwsh
+```powershell
 & chezmoi managed --include encrypted --path-style absolute |
 Where-Object { Test-Path $_ } |
 ForEach-Object {
     $encrypted_file = $_
 
     chezmoi forget "$encrypted_file"
-    
+
     # remove .asc suffix
     if ($encrypted_file -match '\.asc$') {
         $decrypted_file = $encrypted_file -replace '\.asc$', ''
@@ -74,7 +74,7 @@ do
 done
 ```
 
-Above script 
+Above script
 
 ## Data Encryption
 
