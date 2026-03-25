@@ -45,5 +45,20 @@
 		"powershell": ["*.ps1.tmpl"],
 		"lua": ["*.lua.tmpl"],
 		"yaml": ["*.ymal.tmpl", ".*.ymal.tmpl"]
+	},
+
+	"lsp": {
+		"tinymist": {
+			"initialization_options": {
+				"preview": {
+					"background": {
+						"enabled": true
+					}
+				}
+			},
+			"settings": {
+				"exportPdf": "onSave"
+			}
+		}
 	}
 }

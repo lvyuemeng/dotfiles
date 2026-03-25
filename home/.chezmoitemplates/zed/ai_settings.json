@@ -10,7 +10,7 @@
 		"default_model": {
 			"provider": "Blaze",
 			"model": "anthropic/claude-sonnet-4-6",
-			"enable_thinking": false
+			"enable_thinking": true
 		},
 		"favorite_models": [],
 		"model_parameters": []
@@ -21,7 +21,7 @@
 				"api_url": "https://blazeai.boxu.dev/api/v1",
 				"available_models": [
 					{
-						"name": "anthropic/claude-sonnet-4-6",
+						"name": "openai/gpt-5.1",
 						"max_tokens": 200000,
 						"max_output_tokens": 32000,
 						"max_completion_tokens": 200000,
@@ -34,20 +34,7 @@
 						}
 					},
 					{
-						"name": "claude-sonnet-4.6-thinking",
-						"max_tokens": 200000,
-						"max_output_tokens": 32000,
-						"max_completion_tokens": 200000,
-						"capabilities": {
-							"tools": true,
-							"images": false,
-							"parallel_tool_calls": true,
-							"prompt_cache_key": false,
-							"chat_completions": true
-						}
-					},
-					{
-						"name": "openai/gpt-5.3-codex",
+						"name": "z-ai/glm5",
 						"max_tokens": 200000,
 						"max_output_tokens": 32000,
 						"max_completion_tokens": 200000,
