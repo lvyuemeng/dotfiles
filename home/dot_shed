@@ -1,24 +1,24 @@
-if exists ~/.cargo/bin
-	path+ ~/.cargo/bin
-	set CARGO_HOME ~/.cargo
-	set RUSTUP_HOME ~/.rustup
+if exists $HOME/.cargo/bin
+	path+ $HOME/.cargo/bin
+	set CARGO_HOME $HOME/.cargo
+	set RUSTUP_HOME $HOME/.rustup
 end
 
-if exists ~/go/bin
-	path+ ~/go/bin
-	set GOPATH ~/go
+if exists $HOME/go/bin
+	path+ $HOME/go/bin
+	set GOPATH $HOME/go
 end
 
-if exists ~/.deno/bin
-	path+ ~/.deno/bin
+if exists $HOME/.deno/bin
+	path+ $HOME/.deno/bin
 end
 
-if exists ~/.bun/bin
-	path+ ~/.bun/bin
+if exists $HOME/.bun/bin
+	path+ $HOME/.bun/bin
 end
 
-if exists ~/.local/bin
-	path+ ~/.local/bin
+if exists $HOME/.local/bin
+	path+ $HOME/.local/bin
 end
 
 if have nvim
@@ -29,7 +29,7 @@ end
 
 if have starship
 	call starship init {shell}
-	set STARSHIP_CONFIG $HOME\.config\starship.toml
+	set STARSHIP_CONFIG $HOME/.config/starship.toml
 end
 
 if have rg
@@ -40,8 +40,27 @@ if have fd
 	alias find fd
 end
 
+if have fd and have fzf
+	set FZF_DEFAULT_COMMAND "fd --hidden --strip-cwd-prefix --exclude .git"
+	set FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+	set FZF_ALT_C_COMMAND "fd --type d --hidden --strip-cwd-prefix --exclude .git"
+end
+
+if have bat and have fzf
+	set FZF_CTRL_T_OPTS "--preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+end
+
+if have rg and have fzf
+	set FZF_CTRL_R_OPTS --preview 'echo {}' --preview-window down:3:hidden:wrap --bind 'ctrl-/:toggle-preview' --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort' --color 'header:italic' --header 'Press CTRL-/ to toggle preview'
+end
+
 if have fzf
-	set FZF_DEFAULT_COMMAND fd --type f --hidden --follow --exclude .git
+	set FZF_DEFAULT_OPTS --height 40% --layout=reverse --border sharp --margin=1 --padding=1 --info=inline-right --separator='─' --scrollbar='█' --prompt='❯ ' --pointer='▶' --marker='✓' --multi --cycle --bind='ctrl-space:toggle+down' --bind='ctrl-y:execute-silent(echo {+} | pbcopy)' --bind='ctrl-v:execute($EDITOR {})' --bind='ctrl-f:preview-page-down,ctrl-b:preview-page-up' --bind='tab:down,btab:up'
+end
+
+# aqua mirror registry
+if exists $HOME/aqua.yml or exists $HOME/aqua.yaml
+	set AQUA_POLICY_CONFIG $HOME/aqua-policy.yaml
 end
 
 if os windows

@@ -1,15 +1,20 @@
 #!/bin/bash
+# key.txt.rage hash: {{ include "key.txt.rage" | sha256sum }}
 
-if [ -f "${HOME}/.config/chezmoi/key.txt" ]; then
-	exit 0
-fi
+set -euo pipefail
 
-mkdir -p "${HOME}/.config/chezmoi"
+TARGET="${HOME}/.config/chezmoi/key.txt"
+SOURCE="{{ joinPath .chezmoi.sourceDir "key.txt.rage" }}"
+
+mkdir -p "$(dirname "$TARGET")"
+
 # ensure rage is installed
 if ! command -v rage &> /dev/null; then
     echo "rage is not installed. Please install it and try again."
     exit 1
 fi
+
 echo "Decrypting key.txt.rage..."
-rage -d "{{ .chezmoi.sourceDir }}/key.txt.rage" -o "${HOME}/.config/chezmoi/key.txt"
-chmod 600 "${HOME}/.config/chezmoi/key.txt"
+rage -d "$SOURCE" -o "$TARGET"
+
+chmod 600 "$TARGET"

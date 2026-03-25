@@ -1,11 +1,14 @@
-if (Test-Path "$HOME/.config/chezmoi/key.txt") {
-	return
-}
-New-Item -ItemType Directory -Path "$HOME/.config/chezmoi" -ErrorAction SilentlyContinue | Out-Null
-# ensure rage is installed
+# key.txt.rage hash: {{ include "key.txt.rage" | sha256sum }}
+
+$Target = "$HOME/.config/chezmoi/key.txt"
+$Source = "{{ .chezmoi.sourceDir }}/key.txt.rage"
+
+New-Item -ItemType Directory -Path (Split-Path $Target) -Force | Out-Null
+
 if (-Not (Get-Command "rage" -ErrorAction SilentlyContinue)) {
-	Write-Error "rage is not installed. Please install it and try again."
-	exit 1
+    Write-Error "rage is not installed. Please install it and try again."
+    exit 1
 }
+
 Write-Host "Decrypting key.txt.rage..."
-& rage -d "{{ .chezmoi.sourceDir }}/key.txt.rage" -o "$HOME/.config/chezmoi/key.txt"
+& rage -d $Source -o $Target
