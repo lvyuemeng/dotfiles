@@ -7,21 +7,16 @@
 				}
 			}
 		},
-		"default_model": {
-			"provider": "Blaze",
-			"model": "anthropic/claude-sonnet-4-6",
-			"enable_thinking": false
-		},
 		"favorite_models": [],
 		"model_parameters": []
 	},
 	"language_models": {
 		"openai_compatible": {
 			"Blaze": {
-				"api_url": "https://blazeai.boxu.dev/api/v1",
+				"api_url": "https://blazeai.boxu.dev/api/",
 				"available_models": [
 					{
-						"name": "anthropic/claude-sonnet-4-6",
+						"name": "kimi-k2.5-routing",
 						"max_tokens": 200000,
 						"max_output_tokens": 32000,
 						"max_completion_tokens": 200000,
@@ -34,20 +29,7 @@
 						}
 					},
 					{
-						"name": "claude-sonnet-4.6-thinking",
-						"max_tokens": 200000,
-						"max_output_tokens": 32000,
-						"max_completion_tokens": 200000,
-						"capabilities": {
-							"tools": true,
-							"images": false,
-							"parallel_tool_calls": true,
-							"prompt_cache_key": false,
-							"chat_completions": true
-						}
-					},
-					{
-						"name": "openai/gpt-5.3-codex",
+						"name": "glm-5-routing",
 						"max_tokens": 200000,
 						"max_output_tokens": 32000,
 						"max_completion_tokens": 200000,

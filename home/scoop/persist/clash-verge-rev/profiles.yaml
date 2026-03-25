@@ -1,6 +1,6 @@
 # Profiles Config for Clash Verge
 
-current: R8gZjmES6YI5
+current: RDRAuhin84dF
 items:
 - uid: Merge
   type: merge
@@ -47,10 +47,10 @@ items:
   - name: 🚀 节点选择
     now: 🚀 手动切换
   - name: 🚀 手动切换
-    now: 🇵🇱PL_1|2.1MB/s
+    now: 🇯🇵JP_2|2.1MB/s
   - name: ♻️ 自动选择
     now: sg|ab66|puddincat07@Telegram
-  updated: 1774418303
+  updated: 1778499453
   option:
     with_proxy: false
     self_proxy: false
@@ -93,12 +93,12 @@ items:
   url: https://gh-proxy.org/raw.githubusercontent.com/PuddinCat/BestClash/refs/heads/main/proxies.yaml
   selected:
   - name: 🔰 节点选择
-    now: xx|9026|puddincat07@Telegram
+    now: nl|4a28|puddincat07@Telegram
   - name: ♻️ 自动选择
     now: gb|1593|puddincat07@Telegram
   - name: Proxy
     now: 🇺🇸 美国节点
-  updated: 1774423079
+  updated: 1778499455
   option:
     with_proxy: false
     self_proxy: false
@@ -146,12 +146,14 @@ items:
   - name: 🚀 节点选择
     now: 🚀 手动切换
   - name: Haita Cloud
-    now: 购买地址https://kelayun.notepin.co
+    now: 下单地址https://kelayun.notepin.co
   - name: 🔰 节点选择
     now: kr|71a5|puddincat07@Telegram
   - name: 自动选择
     now: 官网地址https://kelayun.notepin.co
-  updated: 1774423077
+  - name: Proxy
+    now: 🇰🇷 韩国节点
+  updated: 1778499458
   option:
     with_proxy: false
     self_proxy: false
@@ -195,8 +197,8 @@ items:
   url: https://gh-proxy.org/https://raw.githubusercontent.com/ggborr/FREEE-VPN/refs/heads/main/2clash
   selected:
   - name: 🚀 节点选择
-    now: 🇺🇸 US美国
-  updated: 1774418305
+    now: 关注https://github.com/ggborr/FREEE-VPN
+  updated: 1778499454
   option:
     with_proxy: false
     self_proxy: false
@@ -239,10 +241,10 @@ items:
   url: https://gh-proxy.org//https://raw.githubusercontent.com/ts-sf/fly/main/clash
   selected:
   - name: 🚀 节点选择
-    now: 🇺🇲 美国节点
+    now: 🇯🇵JP日本 1.2MB/s
   - name: 🚀 手动切换
     now: 🇸🇬SG_3|1.7MB/s
-  updated: 1774418305
+  updated: 1778499454
   option:
     with_proxy: false
     self_proxy: false
@@ -281,65 +283,21 @@ items:
   type: remote
   name: yudou66.yaml
   file: RrsdrdP7Opk4.yaml
-  url: https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/yudou66.yaml
+  desc: ''
+  url: https://gh-proxy.org/raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/yudou66.yaml
   selected:
   - name: 🚀 节点选择
-    now: 美国(yudou789.top 玉豆免费节点)_14
-  updated: 1774418306
+    now: 韩国(yudou789.top 玉豆免费节点)_1
+  updated: 1778499454
   option:
+    with_proxy: false
+    self_proxy: false
     allow_auto_update: true
     merge: mY3wtAG1LwFS
     script: sFx2zTnclq0F
     rules: rvzhAziCnBAJ
     proxies: pcGFv8PJJyNg
     groups: g0WyTIUds2Ki
-- uid: mKKC6O3s3uUa
-  type: merge
-  name: null
-  file: mKKC6O3s3uUa.yaml
-  updated: 1773672198
-- uid: stJH2KW6KYWy
-  type: script
-  name: null
-  file: stJH2KW6KYWy.js
-  updated: 1773672198
-- uid: rUn9gNynUH4Z
-  type: rules
-  name: null
-  file: rUn9gNynUH4Z.yaml
-  updated: 1773672198
-- uid: pWmpSZxk1hvD
-  type: proxies
-  name: null
-  file: pWmpSZxk1hvD.yaml
-  updated: 1773672198
-- uid: gnXTzvcNvWMM
-  type: groups
-  name: null
-  file: gnXTzvcNvWMM.yaml
-  updated: 1773672198
-- uid: Rwyq1fQ8AvD2
-  type: remote
-  name: 免费节点【日更版】
-  file: Rwyq1fQ8AvD2.yaml
-  url: https://www.xrayvip.com/free.yaml
-  selected:
-  - name: 🚀 节点选择
-    now: HK【机场推荐：https://a9a.xyz】30
-  extra:
-    upload: 4518581
-    download: 41779198033920
-    total: 1073740786892800
-    expire: 4102329600
-  updated: 1774418303
-  option:
-    update_interval: 720
-    allow_auto_update: true
-    merge: mKKC6O3s3uUa
-    script: stJH2KW6KYWy
-    rules: rUn9gNynUH4Z
-    proxies: pWmpSZxk1hvD
-    groups: gnXTzvcNvWMM
 - uid: mfXNjaNyx19s
   type: merge
   name: null
@@ -373,8 +331,8 @@ items:
   url: https://gh-proxy.org/https://raw.githubusercontent.com/ovmvo/FreeSub/refs/heads/main/sub/permanent/mihomo.yaml
   selected:
   - name: Proxy
-    now: 🇰🇷 韩国节点
-  updated: 1774418305
+    now: 🇩🇪 德国节点
+  updated: 1778499454
   option:
     with_proxy: false
     self_proxy: false
@@ -384,3 +342,51 @@ items:
     rules: rIQ1BDlmzNUi
     proxies: p6EBiANjjnVa
     groups: ge2fpr6vZZUj
+- uid: mHX3vk3nPwBP
+  type: merge
+  name: null
+  file: mHX3vk3nPwBP.yaml
+  updated: 1776765123
+- uid: sOHhiSm1bUo9
+  type: script
+  name: null
+  file: sOHhiSm1bUo9.js
+  updated: 1776765123
+- uid: rhU4BfztNqCG
+  type: rules
+  name: null
+  file: rhU4BfztNqCG.yaml
+  updated: 1776765123
+- uid: p8o9wAvM8kV8
+  type: proxies
+  name: null
+  file: p8o9wAvM8kV8.yaml
+  updated: 1776765123
+- uid: gW0rBOPDEVL6
+  type: groups
+  name: null
+  file: gW0rBOPDEVL6.yaml
+  updated: 1776765123
+- uid: RDRAuhin84dF
+  type: remote
+  name: 魔戒.net
+  file: RDRAuhin84dF.yaml
+  url: https://msub.xn--m7r52rosihxm.com/api/v1/client/subscribe?token=f84215e4a2f08b44eff91ee612d40f54
+  selected:
+  - name: 节点选择
+    now: 美国LA-优化2-GPT
+  extra:
+    upload: 10436149884
+    download: 66164944538
+    total: 139586437120
+    expire: 0
+  updated: 1778499454
+  option:
+    update_interval: 1440
+    allow_auto_update: true
+    merge: mHX3vk3nPwBP
+    script: sOHhiSm1bUo9
+    rules: rhU4BfztNqCG
+    proxies: p8o9wAvM8kV8
+    groups: gW0rBOPDEVL6
+  home: https://mojie.app

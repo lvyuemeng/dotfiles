@@ -33,7 +33,8 @@ encryption = "age"
 - [Windows](/home/.chezmoiscripts/windows/run_onchange_before_00-decrypt-home.ps1.tmpl)
 - [linux](/home/.chezmoiscripts/linux/run_onchange_before_00-decrypt-home.sh.tmpl)
 
-It will use rage to decrypt the `key.txt.rage` into the expected path configured in `identity` field.
+It will use rage to decrypt the `key.txt.rage` into the expected path configured
+in `identity` field.
 
 ### Re-encrypt
 
@@ -89,13 +90,14 @@ chezmoi add --encrypt [data path]
 
 3. Create template in `.chezmoitemplates/(name)`:
 
-```
-{{ joinPath .chezmoi.sourceDir "dot_config/encrypted_(name).toml.age" | include | decrypt }}
+```text
+{{ joinPath .chezmoi.sourceDir "dot_config/encrypted_(name).toml.age" | include 
+| decrypt }}
 ```
 
 4. Use in any template:
 
-```
+```text
 {{- $secret := includeTemplate "path-to-your-data" . | fromToml -}}
 {{- $something := $secret.some-field -}}
 ```
