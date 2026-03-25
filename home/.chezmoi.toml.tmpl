@@ -1,50 +1,44 @@
 {{/*
   chezmoi config should be independent of chezmoidata
 */}}
-{{/* System Range */}}
 
-{{/* Default Static Values */}}
+{{- $pubkey := "age18jcln2kqlqwpfjhtp9dnxsq2dnd604m5akuv5kfnqt3kxyvcdu5qvytrtu" -}}
+{{- $shell      := "" -}}
+{{- $editor     := "" -}}
+{{- $pre        := "" -}}
 
-{{- $global_pubkey := "age15qzze3ywx4ml4n007n6p9guzn3exxvqmwmv7tg7ue408dknlu46qtcumg6" -}}
-
-{{/* Default Dynamic Values */}}
-
-{{ $shell := "" }}
-{{ $editor := "" }}
-{{- $pre := "" -}}
+{{/* Shell detection */}}
 {{- if eq .chezmoi.os "windows" -}}
-  {{- if lookPath "pwsh" -}}
-    {{- $shell = "pwsh" -}}
-  {{- else -}}
-    {{- $shell = "powershell" -}}
-  {{- end -}}
-  {{- $editor = "code" -}}
+  {{- if lookPath "pwsh" -}}{{- $shell = "pwsh" -}}{{- else -}}{{- $shell = "powershell" -}}{{- end -}}
   {{- $pre = ".local/share/chezmoi/home/scripts/.prepare.ps1" -}}
 {{- else -}}
-  {{- if lookPath "fish" -}}
-    {{- $shell = "fish" -}}
-  {{- else -}}
-    {{- $shell = "bash" -}}
-  {{- end -}}
-  {{- if lookPath "nvim" -}}
-    {{- $editor = "nvim" -}}
-  {{- else -}}
-    {{- $editor = "vi" -}}
-  {{- end -}}
+  {{- if lookPath "fish" -}}{{- $shell = "fish" -}}{{- else -}}{{- $shell = "bash" -}}{{- end -}}
   {{- $pre = ".local/share/chezmoi/home/scripts/.prepare.sh" -}}
+{{- end -}}
+
+{{/* Editor detection: zed > nvim > platform fallback */}}
+{{- if lookPath "zed" -}}
+  {{- $editor = "zed" -}}
+{{- else if lookPath "nvim" -}}
+  {{- $editor = "nvim" -}}
+{{- else if eq .chezmoi.os "windows" -}}
+  {{- $editor = "code" -}}
+{{- else -}}
+  {{- $editor = "vi" -}}
 {{- end -}}
 
 encryption = "age"
 [age]
-	command = "rage"
+  command = "rage"
   identity = "~/.config/chezmoi/key.txt"
-  recipient = {{ $global_pubkey | quote }}
-  
+  recipient = {{ $pubkey | quote }}
+
 [data]
-  githubUserName = "lvyuemeng"
-  gmail = "lv15623448685@gmail.com"
-  olmail = "Nostalume@outlook.com"
-  shell = {{ $shell | quote }}
+shell = {{ $shell | quote }}
+editor = {{ $editor | quote }}
+githubUserName = "lvyuemeng"
+gmail = "lv15623448685@gmail.com"
+olmail = "Nostalume@outlook.com"
 
 [cd]
 command = {{ $shell | quote }}
@@ -61,8 +55,7 @@ custom = true
 command = {{ $editor | quote }}
 
 [merge]
-  # escape "{{" and "}}"
-  command = "nvim"
+  command = {{ $editor | quote }}
   args = [
       "-d",
       {{ printf "%q" "{{ .Destination }}" }},
@@ -76,9 +69,5 @@ autoCommit = false
 autoPush = false
 
 [hooks.read-source-state.pre]
-{{- if eq .chezmoi.os "windows" }}
-command = "powershell"
-{{- else }}
-command = "bash"
-{{- end }}
+command = {{ $shell | quote }}
 args = {{ $pre | quote }}

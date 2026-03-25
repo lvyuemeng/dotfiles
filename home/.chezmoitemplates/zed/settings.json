@@ -35,8 +35,8 @@
 	"terminal": {
 		"font_family": "Maple Mono NF",
 		"blinking": "on",
+		"shell": {{ .shell | quote }},
 	},
-
 	// Theme & Icons
 	"theme": {
 		"mode": "system",

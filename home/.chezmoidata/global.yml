@@ -1,6 +1,0 @@
-# Global configuration for dotfiles
-
-# Mirror proxy for GitHub downloads (leave empty to disable)
-# Example: "https://gh-proxy.com"
-mirror:
-  github: "https://gh-proxy.com"

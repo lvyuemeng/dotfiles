@@ -1,13 +1,28 @@
 local wezterm = require("wezterm")
-
+local act = wezterm.action
 local config = wezterm.config_builder()
+
+------------------------------------------------------------
+-- PLATFORM
+------------------------------------------------------------
+local triple = wezterm.target_triple
+local platform = {
+	is_windows = triple:find("windows") ~= nil,
+	is_linux = triple:find("linux") ~= nil,
+	is_mac = triple:find("darwin") ~= nil,
+}
+-- Distinguish Wayland from X11 on Linux
+platform.is_wayland = platform.is_linux and os.getenv("WAYLAND_DISPLAY") ~= nil
 
 ------------------------------------------------------------
 -- PERFORMANCE
 ------------------------------------------------------------
 config.max_fps = 144
 config.animation_fps = 144
-config.front_end = "WebGpu"
+
+-- WebGpu is the best renderer on Windows / macOS / Wayland.
+-- Fall back to OpenGL on X11 where WebGpu support is uneven.
+config.front_end = (platform.is_linux and not platform.is_wayland) and "OpenGL" or "WebGpu"
 
 ------------------------------------------------------------
 -- FONT
@@ -27,161 +42,180 @@ config.color_scheme = "Catppuccin Macchiato"
 ------------------------------------------------------------
 -- WINDOW
 ------------------------------------------------------------
-config.window_decorations = "TITLE | RESIZE"
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
 config.tab_and_split_indices_are_zero_based = true
 
-------------------------------------------------------------
--- OS + SHELL PRIORITY DETECTION
-------------------------------------------------------------
+-- Linux tiling WMs typically manage decorations themselves; drop the title bar.
+-- Windows and macOS keep the native title bar for proper window management.
+config.window_decorations = platform.is_linux and "RESIZE" or "TITLE | RESIZE"
 
-local function command_exists(cmd)
-	local success, _, _ = wezterm.run_child_process({ cmd, "--version" })
-	return success
-end
-local is_windows = wezterm.target_triple:find("windows") ~= nil
-
-local default_prog = nil
-
-if is_windows then
-	config.wsl_domains = wezterm.default_wsl_domains()
-	-- Windows priority: pwsh > powershell > cmd
-	if command_exists("pwsh.exe") then
-		default_prog = { "pwsh.exe" }
-	elseif command_exists("powershell.exe") then
-		default_prog = { "powershell.exe" }
-	else
-		default_prog = { "cmd.exe" }
-	end
-else
-	config.wsl_domains = {}
-	-- Unix priority: zsh > bash > sh
-	if command_exists("zsh") then
-		default_prog = { "zsh" }
-	elseif command_exists("bash") then
-		default_prog = { "bash" }
-	else
-		default_prog = { "sh" }
-	end
+-- Let WezTerm use the native Wayland compositor when available
+if platform.is_wayland then
+	config.enable_wayland = true
 end
 
+------------------------------------------------------------
+-- SHELL DETECTION
+------------------------------------------------------------
+local UNIX_SHELLS = { "fish", "zsh", "bash", "sh" }
+local WINDOWS_SHELLS = { "pwsh", "powershell", "cmd" } -- bare names, .exe appended below
+
+-- `where.exe` matches bare names ("pwsh") and suffixed ones ("pwsh.exe") equally,
+-- so always pass the bare name and only append .exe when building the actual args.
+local function find_executable(name)
+	return wezterm.run_child_process(platform.is_windows and { "where.exe", name } or { "which", name })
+end
+
+local function detect_shell()
+	local shells = platform.is_windows and WINDOWS_SHELLS or UNIX_SHELLS
+	local suffix = platform.is_windows and ".exe" or ""
+	local default = platform.is_windows and "cmd.exe" or "sh"
+	for _, sh in ipairs(shells) do
+		if find_executable(sh) then
+			return { sh .. suffix }
+		end
+	end
+	return { default }
+end
+
+-- Run a single WSL process that walks the candidate list internally and
+-- prints the first shell found — one spawn instead of N.
+-- Returns (shell_name, prog_args), or (nil, nil) if nothing matched.
+local function detect_wsl_shell(distro)
+	-- Build: `for s in fish zsh bash sh; do command -v "$s" >/dev/null && printf '%s' "$s" && exit 0; done; exit 1`
+	local script = string.format(
+		'for s in %s; do command -v "$s" >/dev/null 2>&1 && printf \'%%s\' "$s" && exit 0; done; exit 1',
+		table.concat(UNIX_SHELLS, " ")
+	)
+
+	local base = distro and { "wsl.exe", "-d", distro, "--exec" } or { "wsl.exe", "--exec" }
+	local probe = { table.unpack(base) }
+	table.insert(probe, "sh")
+	table.insert(probe, "-c")
+	table.insert(probe, script)
+
+	local ok, stdout = wezterm.run_child_process(probe)
+	if not ok then
+		return nil, nil
+	end
+
+	-- stdout is the matched shell name, e.g. "fish"
+	local sh = stdout:match("^(%S+)")
+	if not sh or sh == "" then
+		return nil, nil
+	end
+
+	-- Launch as a login shell so rc/profile files are sourced
+	local prog = { table.unpack(base) }
+	table.insert(prog, sh)
+	table.insert(prog, "-l")
+	return sh, prog
+end
+
+-- WSL is a Windows-only concept
+config.wsl_domains = platform.is_windows and wezterm.default_wsl_domains() or {}
+
+local default_prog = detect_shell()
 config.default_prog = default_prog
 
+-- Detect WSL shell once at startup; name is reused for the tab-title fallback.
+local wsl_shell_name, wsl_prog = nil, nil
+if platform.is_windows and #config.wsl_domains > 0 then
+	wsl_shell_name, wsl_prog = detect_wsl_shell(config.wsl_domains[1].name)
+end
+
 ------------------------------------------------------------
--- LEADER (tmux-style)
+-- LEADER
 ------------------------------------------------------------
 config.leader = { key = "q", mods = "ALT", timeout_milliseconds = 2000 }
 
 ------------------------------------------------------------
 -- KEYBINDINGS
 ------------------------------------------------------------
+local function ldr(key, action)
+	return { key = key, mods = "LEADER", action = action }
+end
+
 config.keys = {
+	-- Tabs
+	ldr("c", act.SpawnTab("CurrentPaneDomain")),
+	ldr("x", act.CloseCurrentPane({ confirm = true })),
+	ldr("b", act.ActivateTabRelative(-1)),
+	ldr("n", act.ActivateTabRelative(1)),
 
-	-- New tab in same domain (IMPORTANT)
-	{
-		mods = "LEADER",
-		key = "c",
-		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
-	},
+	-- Splits
+	ldr("\\", act.SplitHorizontal({ domain = "CurrentPaneDomain" })),
+	ldr("-", act.SplitVertical({ domain = "CurrentPaneDomain" })),
 
-	-- Close pane
-	{
-		mods = "LEADER",
-		key = "x",
-		action = wezterm.action.CloseCurrentPane({ confirm = true }),
-	},
+	-- Pane focus (vim-style)
+	ldr("h", act.ActivatePaneDirection("Left")),
+	ldr("j", act.ActivatePaneDirection("Down")),
+	ldr("k", act.ActivatePaneDirection("Up")),
+	ldr("l", act.ActivatePaneDirection("Right")),
 
-	-- Tab navigation
-	{
-		mods = "LEADER",
-		key = "b",
-		action = wezterm.action.ActivateTabRelative(-1),
-	},
-	{
-		mods = "LEADER",
-		key = "n",
-		action = wezterm.action.ActivateTabRelative(1),
-	},
+	-- Pane resize
+	ldr("LeftArrow", act.AdjustPaneSize({ "Left", 5 })),
+	ldr("RightArrow", act.AdjustPaneSize({ "Right", 5 })),
+	ldr("UpArrow", act.AdjustPaneSize({ "Up", 5 })),
+	ldr("DownArrow", act.AdjustPaneSize({ "Down", 5 })),
 
-	-- Split panes
-	{
-		mods = "LEADER",
-		key = "\\",
-		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
-	},
-	{
-		mods = "LEADER",
-		key = "-",
-		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
-	},
-
-	-- Pane navigation
-	{ mods = "LEADER", key = "h", action = wezterm.action.ActivatePaneDirection("Left") },
-	{ mods = "LEADER", key = "j", action = wezterm.action.ActivatePaneDirection("Down") },
-	{ mods = "LEADER", key = "k", action = wezterm.action.ActivatePaneDirection("Up") },
-	{ mods = "LEADER", key = "l", action = wezterm.action.ActivatePaneDirection("Right") },
-
-	-- Resize
-	{ mods = "LEADER", key = "LeftArrow", action = wezterm.action.AdjustPaneSize({ "Left", 5 }) },
-	{ mods = "LEADER", key = "RightArrow", action = wezterm.action.AdjustPaneSize({ "Right", 5 }) },
-	{ mods = "LEADER", key = "UpArrow", action = wezterm.action.AdjustPaneSize({ "Up", 5 }) },
-	{ mods = "LEADER", key = "DownArrow", action = wezterm.action.AdjustPaneSize({ "Down", 5 }) },
-
-	-- Explicit PowerShell tab
-	{
-		mods = "LEADER",
-		key = "1",
-		action = wezterm.action.SpawnCommandInNewTab({
-			args = default_prog,
-		}),
-	},
+	-- Explicit native-shell tab
+	ldr("1", act.SpawnCommandInNewTab({ args = default_prog })),
 }
 
-if is_windows and #config.wsl_domains > 0 then
-	table.insert(config.keys, {
-		mods = "LEADER",
-		key = "2",
-		action = wezterm.action.SpawnTab({
-			DomainName = config.wsl_domains[1].name,
-		}),
-	})
+-- WSL tab shortcut (Windows only, when at least one WSL distro exists).
+-- Uses the detected shell inside WSL; falls back to plain SpawnTab if detection failed.
+if platform.is_windows and #config.wsl_domains > 0 then
+	local wsl_action = wsl_prog and act.SpawnCommandInNewTab({ args = wsl_prog })
+		or act.SpawnTab({ DomainName = config.wsl_domains[1].name })
+	table.insert(config.keys, ldr("2", wsl_action))
 end
 
 ------------------------------------------------------------
--- TAB TITLE FORMAT
+-- TAB TITLE
 ------------------------------------------------------------
+local PROCESS_LABELS = {
+	pwsh = "PowerShell",
+	powershell = "PowerShell",
+	cmd = "CMD",
+	fish = "fish",
+	zsh = "zsh",
+	bash = "bash",
+	ssh = "SSH",
+}
+
+local WSL_LABELS = {
+	fish = "WSL:fsh",
+	zsh = "WSL:zsh",
+	bash = "WSL:sh",
+}
+
 wezterm.on("format-tab-title", function(tab)
 	local pane = tab.active_pane
-	local process = pane.foreground_process_name or ""
-	process = process:match("([^/\\]+)$") or process
-	process = process:lower()
+	-- Strip .exe suffix so "pwsh.exe" → "pwsh" hits PROCESS_LABELS correctly
+	local proc = (pane.foreground_process_name:match("([^/\\]+)$") or ""):lower():gsub("%.exe$", "")
+	local is_wsl = pane.domain_name and pane.domain_name:find("WSL") ~= nil
 
-	local title = process
-
-	if process:find("pwsh") then
-		title = "PowerShell"
-	elseif process:find("bash") or process:find("zsh") then
-		title = "WSL"
-	elseif process:find("ssh") then
-		title = "SSH"
+	local label
+	if is_wsl then
+		-- foreground_process_name is often empty in WSL; fall back to the shell
+		-- we detected at startup, then to a plain "WSL" label.
+		local effective = (proc ~= "" and proc) or wsl_shell_name or ""
+		label = WSL_LABELS[effective] or (wsl_shell_name and ("WSL:" .. wsl_shell_name) or "WSL")
+	else
+		label = PROCESS_LABELS[proc] or proc
 	end
 
-	return {
-		{ Text = " " .. title .. " " },
-	}
+	return { { Text = " " .. label .. " " } }
 end)
 
 ------------------------------------------------------------
 -- LEADER INDICATOR
 ------------------------------------------------------------
-wezterm.on("update-status", function(window, _)
-	if window:leader_is_active() then
-		window:set_left_status(" 🌊 LEADER ")
-	else
-		window:set_left_status("")
-	end
+wezterm.on("update-status", function(window)
+	window:set_left_status(window:leader_is_active() and " 🌊 LEADER " or "")
 end)
 
 return config

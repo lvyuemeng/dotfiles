@@ -1,0 +1,49 @@
+if exists ~/.cargo/bin
+	path+ ~/.cargo/bin
+	set CARGO_HOME ~/.cargo
+	set RUSTUP_HOME ~/.rustup
+end
+
+if exists ~/go/bin
+	path+ ~/go/bin
+	set GOPATH ~/go
+end
+
+if exists ~/.deno/bin
+	path+ ~/.deno/bin
+end
+
+if exists ~/.bun/bin
+	path+ ~/.bun/bin
+end
+
+if exists ~/.local/bin
+	path+ ~/.local/bin
+end
+
+if have nvim
+	set EDITOR nvim
+	set VISUAL nvim
+	set GIT_EDITOR nvim
+end
+
+if have starship
+	call starship init {shell}
+	set STARSHIP_CONFIG $HOME\.config\starship.toml
+end
+
+if have rg
+	alias grep rg
+end
+
+if have fd
+	alias find fd
+end
+
+if have fzf
+	set FZF_DEFAULT_COMMAND fd --type f --hidden --follow --exclude .git
+end
+
+if os windows
+	alias e explorer.exe
+end

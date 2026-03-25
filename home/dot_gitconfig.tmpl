@@ -9,11 +9,7 @@
 
 # == Ease ==
 [core]
-{{ if (or (eq .chezmoi.os "darwin") (eq .chezmoi.os "linux")) }}
-  editor = nvim
-{{ else }}
-  editor = code --wait
-{{ end }}
+editor = {{ .editor }}
 [fetch]
 	prune = true
 [alias]
@@ -37,7 +33,7 @@ sslverify = false
 # credenence cache
 [credential]
 {{- if eq .chezmoi.os "windows" }}
-	helper = wincred 
+	helper = wincred
 {{- else if eq .chezmoi.os "darwin" }}
 	helper = osxkeychain
 {{- else if eq .chezmoi.os "linux" }}

@@ -73,7 +73,7 @@ function Invoke-Package {
 function Invoke-Trigger {
     param($Option)
 
-    if ($Option) {
+    if (-not $Option) {
         $Option = @{}
     }
     # PS 5.1 compatible default values

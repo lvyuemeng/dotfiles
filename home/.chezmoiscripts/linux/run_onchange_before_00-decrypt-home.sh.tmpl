@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ -f "${HOME}/.config/chezmoi/key.txt" ]; then
+	exit 0
+fi
+
+mkdir -p "${HOME}/.config/chezmoi"
+# ensure rage is installed
+if ! command -v rage &> /dev/null; then
+    echo "rage is not installed. Please install it and try again."
+    exit 1
+fi
+echo "Decrypting key.txt.rage..."
+rage -d "{{ .chezmoi.sourceDir }}/key.txt.rage" -o "${HOME}/.config/chezmoi/key.txt"
+chmod 600 "${HOME}/.config/chezmoi/key.txt"

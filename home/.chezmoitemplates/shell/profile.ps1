@@ -1,12 +1,3 @@
-# == UTILS ==
-function wttr {
-    param(
-        [Parameter(Mandatory = $false)]
-        [string]$In
-    )
-    & curl "wttr.in/$In"
-}
-
 function Clear-PSReadLineHistory {
     Get-PSReadLineOption | Select-Object -expand HistorySavePath | Remove-Item
 }
@@ -14,21 +5,9 @@ function Clear-PSReadLineHistory {
 # == ENVIRONMENT ==
 
 function Initialize-Env {
-    # explorer
-    Set-Alias -Name e -Value explorer.exe -Scope Global
-    # starship
-    if (Get-Command starship -ErrorAction SilentlyContinue) {
-        Invoke-Expression (& starship init powershell)
-        $ENV:STARSHIP_CONFIG = "$HOME\.config\starship.toml"
+    if (Get-Command shed -ErrorAction SilentlyContinue) {
+        (& shed pwsh "$HOME\.shed") | Out-String | Invoke-Expression
     }
-
-    # nvim
-    if (Get-Command nvim -ErrorAction SilentlyContinue) {
-        $ENV:EDITOR = "nvim"
-    }
-    # vscode: change `nvim` -> `code.cmd`
-
-    $ENV:SHELL = "pwsh"
 }
 
 # == MODULES ==

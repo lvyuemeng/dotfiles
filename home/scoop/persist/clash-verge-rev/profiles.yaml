@@ -47,10 +47,10 @@ items:
   - name: 🚀 节点选择
     now: 🚀 手动切换
   - name: 🚀 手动切换
-    now: 🇺🇸US_1|1.7MB/s
+    now: 🇸🇨SC_1|2.5MB/s
   - name: ♻️ 自动选择
     now: sg|ab66|puddincat07@Telegram
-  updated: 1774242591
+  updated: 1774405959
   option:
     with_proxy: false
     self_proxy: false
@@ -93,10 +93,12 @@ items:
   url: https://gh-proxy.org/raw.githubusercontent.com/PuddinCat/BestClash/refs/heads/main/proxies.yaml
   selected:
   - name: 🔰 节点选择
-    now: hk|033b|puddincat07@Telegram
+    now: xx|9026|puddincat07@Telegram
   - name: ♻️ 自动选择
     now: gb|1593|puddincat07@Telegram
-  updated: 1774242592
+  - name: Proxy
+    now: 🇺🇸 美国节点
+  updated: 1774405965
   option:
     with_proxy: false
     self_proxy: false
@@ -144,12 +146,12 @@ items:
   - name: 🚀 节点选择
     now: 🚀 手动切换
   - name: Haita Cloud
-    now: 下单地址https://kelayun.notepin.co
+    now: 购买地址https://kelayun.notepin.co
   - name: 🔰 节点选择
     now: kr|71a5|puddincat07@Telegram
   - name: 自动选择
     now: 官网地址https://kelayun.notepin.co
-  updated: 1774242592
+  updated: 1774409691
   option:
     with_proxy: false
     self_proxy: false
@@ -194,7 +196,7 @@ items:
   selected:
   - name: 🚀 节点选择
     now: 🇺🇸 US美国
-  updated: 1774242593
+  updated: 1774405961
   option:
     with_proxy: false
     self_proxy: false
@@ -240,7 +242,7 @@ items:
     now: 🇺🇲 美国节点
   - name: 🚀 手动切换
     now: 🇸🇬SG_3|1.7MB/s
-  updated: 1774242574
+  updated: 1774405961
   option:
     with_proxy: false
     self_proxy: false
@@ -282,8 +284,8 @@ items:
   url: https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/yudou66.yaml
   selected:
   - name: 🚀 节点选择
-    now: 美国(yudou789.top 玉豆免费节点)_6
-  updated: 1774242572
+    now: 美国(yudou789.top 玉豆免费节点)_14
+  updated: 1774405961
   option:
     allow_auto_update: true
     merge: mY3wtAG1LwFS
@@ -329,7 +331,7 @@ items:
     download: 41779198033920
     total: 1073740786892800
     expire: 4102329600
-  updated: 1774242594
+  updated: 1774405960
   option:
     update_interval: 720
     allow_auto_update: true
@@ -338,3 +340,47 @@ items:
     rules: rUn9gNynUH4Z
     proxies: pWmpSZxk1hvD
     groups: gnXTzvcNvWMM
+- uid: mfXNjaNyx19s
+  type: merge
+  name: null
+  file: mfXNjaNyx19s.yaml
+  updated: 1774265164
+- uid: s6aakWpqIgXG
+  type: script
+  name: null
+  file: s6aakWpqIgXG.js
+  updated: 1774265164
+- uid: rIQ1BDlmzNUi
+  type: rules
+  name: null
+  file: rIQ1BDlmzNUi.yaml
+  updated: 1774265164
+- uid: p6EBiANjjnVa
+  type: proxies
+  name: null
+  file: p6EBiANjjnVa.yaml
+  updated: 1774265164
+- uid: ge2fpr6vZZUj
+  type: groups
+  name: null
+  file: ge2fpr6vZZUj.yaml
+  updated: 1774265164
+- uid: RClhMvILjc3E
+  type: remote
+  name: mihomo.yaml
+  file: RClhMvILjc3E.yaml
+  desc: ''
+  url: https://gh-proxy.org/https://raw.githubusercontent.com/ovmvo/FreeSub/refs/heads/main/sub/permanent/mihomo.yaml
+  selected:
+  - name: Proxy
+    now: 🇰🇷 韩国节点
+  updated: 1774405962
+  option:
+    with_proxy: false
+    self_proxy: false
+    allow_auto_update: true
+    merge: mfXNjaNyx19s
+    script: s6aakWpqIgXG
+    rules: rIQ1BDlmzNUi
+    proxies: p6EBiANjjnVa
+    groups: ge2fpr6vZZUj
