@@ -47,10 +47,10 @@ items:
   - name: 🚀 节点选择
     now: 🚀 手动切换
   - name: 🚀 手动切换
-    now: 🇯🇵JP_2|2.1MB/s
+    now: 🇺🇸US_3|2.2MB/s
   - name: ♻️ 自动选择
     now: sg|ab66|puddincat07@Telegram
-  updated: 1778499453
+  updated: 1780796438
   option:
     with_proxy: false
     self_proxy: false
@@ -98,7 +98,7 @@ items:
     now: gb|1593|puddincat07@Telegram
   - name: Proxy
     now: 🇺🇸 美国节点
-  updated: 1778499455
+  updated: 1780796438
   option:
     with_proxy: false
     self_proxy: false
@@ -153,7 +153,7 @@ items:
     now: 官网地址https://kelayun.notepin.co
   - name: Proxy
     now: 🇰🇷 韩国节点
-  updated: 1778499458
+  updated: 1780796352
   option:
     with_proxy: false
     self_proxy: false
@@ -198,7 +198,7 @@ items:
   selected:
   - name: 🚀 节点选择
     now: 关注https://github.com/ggborr/FREEE-VPN
-  updated: 1778499454
+  updated: 1780796438
   option:
     with_proxy: false
     self_proxy: false
@@ -244,7 +244,7 @@ items:
     now: 🇯🇵JP日本 1.2MB/s
   - name: 🚀 手动切换
     now: 🇸🇬SG_3|1.7MB/s
-  updated: 1778499454
+  updated: 1780796438
   option:
     with_proxy: false
     self_proxy: false
@@ -288,7 +288,7 @@ items:
   selected:
   - name: 🚀 节点选择
     now: 韩国(yudou789.top 玉豆免费节点)_1
-  updated: 1778499454
+  updated: 1780796439
   option:
     with_proxy: false
     self_proxy: false
@@ -332,7 +332,7 @@ items:
   selected:
   - name: Proxy
     now: 🇩🇪 德国节点
-  updated: 1778499454
+  updated: 1780796438
   option:
     with_proxy: false
     self_proxy: false
@@ -374,13 +374,13 @@ items:
   url: https://msub.xn--m7r52rosihxm.com/api/v1/client/subscribe?token=f84215e4a2f08b44eff91ee612d40f54
   selected:
   - name: 节点选择
-    now: 美国LA-优化2-GPT
+    now: 美国LA-优化3-GPT
   extra:
-    upload: 10436149884
-    download: 66164944538
+    upload: 12886677222
+    download: 79058499316
     total: 139586437120
     expire: 0
-  updated: 1778499454
+  updated: 1780796440
   option:
     update_interval: 1440
     allow_auto_update: true
